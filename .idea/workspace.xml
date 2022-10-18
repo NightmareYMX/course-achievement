@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4e9579a6-1482-4dae-b675-85470cd96e92" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +183,7 @@
       <updated>1666016889570</updated>
       <workItem from="1666016891914" duration="866000" />
       <workItem from="1666075023547" duration="6976000" />
-      <workItem from="1666082344672" duration="1327000" />
+      <workItem from="1666082344672" duration="2195000" />
     </task>
     <task id="LOCAL-00001" summary="初始化项目">
       <created>1666017061223</created>
@@ -219,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666081948866</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update README.md">
+      <created>1666083792668</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1666083792668</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,7 +250,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="初始化项目" />
     <MESSAGE value="ssm配置文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="ssm配置文件" />
+    <MESSAGE value="update README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="update README.md" />
   </component>
   <component name="WindowStateProjectService">
     <state x="309" y="165" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1666081575550">
@@ -257,10 +266,10 @@
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
     <state x="720" y="605" key="#com.intellij.javaee.module.view.web.EditWebRootDialog/0.0.1707.1019@0.0.1707.1019" timestamp="1666077500294" />
-    <state x="463" y="103" key="CommitChangelistDialog2" timestamp="1666081948432">
+    <state x="463" y="103" key="CommitChangelistDialog2" timestamp="1666083792218">
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
-    <state x="463" y="103" key="CommitChangelistDialog2/0.0.1707.1019@0.0.1707.1019" timestamp="1666081948432" />
+    <state x="463" y="103" key="CommitChangelistDialog2/0.0.1707.1019@0.0.1707.1019" timestamp="1666083792218" />
     <state x="634" y="265" key="FileChooserDialogImpl" timestamp="1666082927638">
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
@@ -269,10 +278,10 @@
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
     <state x="193" y="108" width="1038" height="839" key="SettingsEditor/0.0.1707.1019@0.0.1707.1019" timestamp="1666081526650" />
-    <state x="446" y="243" key="Vcs.Push.Dialog.v2" timestamp="1666081959990">
+    <state x="446" y="243" key="Vcs.Push.Dialog.v2" timestamp="1666083803358">
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
-    <state x="446" y="243" key="Vcs.Push.Dialog.v2/0.0.1707.1019@0.0.1707.1019" timestamp="1666081959990" />
+    <state x="446" y="243" key="Vcs.Push.Dialog.v2/0.0.1707.1019@0.0.1707.1019" timestamp="1666083803358" />
     <state x="495" y="301" key="git4idea.merge.GitPullDialog" timestamp="1666017730912">
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
