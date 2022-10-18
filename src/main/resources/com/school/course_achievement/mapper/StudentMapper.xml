@@ -5,4 +5,7 @@
 
 <mapper namespace="com.school.course_achievement.mapper.StudentMapper">
 
+    <select id="findUser" resultType="java.lang.Integer" parameterType="string">
+        SELECT * FROM student WHERE username = #{arg0} and password = #{arg1}
+    </select>
 </mapper>

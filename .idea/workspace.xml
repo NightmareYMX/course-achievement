@@ -1,26 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="course-achievement:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="4e9579a6-1482-4dae-b675-85470cd96e92" name="Default Changelist" comment="ssm配置文件">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/course_achievement/controller/StudentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/course_achievement/mapper/StudentMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/course_achievement/pojo/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/course_achievement/service/StudentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/course_achievement/service/impl/StudentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/school/course_achievement/StudentMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/lockback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/spring-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/springmvc-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/lockback-test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/course_achievement/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/course_achievement/controller/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/course_achievement/mapper/StudentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/course_achievement/mapper/StudentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/course_achievement/pojo/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/course_achievement/pojo/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/course_achievement/service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/course_achievement/service/StudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/course_achievement/service/impl/StudentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/course_achievement/service/impl/StudentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/school/course_achievement/StudentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/school/course_achievement/mapper/StudentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lockback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lockback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,25 +68,20 @@
       </set>
     </option>
   </component>
-  <component name="IgnoredFileRootStore">
-    <option name="generatedRoots">
-      <set>
-        <option value="D:\Java\project\course_achievement\.idea" />
-      </set>
-    </option>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="localRepository" value="D:\Maven\apache-maven-3.8.4\myRepository" />
-        <option name="mavenHome" value="D:/Maven/apache-maven-3.8.4" />
-        <option name="userSettingsFile" value="D:\Maven\apache-maven-3.8.4\conf\settings.xml" />
+        <option name="localRepository" value="D:\Program4it\Maven\apache-maven-3.6.3\repository" />
+        <option name="mavenHome" value="D:/Program4it/Maven/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\Program4it\Maven\apache-maven-3.6.3\conf\settings.xml" />
       </MavenGeneralSettings>
-    </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
     </option>
   </component>
   <component name="ProjectId" id="2GGZTfnLperMp3yqMOkNDCqsORR" />
@@ -73,25 +89,30 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
+    <option name="autoscrollToSource" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="LombokPluginIS_EXTSION_METHOD_Enabled" value="true" />
+    <property name="LombokPluginIS_LOMBOK_VERSION_CHECK_Enabled" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="spring" />
+    <property name="settings.editor.selected.configurable" value="settings.gitee" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Coding_work\Idea_work\course-achievement\src\main\resources\com\school\course_achievement\mapper" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Java\project\course_achievement\src\test\resources" />
       <recent name="D:\Java\project\course_achievement\src\main\resources" />
@@ -99,18 +120,17 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="course_achievement" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.68" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/course_achievement/" />
-      <option name="UPDATING_POLICY" value="restart-server" />
+    <configuration name="Tomcat 9.0.35" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.35" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
-        <artifact name="course_achievement:war exploded">
+        <artifact name="course-achievement:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/course_achievement" />
+            <option name="CONTEXT_PATH" value="/course_achievement_war_exploded" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_course_achievement" />
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_course-achievement" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -118,7 +138,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="51191" />
+        <option name="DEBUG_PORT" value="8474" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -168,22 +188,10 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="course_achievement:war exploded" />
+          <artifact name="course-achievement:war exploded" />
         </option>
       </method>
     </configuration>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SpringGeneralSettings">
     <option name="allowAutoConfigurationMode" value="true" />
@@ -200,6 +208,11 @@
       <updated>1666016889570</updated>
       <workItem from="1666016891914" duration="866000" />
       <workItem from="1666075023547" duration="6893000" />
+      <workItem from="1666082386348" duration="2893000" />
+      <workItem from="1666101965681" duration="30000" />
+      <workItem from="1666102008544" duration="2880000" />
+      <workItem from="1666105146938" duration="372000" />
+      <workItem from="1666105547593" duration="3172000" />
     </task>
     <task id="LOCAL-00001" summary="初始化项目">
       <created>1666017061223</created>
@@ -233,20 +246,19 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -255,10 +267,15 @@
     <option name="LAST_COMMIT_MESSAGE" value="ssm配置文件" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="309" y="165" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1666081575550">
-      <screen x="0" y="0" width="1707" height="1019" />
+    <state x="278" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1666105956350">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
+    <state x="278" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1666105956350" />
     <state x="309" y="165" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1707.1019@0.0.1707.1019" timestamp="1666081575550" />
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1666101834651">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1666101834651" />
     <state x="637" y="416" width="537" height="186" key="#com.intellij.javaee.module.view.common.J2EE.J2EEDeploymentDescriptorLocationPanel.changeDDPath" timestamp="1666077487775">
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
@@ -271,13 +288,63 @@
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
     <state x="463" y="103" key="CommitChangelistDialog2/0.0.1707.1019@0.0.1707.1019" timestamp="1666081712572" />
-    <state x="634" y="265" key="FileChooserDialogImpl" timestamp="1666075219580">
-      <screen x="0" y="0" width="1707" height="1019" />
+    <state x="570" y="217" key="FileChooserDialogImpl" timestamp="1666106234891">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
+    <state x="570" y="217" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1666106234891" />
     <state x="634" y="265" key="FileChooserDialogImpl/0.0.1707.1019@0.0.1707.1019" timestamp="1666075219580" />
-    <state x="193" y="108" width="1038" height="839" key="SettingsEditor" timestamp="1666081526650">
-      <screen x="0" y="0" width="1707" height="1019" />
+    <state width="1240" height="323" key="GridCell.Tab.0.bottom" timestamp="1666108723455">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
+    <state width="1240" height="323" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1666108723455" />
+    <state width="1240" height="323" key="GridCell.Tab.0.center" timestamp="1666108723455">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1240" height="323" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1666108723455" />
+    <state width="1240" height="323" key="GridCell.Tab.0.left" timestamp="1666108723455">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1240" height="323" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1666108723455" />
+    <state width="1240" height="323" key="GridCell.Tab.0.right" timestamp="1666108723455">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1240" height="323" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1666108723455" />
+    <state width="1240" height="323" key="GridCell.Tab.1.bottom" timestamp="1666108723455">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1240" height="323" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1666108723455" />
+    <state width="1240" height="323" key="GridCell.Tab.1.center" timestamp="1666108723455">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1240" height="323" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1666108723455" />
+    <state width="1240" height="323" key="GridCell.Tab.1.left" timestamp="1666108723455">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1240" height="323" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1666108723455" />
+    <state width="1240" height="323" key="GridCell.Tab.1.right" timestamp="1666108723455">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1240" height="323" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1666108723455" />
+    <state width="1240" height="323" key="GridCell.Tab.2.bottom" timestamp="1666108723456">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1240" height="323" key="GridCell.Tab.2.bottom/0.0.1536.834@0.0.1536.834" timestamp="1666108723456" />
+    <state width="1240" height="323" key="GridCell.Tab.2.center" timestamp="1666108723456">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1240" height="323" key="GridCell.Tab.2.center/0.0.1536.834@0.0.1536.834" timestamp="1666108723456" />
+    <state width="1240" height="323" key="GridCell.Tab.2.left" timestamp="1666108723456">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1240" height="323" key="GridCell.Tab.2.left/0.0.1536.834@0.0.1536.834" timestamp="1666108723456" />
+    <state width="1240" height="323" key="GridCell.Tab.2.right" timestamp="1666108723456">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1240" height="323" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1666108723456" />
+    <state x="450" y="43" width="935" height="707" key="SettingsEditor" timestamp="1666108736272">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="450" y="43" width="935" height="707" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1666108736272" />
     <state x="193" y="108" width="1038" height="839" key="SettingsEditor/0.0.1707.1019@0.0.1707.1019" timestamp="1666081526650" />
     <state x="446" y="243" key="Vcs.Push.Dialog.v2" timestamp="1666075087955">
       <screen x="0" y="0" width="1707" height="1019" />
@@ -287,6 +354,10 @@
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
     <state x="495" y="301" key="git4idea.merge.GitPullDialog/0.0.1707.1019@0.0.1707.1019" timestamp="1666017730912" />
+    <state x="680" y="270" width="627" height="283" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1666106561991">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="680" y="270" width="627" height="283" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1536.834@0.0.1536.834" timestamp="1666106561991" />
     <state x="419" y="294" key="spring file set editor" timestamp="1666077746123">
       <screen x="0" y="0" width="1707" height="1019" />
     </state>

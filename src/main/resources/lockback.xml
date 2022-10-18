@@ -11,7 +11,7 @@
     </appender>
 
     <!-- 根据特殊需求指定局部的日志级别 : SQL 语句是 info 级别 -->
-    <logger name="com.atguigu.crowd.mapper">
+    <logger name="com.school.course_achievement.mapper">
         <level value="DEBUG"/>
     </logger>
 

@@ -19,7 +19,7 @@
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
 
         <!-- 数据库信息 -->
-        <property name="driver" value="${jdbc.driver}"></property>
+        <property name="driverClassName" value="${jdbc.driver}"></property>
         <property name="url" value="${jdbc.url}"></property>
         <property name="username" value="${jdbc.username}"></property>
         <property name="password" value="${jdbc.password}"></property>
