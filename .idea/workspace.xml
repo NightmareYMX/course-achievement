@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4e9579a6-1482-4dae-b675-85470cd96e92" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lockback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lockback.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,81 +81,6 @@
       <recent name="D:\Java\project\course_achievement\.idea" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="course_achievement" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.68" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/course_achievement/" />
-      <option name="UPDATING_POLICY" value="restart-server" />
-      <deployment>
-        <artifact name="course_achievement:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/course_achievement" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_course_achievement" />
-      </server-settings>
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="51191" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="course_achievement:war exploded" />
-        </option>
-      </method>
-    </configuration>
-  </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
       <list>
@@ -183,7 +108,8 @@
       <updated>1666016889570</updated>
       <workItem from="1666016891914" duration="866000" />
       <workItem from="1666075023547" duration="6976000" />
-      <workItem from="1666082344672" duration="2195000" />
+      <workItem from="1666082344672" duration="3290000" />
+      <workItem from="1666140757726" duration="224000" />
     </task>
     <task id="LOCAL-00001" summary="初始化项目">
       <created>1666017061223</created>
@@ -227,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666083792668</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="update README.md">
+      <created>1666085369027</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1666085369027</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,10 +187,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="update README.md" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="309" y="165" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1666081575550">
+    <state x="446" y="168" key="#Notifications" timestamp="1666140980641">
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
-    <state x="309" y="165" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1707.1019@0.0.1707.1019" timestamp="1666081575550" />
+    <state x="446" y="168" key="#Notifications/0.0.1707.1019@0.0.1707.1019" timestamp="1666140980641" />
+    <state x="309" y="165" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1666140778439">
+      <screen x="0" y="0" width="1707" height="1019" />
+    </state>
+    <state x="309" y="165" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1707.1019@0.0.1707.1019" timestamp="1666140778439" />
     <state x="637" y="416" width="537" height="186" key="#com.intellij.javaee.module.view.common.J2EE.J2EEDeploymentDescriptorLocationPanel.changeDDPath" timestamp="1666077487775">
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
@@ -266,10 +203,10 @@
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
     <state x="720" y="605" key="#com.intellij.javaee.module.view.web.EditWebRootDialog/0.0.1707.1019@0.0.1707.1019" timestamp="1666077500294" />
-    <state x="463" y="103" key="CommitChangelistDialog2" timestamp="1666083792218">
+    <state x="463" y="103" key="CommitChangelistDialog2" timestamp="1666085368676">
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
-    <state x="463" y="103" key="CommitChangelistDialog2/0.0.1707.1019@0.0.1707.1019" timestamp="1666083792218" />
+    <state x="463" y="103" key="CommitChangelistDialog2/0.0.1707.1019@0.0.1707.1019" timestamp="1666085368676" />
     <state x="634" y="265" key="FileChooserDialogImpl" timestamp="1666082927638">
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
@@ -278,14 +215,14 @@
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
     <state x="193" y="108" width="1038" height="839" key="SettingsEditor/0.0.1707.1019@0.0.1707.1019" timestamp="1666081526650" />
-    <state x="446" y="243" key="Vcs.Push.Dialog.v2" timestamp="1666083803358">
+    <state x="446" y="243" key="Vcs.Push.Dialog.v2" timestamp="1666085855674">
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
-    <state x="446" y="243" key="Vcs.Push.Dialog.v2/0.0.1707.1019@0.0.1707.1019" timestamp="1666083803358" />
-    <state x="495" y="301" key="git4idea.merge.GitPullDialog" timestamp="1666017730912">
+    <state x="446" y="243" key="Vcs.Push.Dialog.v2/0.0.1707.1019@0.0.1707.1019" timestamp="1666085855674" />
+    <state x="495" y="301" key="git4idea.merge.GitPullDialog" timestamp="1666140939302">
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
-    <state x="495" y="301" key="git4idea.merge.GitPullDialog/0.0.1707.1019@0.0.1707.1019" timestamp="1666017730912" />
+    <state x="495" y="301" key="git4idea.merge.GitPullDialog/0.0.1707.1019@0.0.1707.1019" timestamp="1666140939302" />
     <state x="419" y="294" key="spring file set editor" timestamp="1666077746123">
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
