@@ -6,7 +6,7 @@ i# Compiled class file
 
 # User-specific stuff:
 .idea/workspace.xml
-
+*.iml
 # Log file
 *.log
 
