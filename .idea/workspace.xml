@@ -183,7 +183,8 @@
     <MESSAGE value="初始化项目" />
     <MESSAGE value="ssm配置文件" />
     <MESSAGE value="update README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="update README.md" />
+    <MESSAGE value="Merge branch 'master' of https://gitee.com/noobyao/course-achievement&#10;&#10; Conflicts:&#10;&#9;.idea/workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://gitee.com/noobyao/course-achievement&#10;&#10; Conflicts:&#10;&#9;.idea/workspace.xml" />
   </component>
   <component name="WindowStateProjectService">
     <state x="446" y="168" key="#Notifications" timestamp="1666140980641">
@@ -202,10 +203,14 @@
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
     <state x="720" y="605" key="#com.intellij.javaee.module.view.web.EditWebRootDialog/0.0.1707.1019@0.0.1707.1019" timestamp="1666077500294" />
-    <state x="463" y="103" key="CommitChangelistDialog2" timestamp="1666141293849">
+    <state x="463" y="103" key="CommitChangelistDialog2" timestamp="1666141467278">
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
-    <state x="463" y="103" key="CommitChangelistDialog2/0.0.1707.1019@0.0.1707.1019" timestamp="1666141293849" />
+    <state x="463" y="103" key="CommitChangelistDialog2/0.0.1707.1019@0.0.1707.1019" timestamp="1666141467278" />
+    <state x="164" y="85" key="DiffContextDialog" timestamp="1666141423237">
+      <screen x="0" y="0" width="1707" height="1019" />
+    </state>
+    <state x="164" y="85" key="DiffContextDialog/0.0.1707.1019@0.0.1707.1019" timestamp="1666141423237" />
     <state x="634" y="265" key="FileChooserDialogImpl" timestamp="1666082927638">
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
@@ -214,14 +219,14 @@
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
     <state x="193" y="108" width="1038" height="839" key="SettingsEditor/0.0.1707.1019@0.0.1707.1019" timestamp="1666081526650" />
-    <state x="446" y="243" key="Vcs.Push.Dialog.v2" timestamp="1666085855674">
+    <state x="446" y="243" key="Vcs.Push.Dialog.v2" timestamp="1666141424734">
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
-    <state x="446" y="243" key="Vcs.Push.Dialog.v2/0.0.1707.1019@0.0.1707.1019" timestamp="1666085855674" />
-    <state x="495" y="301" key="git4idea.merge.GitPullDialog" timestamp="1666140939302">
+    <state x="446" y="243" key="Vcs.Push.Dialog.v2/0.0.1707.1019@0.0.1707.1019" timestamp="1666141424734" />
+    <state x="495" y="301" key="git4idea.merge.GitPullDialog" timestamp="1666141325360">
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
-    <state x="495" y="301" key="git4idea.merge.GitPullDialog/0.0.1707.1019@0.0.1707.1019" timestamp="1666140939302" />
+    <state x="495" y="301" key="git4idea.merge.GitPullDialog/0.0.1707.1019@0.0.1707.1019" timestamp="1666141325360" />
     <state x="419" y="294" key="spring file set editor" timestamp="1666077746123">
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
