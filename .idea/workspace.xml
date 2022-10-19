@@ -30,24 +30,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e9579a6-1482-4dae-b675-85470cd96e92" name="Default Changelist" comment="1.测试项目环境配置&#10;2.数据库交互成功&#10;3.测试接口设置成功">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
-    <list id="b40750fa-b2b3-4823-acfe-1c041a6673eb" name="1.测试项目环境配置 2.数据库交互成功 3.测试接口设置成功" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/success.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/course_achievement-1.0-SNAPSHOT/WEB-INF/templates/success.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/tomcat/logs/access_log.2022-10-19" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_10_19_0_08_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_10_19_0_08__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/course_achievement/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/course_achievement/controller/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/school/course_achievement/controller/StudentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/school/course_achievement/controller/StudentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/course_achievement-1.0-SNAPSHOT/WEB-INF/classes/com/school/course_achievement/controller/StudentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/course_achievement-1.0-SNAPSHOT/WEB-INF/classes/com/school/course_achievement/controller/StudentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/course_achievement-1.0-SNAPSHOT/WEB-INF/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/course_achievement-1.0-SNAPSHOT/WEB-INF/templates/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="4e9579a6-1482-4dae-b675-85470cd96e92" name="Default Changelist" comment="1.测试项目环境配置&#10;2.数据库交互成功&#10;3.测试接口设置成功" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,52 +58,6 @@
         <option value="https://gitee.com/noobyao/course-achievement.git" />
       </set>
     </option>
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/.gitignore">
-      <ranges>
-        <range start1="2" end1="2" start2="2" end2="8" changelist="b40750fa-b2b3-4823-acfe-1c041a6673eb" />
-        <range start1="21" end1="21" start2="27" end2="31" changelist="4e9579a6-1482-4dae-b675-85470cd96e92" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/.idea/workspace.xml">
-      <ranges>
-        <range start1="23" end1="24" start2="23" end2="30" changelist="b40750fa-b2b3-4823-acfe-1c041a6673eb" />
-        <range start1="26" end1="27" start2="32" end2="42" changelist="4e9579a6-1482-4dae-b675-85470cd96e92" />
-        <range start1="28" end1="28" start2="43" end2="48" changelist="4e9579a6-1482-4dae-b675-85470cd96e92" />
-        <range start1="33" end1="33" start2="53" end2="56" changelist="b40750fa-b2b3-4823-acfe-1c041a6673eb" />
-        <range start1="54" end1="54" start2="77" end2="85" changelist="4e9579a6-1482-4dae-b675-85470cd96e92" />
-        <range start1="69" end1="69" start2="100" end2="105" changelist="b40750fa-b2b3-4823-acfe-1c041a6673eb" />
-        <range start1="93" end1="94" start2="129" end2="130" changelist="b40750fa-b2b3-4823-acfe-1c041a6673eb" />
-        <range start1="96" end1="99" start2="132" end2="132" changelist="4e9579a6-1482-4dae-b675-85470cd96e92" />
-        <range start1="103" end1="103" start2="136" end2="140" changelist="4e9579a6-1482-4dae-b675-85470cd96e92" />
-        <range start1="104" end1="178" start2="141" end2="141" changelist="b40750fa-b2b3-4823-acfe-1c041a6673eb" />
-        <range start1="183" end1="184" start2="146" end2="147" changelist="b40750fa-b2b3-4823-acfe-1c041a6673eb" />
-        <range start1="188" end1="188" start2="151" end2="152" changelist="4e9579a6-1482-4dae-b675-85470cd96e92" />
-        <range start1="199" end1="199" start2="163" end2="165" changelist="4e9579a6-1482-4dae-b675-85470cd96e92" />
-        <range start1="228" end1="229" start2="194" end2="216" changelist="4e9579a6-1482-4dae-b675-85470cd96e92" />
-        <range start1="239" end1="240" start2="226" end2="244" changelist="b40750fa-b2b3-4823-acfe-1c041a6673eb" />
-        <range start1="250" end1="251" start2="254" end2="257" changelist="b40750fa-b2b3-4823-acfe-1c041a6673eb" />
-        <range start1="253" end1="254" start2="259" end2="260" changelist="b40750fa-b2b3-4823-acfe-1c041a6673eb" />
-        <range start1="256" end1="257" start2="262" end2="263" changelist="b40750fa-b2b3-4823-acfe-1c041a6673eb" />
-        <range start1="279" end1="280" start2="285" end2="286" changelist="b40750fa-b2b3-4823-acfe-1c041a6673eb" />
-        <range start1="282" end1="284" start2="288" end2="290" changelist="b40750fa-b2b3-4823-acfe-1c041a6673eb" />
-        <range start1="286" end1="288" start2="292" end2="294" changelist="b40750fa-b2b3-4823-acfe-1c041a6673eb" />
-        <range start1="290" end1="292" start2="296" end2="298" changelist="b40750fa-b2b3-4823-acfe-1c041a6673eb" />
-        <range start1="294" end1="296" start2="300" end2="302" changelist="b40750fa-b2b3-4823-acfe-1c041a6673eb" />
-        <range start1="298" end1="300" start2="304" end2="306" changelist="b40750fa-b2b3-4823-acfe-1c041a6673eb" />
-        <range start1="302" end1="304" start2="308" end2="310" changelist="b40750fa-b2b3-4823-acfe-1c041a6673eb" />
-        <range start1="306" end1="308" start2="312" end2="314" changelist="b40750fa-b2b3-4823-acfe-1c041a6673eb" />
-        <range start1="310" end1="312" start2="316" end2="318" changelist="b40750fa-b2b3-4823-acfe-1c041a6673eb" />
-        <range start1="314" end1="316" start2="320" end2="322" changelist="b40750fa-b2b3-4823-acfe-1c041a6673eb" />
-        <range start1="318" end1="320" start2="324" end2="326" changelist="b40750fa-b2b3-4823-acfe-1c041a6673eb" />
-        <range start1="322" end1="324" start2="328" end2="330" changelist="b40750fa-b2b3-4823-acfe-1c041a6673eb" />
-        <range start1="326" end1="328" start2="332" end2="334" changelist="b40750fa-b2b3-4823-acfe-1c041a6673eb" />
-        <range start1="330" end1="331" start2="336" end2="337" changelist="b40750fa-b2b3-4823-acfe-1c041a6673eb" />
-        <range start1="332" end1="334" start2="338" end2="340" changelist="4e9579a6-1482-4dae-b675-85470cd96e92" />
-        <range start1="335" end1="335" start2="341" end2="346" changelist="4e9579a6-1482-4dae-b675-85470cd96e92" />
-      </ranges>
-    </file>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -188,7 +125,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="4e9579a6-1482-4dae-b675-85470cd96e92" name="Default Changelist" comment="" />
-      <changelist id="b40750fa-b2b3-4823-acfe-1c041a6673eb" name="1.测试项目环境配置 2.数据库交互成功 3.测试接口设置成功" comment="" />
+      <changelist id="" name="1.测试项目环境配置 2.数据库交互成功 3.测试接口设置成功" comment="" />
       <created>1666016889570</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -201,7 +138,7 @@
       <workItem from="1666105146938" duration="372000" />
       <workItem from="1666105547593" duration="3172000" />
       <workItem from="1666138129225" duration="639000" />
-      <workItem from="1666141166986" duration="756000" />
+      <workItem from="1666141166986" duration="894000" />
     </task>
     <task id="LOCAL-00001" summary="初始化项目">
       <created>1666017061223</created>
@@ -252,7 +189,21 @@
       <option name="project" value="LOCAL" />
       <updated>1666141562876</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="1.测试项目环境配置&#10;2.数据库交互成功&#10;3.测试接口设置成功">
+      <created>1666141962799</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1666141962799</updated>
+    </task>
+    <task id="LOCAL-00009" summary="1.测试项目环境配置&#10;2.数据库交互成功&#10;3.测试接口设置成功">
+      <created>1666142022383</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1666142022383</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,6 +268,10 @@
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
     <state x="463" y="103" key="CommitChangelistDialog2/0.0.1707.1019@0.0.1707.1019" timestamp="1666081712572" />
+    <state x="187" y="115" key="DiffContextDialog" timestamp="1666142055927">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="187" y="115" key="DiffContextDialog/0.0.1536.834@0.0.1536.834" timestamp="1666142055927" />
     <state x="570" y="217" key="FileChooserDialogImpl" timestamp="1666106234891">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -379,10 +334,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="614" y="331" key="VCS.ChangelistChooser/0.0.1536.834@0.0.1536.834" timestamp="1666141638370" />
-    <state x="401" y="199" key="Vcs.Push.Dialog.v2" timestamp="1666141601769">
+    <state x="401" y="199" key="Vcs.Push.Dialog.v2" timestamp="1666142061872">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="401" y="199" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1666141601769" />
+    <state x="401" y="199" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1666142061872" />
     <state x="446" y="243" key="Vcs.Push.Dialog.v2/0.0.1707.1019@0.0.1707.1019" timestamp="1666075087955" />
     <state x="495" y="301" key="git4idea.merge.GitPullDialog" timestamp="1666017730912">
       <screen x="0" y="0" width="1707" height="1019" />
