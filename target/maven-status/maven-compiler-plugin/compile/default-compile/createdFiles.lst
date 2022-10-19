@@ -1,5 +1,0 @@
-com\school\course_achievement\mapper\StudentMapper.class
-com\school\course_achievement\controller\StudentController.class
-com\school\course_achievement\service\impl\StudentServiceImpl.class
-com\school\course_achievement\pojo\Student.class
-com\school\course_achievement\service\StudentService.class
