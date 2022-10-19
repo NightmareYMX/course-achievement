@@ -3,7 +3,6 @@ package com.school.course_achievement.controller;
 import com.school.course_achievement.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.HttpRequestHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,8 +21,8 @@ public class StudentController {
         int row = studentService.findUser(username, password);
         System.out.println("结果" + row);
         if (row == 1) {
-            return "index";
+            return "success";
         }
-        return "";
+        return "index";
     }
 }
