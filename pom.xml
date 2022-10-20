@@ -45,6 +45,7 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.12.1</version>
+            <scope>provided</scope>
         </dependency>
 
         <!-- 事务支持 : 提供实现好事务切面类 -->

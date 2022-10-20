@@ -38,6 +38,8 @@
     <!-- 处理静态资源 -->
     <mvc:default-servlet-handler />
 
+
+
     <!-- 开启注解驱动
          @ControllerAdvice
          @ResponseBody
@@ -47,5 +49,5 @@
     <mvc:annotation-driven />
 
     <!-- 配置视图控制器 -->
-    <mvc:view-controller path="/" view-name="index"></mvc:view-controller>
+    <mvc:view-controller path="/" view-name="login"></mvc:view-controller>
 </beans>
