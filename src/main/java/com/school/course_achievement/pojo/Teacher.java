@@ -96,4 +96,23 @@ public class Teacher {
     public void settPassword(String tPassword) {
         this.tPassword = tPassword == null ? null : tPassword.trim();
     }
+
+    public Teacher() {
+
+    }
+
+    public Teacher(String tNo, String tName, String tPassword) {
+        this.tNo = tNo;
+        this.tName = tName;
+        this.tPassword = tPassword;
+    }
+
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "tNo='" + tNo + '\'' +
+                ", tName='" + tName + '\'' +
+                ", tPassword='" + tPassword + '\'' +
+                '}';
+    }
 }
