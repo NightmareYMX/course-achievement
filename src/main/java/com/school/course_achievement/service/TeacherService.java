@@ -9,4 +9,6 @@ public interface TeacherService {
      * @return (int)查询到教师信息为1，查询不到信息为0
      */
     int teacherLogin(Teacher teacher);
+
+
 }
