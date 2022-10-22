@@ -36,12 +36,12 @@ public class ClassDegreeServiceImpl implements ClassDegreeService {
             StudentDegreeExample studentDegreeExample = new StudentDegreeExample();
             StudentDegreeExample.Criteria criteria1StudentDegreeExample = studentDegreeExample.createCriteria();
             criteria1StudentDegreeExample.andKNoEqualTo(KNo);
-            criteria1StudentDegreeExample.
-            List<StudentDegree> studentDegreeList = studentDegreeMapper.selectByExample(studentDegreeExample);
-            int size = studentDegreeList.size();
-            for (StudentDegree studentDegree: studentDegreeList) {
-
-            }
+//            criteria1StudentDegreeExample.
+//            List<StudentDegree> studentDegreeList = studentDegreeMapper.selectByExample(studentDegreeExample);
+//            int size = studentDegreeList.size();
+//            for (StudentDegree studentDegree: studentDegreeList) {
+//
+//            }
 //            classDegreeList.add();
         }
         return classDegreeList;
