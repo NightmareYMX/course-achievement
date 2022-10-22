@@ -1,4 +1,4 @@
-package com.school.course_achievement.service.Impl;
+package com.school.course_achievement.service.impl;
 
 import com.school.course_achievement.mapper.TeacherMapper;
 import com.school.course_achievement.pojo.Teacher;

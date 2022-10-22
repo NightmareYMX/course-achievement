@@ -1,6 +1,7 @@
-package com.school.course_achievement.service.Impl;
+package com.school.course_achievement.service.impl;
 import com.school.course_achievement.mapper.ClassDegreeMapper;
 import com.school.course_achievement.mapper.StudentDegreeMapper;
+import com.school.course_achievement.mapper.StudentMapper;
 import com.school.course_achievement.pojo.ClassDegree;
 import com.school.course_achievement.pojo.ClassDegreeExample;
 import com.school.course_achievement.pojo.StudentDegree;
@@ -15,6 +16,8 @@ public class ClassDegreeServiceImpl implements ClassDegreeService {
     ClassDegreeMapper classDegreeMapper;
     @Autowired
     StudentDegreeMapper studentDegreeMapper;
+    @Autowired
+    StudentMapper studentMapper;
 
 
     @Override
@@ -29,8 +32,8 @@ public class ClassDegreeServiceImpl implements ClassDegreeService {
             criteria1StudentDegreeExample.andKNoEqualTo(KNo);
             List<StudentDegree> studentDegreeList = studentDegreeMapper.selectByExample(studentDegreeExample);
             int size = studentDegreeList.size();
-            for (int i = 0; i < size; i ++) {
-                StudentDegree studentDegree = studentDegreeList.get(i);
+            for (StudentDegree studentDegree: studentDegreeList) {
+
             }
 //            classDegreeList.add();
         }
