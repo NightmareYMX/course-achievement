@@ -4,7 +4,7 @@ import com.school.course_achievement.pojo.ClassDegree;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-@Service
+
 public interface ClassDegreeService {
     /**
      * 按课程号查询所有的班级分数

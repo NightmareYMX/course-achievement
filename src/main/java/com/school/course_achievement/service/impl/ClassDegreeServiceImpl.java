@@ -8,8 +8,13 @@ import com.school.course_achievement.pojo.StudentDegree;
 import com.school.course_achievement.pojo.StudentDegreeExample;
 import com.school.course_achievement.service.ClassDegreeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 
+@Service
+@Transactional
 public class ClassDegreeServiceImpl implements ClassDegreeService {
     List<ClassDegree> classDegreeList;
     @Autowired
