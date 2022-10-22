@@ -1,7 +1,6 @@
 package com.school.course_achievement.service;
 
 import com.school.course_achievement.pojo.ClassDegree;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
