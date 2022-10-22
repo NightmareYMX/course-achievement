@@ -16,6 +16,11 @@ public class CommonController {
         return "computer";
     }
 
+    @RequestMapping("/login")
+    public String jumpToLogin() {
+        return "login";
+    }
+
     @RequestMapping("/default")
     public String jumpToDefault() {
         return "default";

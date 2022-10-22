@@ -16,6 +16,7 @@ public class TeacherController {
 
     @RequestMapping(value = "/teacherLogin", method = RequestMethod.POST)
     public String teacherLogin(@Param("username") String username, @Param("password") String password) {
+        
         int i = teacherService.teacherLogin(new Teacher(username, null, password));
         if (i == 1) {
             return "main";
