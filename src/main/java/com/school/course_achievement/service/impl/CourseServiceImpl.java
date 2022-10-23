@@ -14,12 +14,12 @@ import java.util.List;
 @Transactional
 public class CourseServiceImpl implements CourseService {
     @Autowired
-    CourseMapper CourseMapper;
+    CourseMapper courseMapper;
 
     @Override
     public List<Course> getAllCourse() {
         CourseExample courseExample = new CourseExample();
-        List<Course> courseList = CourseMapper.selectByExample(courseExample);
+        List<Course> courseList = courseMapper.selectByExample(courseExample);
         return courseList;
     }
 }
