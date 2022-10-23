@@ -11,7 +11,7 @@
  Target Server Version : 50740
  File Encoding         : 65001
 
- Date: 20/10/2022 08:53:48
+ Date: 23/10/2022 19:56:39
 */
 
 SET NAMES utf8mb4;
@@ -64,14 +64,17 @@ CREATE TABLE `course`  (
   `k_target2` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '课程目标2',
   `k_target3` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '课程目标3',
   `t_no` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '教职工号',
+  `k_analyse` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '课程目标达成度情况分析',
+  `k_improvement` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '持续改进措施',
+  `k_suggestion` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '课程负责人意见',
   PRIMARY KEY (`k_no`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of course
 -- ----------------------------
-INSERT INTO `course` VALUES ('25001', 'Hadoop大数据平台与生态系统', '掌握Hadoop集群的运行机制和原理，以及MapReduce和HDFS的运行的架构和操作方式。', '能够组建由Linux虚拟机组成的分布式集群，熟练使用Linux基本指令操作Hadoop集群。', '能够通过Java、Hive-SQL语句以及Echarts框架进行数据导入、处理、业务逻辑分析。', '002467');
-INSERT INTO `course` VALUES ('25002', 'Pyhon大数据分析', '掌握Python数据分析相关库的基本语法', '能够用Python进行数据读取、处理、分析并得出结论', '能过熟练使用Numpy、Sklearn等库进行数据分析，并将数据可视化', '002471');
+INSERT INTO `course` VALUES ('25001', 'Hadoop大数据平台与生态系统', '掌握Hadoop集群的运行机制和原理，以及MapReduce和HDFS的运行的架构和操作方式。', '能够组建由Linux虚拟机组成的分布式集群，熟练使用Linux基本指令操作Hadoop集群。', '能够通过Java、Hive-SQL语句以及Echarts框架进行数据导入、处理、业务逻辑分析。', '002467', NULL, NULL, NULL);
+INSERT INTO `course` VALUES ('25002', 'Pyhon大数据分析', '掌握Python数据分析相关库的基本语法', '能够用Python进行数据读取、处理、分析并得出结论', '能过熟练使用Numpy、Sklearn等库进行数据分析，并将数据可视化', '002471', NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for graduate_requirement
@@ -188,13 +191,16 @@ CREATE TABLE `weight`  (
   `final_target_1_weight` double(10, 2) NOT NULL,
   `final_target_2_weight` double(10, 2) NOT NULL,
   `final_target_3_weight` double(10, 2) NOT NULL,
+  `total_target_1_weight` double(10, 2) NOT NULL,
+  `total_target_2_weight` double(10, 2) NOT NULL,
+  `total_target_3_weight` double(10, 2) NOT NULL,
   PRIMARY KEY (`k_no`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of weight
 -- ----------------------------
-INSERT INTO `weight` VALUES ('25001', 0.34, 0.33, 0.33, 0.60, 0.00, 0.40, 0.00, 0.50, 0.50, 0.30, 0.40, 0.30);
-INSERT INTO `weight` VALUES ('25002', 0.34, 0.33, 0.33, 0.60, 0.00, 0.40, 0.00, 0.50, 0.50, 0.30, 0.40, 0.30);
+INSERT INTO `weight` VALUES ('25001', 0.34, 0.33, 0.33, 0.60, 0.00, 0.40, 0.00, 0.50, 0.50, 0.30, 0.40, 0.30, 0.40, 0.50, 0.40);
+INSERT INTO `weight` VALUES ('25002', 0.34, 0.33, 0.33, 0.60, 0.00, 0.40, 0.00, 0.50, 0.50, 0.30, 0.40, 0.30, 0.40, 0.50, 0.40);
 
 SET FOREIGN_KEY_CHECKS = 1;
