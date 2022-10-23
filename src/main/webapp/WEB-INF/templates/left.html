@@ -9,8 +9,8 @@
 
     <script type="text/javascript">
         $(function () {
-            //导航切换
-            $(".menuson li").click(function () {
+            //一级导航切换
+            $(".menuson li div").click(function () {
                 $(".menuson li.active").removeClass("active")
                 $(this).addClass("active");
             });
@@ -18,6 +18,22 @@
             $('.title').click(function () {
                 var $ul = $(this).next('ul');
                 $('dd').find('ul').slideUp();
+                if ($ul.is(':visible')) {
+                    $(this).next('ul').slideUp();
+                } else {
+                    $(this).next('ul').slideDown();
+                }
+            });
+
+            //二级导航切换
+            $(".menuson2 li").click(function () {
+                $(".menuson2 li.active").removeClass("active")
+                $(this).addClass("active");
+            });
+
+            $('.title1').click(function () {
+                var $ul = $(this).next('ul');
+                $('.menuson1').find('ul').slideUp();
                 if ($ul.is(':visible')) {
                     $(this).next('ul').slideUp();
                 } else {
@@ -37,26 +53,156 @@
 
     <dd>
         <div class="title">
-            <span><img src="/static/images/leftico01.png"/></span>管理信息
+            <span><img src="/static/images/leftico01.png"/></span>课程目录
         </div>
         <ul class="menuson">
-            <li><cite></cite><a href="/index" target="rightFrame">首页模版</a><i></i></li>
-            <li class="active"><cite></cite><a href="/right" target="rightFrame">数据列表</a><i></i></li>
-            <li><cite></cite><a href="/imgtable" target="rightFrame">图片数据表</a><i></i></li>
-            <li><cite></cite><a href="/form" target="rightFrame">添加编辑</a><i></i></li>
-            <li><cite></cite><a href="/imglist" target="rightFrame">图片列表</a><i></i></li>
-            <li><cite></cite><a href="/imglist1" target="rightFrame">自定义</a><i></i></li>
-            <li><cite></cite><a href="/tools" target="rightFrame">常用工具</a><i></i></li>
-            <li><cite></cite><a href="/filelist" target="rightFrame">信息管理</a><i></i></li>
-            <li><cite></cite><a href="/tab" target="rightFrame">Tab页</a><i></i></li>
-            <li><cite></cite><a href="/error" target="rightFrame">404页面</a><i></i></li>
+            <li class="menuson1">
+                <div class="title1">
+                    <cite></cite><a href="/index" target="rightFrame">数据结构与算法</a><i></i>
+                </div>
+                <ul class="menuson2">
+                    <li class="active"><cite></cite><a href="/index" target="rightFrame">课程目标</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">毕业要求</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">平时成绩</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">期末成绩</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">课程达成情况</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">课程评价</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">指标点达成</a><i></i></li>
+                </ul>
+            </li>
+            <li class="menuson1" >
+                <div class="title1">
+                    <cite></cite><a href="/right" target="rightFrame">算法</a><i></i>
+                </div>
+                <ul class="menuson2">
+                    <li><cite></cite><a href="/index" target="rightFrame">课程目标</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">毕业要求</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">平时成绩</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">期末成绩</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">课程达成情况</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">课程评价</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">指标点达成</a><i></i></li>
+                </ul>
+            </li>
+            <li class="menuson1">
+                <div class="title1">
+                    <cite></cite><a href="/imgtable" target="rightFrame">图片数据表</a><i></i>
+                </div>
+                <ul class="menuson2">
+                    <li><cite></cite><a href="/index" target="rightFrame">课程目标</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">毕业要求</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">平时成绩</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">期末成绩</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">课程达成情况</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">课程评价</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">指标点达成</a><i></i></li>
+                </ul>
+            </li>
+            <li class="menuson1">
+                <div class="title1">
+                    <cite></cite><a href="/form" target="rightFrame">添加编辑</a><i></i>
+                </div>
+                <ul class="menuson2">
+                    <li><cite></cite><a href="/index" target="rightFrame">课程目标</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">毕业要求</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">平时成绩</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">期末成绩</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">课程达成情况</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">课程评价</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">指标点达成</a><i></i></li>
+                </ul>
+            </li>
+            <li class="menuson1">
+                <div class="title1">
+                    <cite></cite><a href="/imglist" target="rightFrame">图片列表</a><i></i>
+                </div>
+                <ul class="menuson2">
+                    <li><cite></cite><a href="/index" target="rightFrame">课程目标</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">毕业要求</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">平时成绩</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">期末成绩</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">课程达成情况</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">课程评价</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">指标点达成</a><i></i></li>
+                </ul>
+            </li>
+            <li class="menuson1">
+                <div class="title1">
+                    <cite></cite><a href="/imglist1" target="rightFrame">自定义</a><i></i>
+                </div>
+                <ul class="menuson2">
+                    <li><cite></cite><a href="/index" target="rightFrame">课程目标</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">毕业要求</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">平时成绩</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">期末成绩</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">课程达成情况</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">课程评价</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">指标点达成</a><i></i></li>
+                </ul>
+            </li>
+            <li class="menuson1">
+                <div class="title1">
+                    <cite></cite><a href="/tools" target="rightFrame">常用工具</a><i></i>
+                </div>
+                <ul class="menuson2">
+                    <li><cite></cite><a href="/index" target="rightFrame">课程目标</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">毕业要求</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">平时成绩</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">期末成绩</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">课程达成情况</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">课程评价</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">指标点达成</a><i></i></li>
+                </ul>
+            </li>
+            <li class="menuson1">
+                <div class="title1">
+                    <cite></cite><a href="/filelist" target="rightFrame">信息管理</a><i></i>
+                </div>
+                <ul class="menuson2">
+                    <li><cite></cite><a href="/index" target="rightFrame">课程目标</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">毕业要求</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">平时成绩</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">期末成绩</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">课程达成情况</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">课程评价</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">指标点达成</a><i></i></li>
+                </ul>
+            </li>
+            <li class="menuson1">
+                <div class="title1">
+                    <cite></cite><a href="/tab" target="rightFrame">Tab页</a><i></i>
+                </div>
+                <ul class="menuson2">
+                    <li><cite></cite><a href="/index" target="rightFrame">课程目标</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">毕业要求</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">平时成绩</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">期末成绩</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">课程达成情况</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">课程评价</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">指标点达成</a><i></i></li>
+                </ul>
+            </li>
+            <li class="menuson1">
+                <div class="title1">
+                    <cite></cite><a href="/error" target="rightFrame">404页面</a><i></i>
+                </div>
+                <ul class="menuson2">
+                    <li><cite></cite><a href="/index" target="rightFrame">课程目标</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">毕业要求</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">平时成绩</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">期末成绩</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">课程达成情况</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">课程评价</a><i></i></li>
+                    <li><cite></cite><a href="/index" target="rightFrame">指标点达成</a><i></i></li>
+                </ul>
+            </li>
         </ul>
     </dd>
 
 
     <dd>
         <div class="title">
-            <span><img src="/static/images/leftico02.png"/></span>其他设置
+            <span><img src="/static/images/leftico02.png"/></span>改进措施
         </div>
         <ul class="menuson">
             <li><cite></cite><a href="#">编辑内容</a><i></i></li>
@@ -67,7 +213,7 @@
 
 
     <dd>
-        <div class="title"><span><img src="/static/images/leftico03.png"/></span>编辑器</div>
+        <div class="title"><span><img src="/static/images/leftico03.png"/></span>课程责任人意见</div>
         <ul class="menuson">
             <li><cite></cite><a href="#">自定义</a><i></i></li>
             <li><cite></cite><a href="#">常用资料</a><i></i></li>
@@ -77,16 +223,7 @@
     </dd>
 
 
-    <dd>
-        <div class="title"><span><img src="/static/images/leftico04.png"/></span>日期管理</div>
-        <ul class="menuson">
-            <li><cite></cite><a href="#">自定义</a><i></i></li>
-            <li><cite></cite><a href="#">常用资料</a><i></i></li>
-            <li><cite></cite><a href="#">信息列表</a><i></i></li>
-            <li><cite></cite><a href="#">其他</a><i></i></li>
-        </ul>
 
-    </dd>
 
 </dl>
 
