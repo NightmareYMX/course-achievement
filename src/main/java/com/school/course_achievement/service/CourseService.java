@@ -9,6 +9,11 @@ public interface CourseService {
      * 搜索所有的课程
      * @return 课程集合
      */
-    List<Course> getAllCourse();
+    List<String> getAllCourseName();
 
+    /**
+     * 按课程号得到课程目标信息
+     * @return 课程目标信息集合
+     */
+    List<String> getCourseByKNo(String KNo);
 }

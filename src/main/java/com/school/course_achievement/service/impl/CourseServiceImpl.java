@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -17,9 +18,23 @@ public class CourseServiceImpl implements CourseService {
     CourseMapper courseMapper;
 
     @Override
-    public List<Course> getAllCourse() {
+    public List<String> getCourseByKNo(String KNo) {
+        Course course = courseMapper.selectByPrimaryKey(KNo);
+        List<String> targetList = new ArrayList<>();
+        targetList.add(course.getkTarget1());
+        targetList.add(course.getkTarget2());
+        targetList.add(course.getkTarget3());
+        return targetList;
+    }
+
+    @Override
+    public List<String> getAllCourseName() {
         CourseExample courseExample = new CourseExample();
         List<Course> courseList = courseMapper.selectByExample(courseExample);
-        return courseList;
+        List<String> nameList = new ArrayList<>();
+        for (Course course: courseList) {
+            nameList.add(course.getkName());
+        }
+        return nameList;
     }
 }
