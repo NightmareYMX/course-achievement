@@ -29,13 +29,11 @@ public class CourseServiceImpl implements CourseService {
         CourseExample.Criteria courseExampleCriteria = courseExample.createCriteria();
         courseExampleCriteria.andKNameEqualTo(KName);
         List<Course> courseList = courseMapper.selectByExample(courseExample);
-
         List<String> targetList = new ArrayList<>();
-        for (Course course: courseList) {
-            targetList.add(course.getkTarget1());
-            targetList.add(course.getkTarget2());
-            targetList.add(course.getkTarget3());
-        }
+        Course course = courseList.get(0);
+        targetList.add(course.getkTarget1());
+        targetList.add(course.getkTarget2());
+        targetList.add(course.getkTarget3());
         return targetList;
     }
 
