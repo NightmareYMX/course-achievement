@@ -8,6 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpSession;
+import java.util.List;
+
 
 @Controller
 public class TeacherController {
@@ -15,13 +18,13 @@ public class TeacherController {
     private TeacherService teacherService;
 
     @RequestMapping(value = "/teacherLogin", method = RequestMethod.POST)
-    public String teacherLogin(@Param("username") String username, @Param("password") String password) {
-        
-        int i = teacherService.teacherLogin(new Teacher(username, null, password));
-        if (i == 1) {
-            return "main";
-        } else {
+    public String teacherLogin(@Param("username") String username, @Param("password") String password, HttpSession httpSession) {
+        List<Teacher> teacherList = teacherService.teacherLogin(new Teacher(username, null, password));
+        if (teacherList.isEmpty()) {
             return "login";
+        } else {
+            httpSession.setAttribute("tName", teacherList.get(0).gettName());
+            return "main";
         }
     }
 }

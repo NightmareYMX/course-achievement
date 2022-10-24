@@ -16,16 +16,12 @@ public class TeacherServiceImpl implements TeacherService {
     @Autowired
     private TeacherMapper teacherMapper;
     @Override
-    public int teacherLogin(Teacher teacher) {
+    public List<Teacher> teacherLogin(Teacher teacher) {
         TeacherExample teacherExample = new TeacherExample();
         TeacherExample.Criteria criteria = teacherExample.createCriteria();
         criteria.andTNoEqualTo(teacher.gettNo());
         criteria.andTPasswordEqualTo(teacher.gettPassword());
         List<Teacher> teacherList = teacherMapper.selectByExample(teacherExample);
-        if (teacherList.isEmpty()) {
-            return 0;
-        } else {
-            return 1;
-        }
+        return teacherList;
     }
 }

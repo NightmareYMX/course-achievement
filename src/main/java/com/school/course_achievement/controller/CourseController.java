@@ -23,15 +23,18 @@ public class CourseController {
     }
 
     @RequestMapping(value = "/target")
-    public String getCourseTarget(@Param("KNo") String KNo, Model model) {
+    public String getCourseTargetByKNo(@Param("KNo") String KNo, Model model) {
         List<String> targetList = courseService.getCourseTargetByKNo(KNo);
         model.addAttribute("targetList", targetList);
         return "courseTarget";
     }
 
+    //未完成
     @RequestMapping(value = "/requirement")
-    public String getCourseRequirement(@Param("KNo") String KNo, Model model) {
-        //未完成
+    public String getCourseRequirement(@Param("KName") String KName, Model model) {
+
         return "courseRequirement";
     }
+
+
 }
