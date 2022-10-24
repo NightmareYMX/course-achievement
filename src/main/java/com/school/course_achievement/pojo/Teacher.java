@@ -105,4 +105,13 @@ public class Teacher {
         this.tName = tName;
         this.tPassword = tPassword;
     }
+
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "tNo='" + tNo + '\'' +
+                ", tName='" + tName + '\'' +
+                ", tPassword='" + tPassword + '\'' +
+                '}';
+    }
 }
