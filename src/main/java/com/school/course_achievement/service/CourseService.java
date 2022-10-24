@@ -1,6 +1,5 @@
 package com.school.course_achievement.service;
 
-import com.school.course_achievement.pojo.Course;
 import com.school.course_achievement.pojo.GraduateRequirement;
 
 import java.util.List;

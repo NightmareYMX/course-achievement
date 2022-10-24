@@ -8,5 +8,5 @@ public interface ClassDegreeService {
      * 按课程号查询所有的班级平时成绩
      * @return 所有班级的所有平时成绩信息
      */
-    List<Map<String, Double>> getAllClassDegree(String KNo);
+    List<Map<String, Double>> getAllClassDegree(String KName);
 }

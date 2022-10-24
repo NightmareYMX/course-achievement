@@ -11,7 +11,7 @@
  Target Server Version : 50740
  File Encoding         : 65001
 
- Date: 23/10/2022 21:51:14
+ Date: 24/10/2022 20:48:59
 */
 
 SET NAMES utf8mb4;
@@ -30,9 +30,9 @@ CREATE TABLE `class_degree`  (
   `d_homework_avg` double(10, 2) NULL DEFAULT NULL,
   `d_homework_low` double(10, 2) NULL DEFAULT NULL,
   `d_homework_high` double(10, 2) NULL DEFAULT NULL,
-  `d_test_1_avg` double(10, 2) NULL DEFAULT NULL,
-  `d_test_1_low` double(10, 2) NULL DEFAULT NULL,
-  `d_test_1_high` double(10, 2) NULL DEFAULT NULL,
+  `d_test_avg` double(10, 2) NULL DEFAULT NULL,
+  `d_test_low` double(10, 2) NULL DEFAULT NULL,
+  `d_test_high` double(10, 2) NULL DEFAULT NULL,
   `d_final_avg` double(10, 2) NULL DEFAULT NULL,
   `d_final_low` double(10, 2) NULL DEFAULT NULL,
   `d_final_high` double(10, 2) NULL DEFAULT NULL,
