@@ -40,8 +40,24 @@ public class ClassDegreeServiceImpl implements ClassDegreeService {
 
         WeightExample weightExample = new WeightExample();
         WeightExample.Criteria weightExampleCriteria = weightExample.createCriteria();
+        weightExampleCriteria.andKNoEqualTo(KNo);
+        List<Weight> weightList = weightMapper.selectByExample(weightExample);
+        Weight weight = weightList.get(0);
         List<Map<String, Double>> degreeMapList = new ArrayList<>();
         Map<String, Double> degreeMap = new HashMap<String, Double>();
+        for (ClassDegree classDegree: classDegreeList) {
+            degreeMap.put("behaveAvg", classDegree.getdBehaveAvg());
+            degreeMap.put("behaveLow", classDegree.getdBehaveLow());
+            degreeMap.put("behaveHigh", classDegree.getdBehaveHigh());
+            degreeMap.put("homeworkAvg", classDegree.getdHomeworkAvg());
+            degreeMap.put("homeworkLow", classDegree.getdBehaveLow());
+            degreeMap.put("homeworkHigh", classDegree.getdHomeworkHigh());
+            degreeMap.put("testAvg", classDegree.getdTestAvg());
+            degreeMap.put("testLow", classDegree.getdTestLow());
+            degreeMap.put("testHigh", classDegree.getdTestHigh());
+            degreeMap.put("behaveTarget1Weight", weight.getBehaveTarget1Weight());
+            degreeMapList.add(degreeMap);
+        }
         //未完成
         return degreeMapList;
     }
