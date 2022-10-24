@@ -24,21 +24,19 @@ public class CourseServiceImpl implements CourseService {
     GraduateRequirementMapper graduateRequirementMapper;
 
     @Override
-    public List<String> getCourseTargetByKNo(String KNo) {
+    public List<String> getCourseTargetByKNo(String KName) {
         CourseExample courseExample = new CourseExample();
         CourseExample.Criteria courseExampleCriteria = courseExample.createCriteria();
-        courseExampleCriteria.andKNoEqualTo(KNo);
+        courseExampleCriteria.andKNameEqualTo(KName);
         List<Course> courseList = courseMapper.selectByExample(courseExample);
-        if (!courseList.isEmpty()) {
-            List<String> targetList = new ArrayList<>();
-            for (Course course: courseList) {
-                targetList.add(course.getkTarget1());
-                targetList.add(course.getkTarget2());
-                targetList.add(course.getkTarget3());
-            }
-            return targetList;
+
+        List<String> targetList = new ArrayList<>();
+        for (Course course: courseList) {
+            targetList.add(course.getkTarget1());
+            targetList.add(course.getkTarget2());
+            targetList.add(course.getkTarget3());
         }
-        return null;
+        return targetList;
     }
 
     @Override

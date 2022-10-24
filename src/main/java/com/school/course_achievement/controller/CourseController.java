@@ -24,8 +24,8 @@ public class CourseController {
     }
 
     @RequestMapping(value = "/target")
-    public String getCourseTargetByKNo(@Param("KNo") String KNo, Model model) {
-        List<String> targetList = courseService.getCourseTargetByKNo(KNo);
+    public String getCourseTargetByKNo(@Param("KName") String KName, Model model) {
+        List<String> targetList = courseService.getCourseTargetByKNo(KName);
         model.addAttribute("targetList", targetList);
         return "courseTarget";
     }
