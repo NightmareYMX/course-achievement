@@ -1,5 +1,6 @@
 package com.school.course_achievement.controller;
 
+import com.school.course_achievement.pojo.GraduateRequirement;
 import com.school.course_achievement.service.CourseService;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,12 +30,11 @@ public class CourseController {
         return "courseTarget";
     }
 
-    //未完成
     @RequestMapping(value = "/requirement")
     public String getCourseRequirement(@Param("KName") String KName, Model model) {
-
+        List<GraduateRequirement> courseTargetPointList = courseService.getCourseTargetPointByKName(KName);
+        model.addAttribute("courseTargetPointList", courseTargetPointList);
         return "courseRequirement";
     }
-
 
 }
