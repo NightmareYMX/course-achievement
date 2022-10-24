@@ -18,7 +18,7 @@ public class CourseServiceImpl implements CourseService {
     CourseMapper courseMapper;
 
     @Override
-    public List<String> getCourseByKNo(String KNo) {
+    public List<String> getCourseTargetByKNo(String KNo) {
         Course course = courseMapper.selectByPrimaryKey(KNo);
         List<String> targetList = new ArrayList<>();
         targetList.add(course.getkTarget1());

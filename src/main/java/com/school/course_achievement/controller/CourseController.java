@@ -19,13 +19,12 @@ public class CourseController {
     @RequestMapping(value = "/name")
     @ResponseBody
     public List<String> getAllCourseName() {
-        List<String> nameList = courseService.getAllCourseName();
-        return nameList;
+        return courseService.getAllCourseName();
     }
 
     @RequestMapping(value = "/target")
     public String getCourseTarget(@Param("KNo") String KNo, Model model) {
-        List<String> targetList = courseService.getCourseByKNo(KNo);
+        List<String> targetList = courseService.getCourseTargetByKNo(KNo);
         model.addAttribute("targetList", targetList);
         return "courseTarget";
     }
