@@ -1,24 +1,73 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>毕业指标点</title>
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="/static/js/jquery.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".click").click(function () {
+                $(".tip").fadeIn(200);
+            });
+
+            $(".tiptop a").click(function () {
+                $(".tip").fadeOut(200);
+            });
+
+            $(".sure").click(function () {
+                $(".tip").fadeOut(100);
+            });
+
+            $(".cancel").click(function () {
+                $(".tip").fadeOut(100);
+            });
+
+        });
+    </script>
+
 </head>
+
 <body>
-<table border="1">
-    <tr>
-        <th colspan="3">requirement</th>
-    </tr>
-    <tr>
-        <th>毕业要求</th>
-        <th>毕业指标点</th>
-        <th>课程目标</th>
-    </tr>
-    <tr th:each="courseTargetPoint:${courseTargetPointList}">
-        <td th:text="${courseTargetPoint.rContent}"></td>
-        <td th:text="${courseTargetPoint.pContent}"></td>
-        <td th:text="${courseTargetPoint.target}"></td>
-    </tr>
-</table>
+
+<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+        <li><a href="/index">首页</a></li>
+        <li><a href="/course/requirement?KName=Hadoop">毕业指标点</a></li>
+    </ul>
+</div>
+
+<div class="rightinfo">
+    <table class="tablelist">
+        <thead>
+            <tr>
+                <th>毕业要求</th>
+                <th>毕业指标点</th>
+                <th>课程目标</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="point:${courseTargetPointList}">
+                <td th:text="${point.rContent}"></td>
+                <td th:text="${point.pContent}"></td>
+                <td th:text="${point.target}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>
+
+<script type="text/javascript">
+    $('.tablelist tbody tr:odd').addClass('odd');
+</script>
+
+<div style="display:none">
+    <script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script>
+</div>
 </body>
 </html>

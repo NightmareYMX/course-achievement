@@ -1,24 +1,75 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>课程目标页</title>
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="/static/js/jquery.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".click").click(function () {
+                $(".tip").fadeIn(200);
+            });
+
+            $(".tiptop a").click(function () {
+                $(".tip").fadeOut(200);
+            });
+
+            $(".sure").click(function () {
+                $(".tip").fadeOut(100);
+            });
+
+            $(".cancel").click(function () {
+                $(".tip").fadeOut(100);
+            });
+
+        });
+    </script>
+
+
 </head>
-    <body>
-        <table border="1">
-            <tr>
-                <th colspan="3">courseTarget</th>
-            </tr>
-            <tr>
-                <th>target1</th>
-                <th>target2</th>
-                <th>target3</th>
-            </tr>
-            <tr>
-                <td th:text="${targetList[0]}"></td>
-                <td th:text="${targetList[1]}"></td>
-                <td th:text="${targetList[2]}"></td>
-            </tr>
+
+
+<body>
+
+    <div class="place">
+        <span>位置：</span>
+        <ul class="placeul">
+            <li><a href="/index">首页</a></li>
+            <li><a href="/course/target?KName=Hadoop">课程目标</a></li>
+        </ul>
+    </div>
+
+    <div class="rightinfo">
+        <table class="tablelist">
+            <thead>
+                <tr>
+                    <th>课程目标1</th>
+                    <th>课程目标2</th>
+                    <th>课程目标3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td th:text="${targetList[0]}"></td>
+                    <td th:text="${targetList[1]}"></td>
+                    <td th:text="${targetList[2]}"></td>
+                </tr>
+            </tbody>
         </table>
-    </body>
+
+
+    </div>
+
+    <script type="text/javascript">
+        $('.tablelist tbody tr:odd').addClass('odd');
+    </script>
+
+    <div style="display:none">
+        <script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script>
+    </div>
+</body>
 </html>

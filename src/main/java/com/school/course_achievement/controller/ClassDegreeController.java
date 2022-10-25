@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ClassDegreeController {
     @Autowired
     ClassDegreeService classDegreeService;
+
     @RequestMapping("/")
     public String calculateDegree() {
         classDegreeService.calculateDegreeOne();
