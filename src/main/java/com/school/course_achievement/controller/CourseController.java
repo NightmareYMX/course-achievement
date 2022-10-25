@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping(value = "/course")
@@ -34,7 +35,7 @@ public class CourseController {
 
     @RequestMapping(value = "/requirement")
     public String getCourseRequirement(@Param("KName") String KName, Model model) {
-        List<GraduateRequirement> courseTargetPointList = courseService.getCourseTargetPointByKName(KName);
+        List<Map<String, String>> courseTargetPointList = courseService.getCourseTargetPointByKName(KName);
         model.addAttribute("courseTargetPointList", courseTargetPointList);
         return "courseRequirement";
     }

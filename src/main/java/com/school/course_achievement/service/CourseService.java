@@ -3,6 +3,7 @@ package com.school.course_achievement.service;
 import com.school.course_achievement.pojo.GraduateRequirement;
 
 import java.util.List;
+import java.util.Map;
 
 public interface CourseService {
     /**
@@ -23,5 +24,5 @@ public interface CourseService {
      * @param KName
      * @return 指标点序号
      */
-    List<GraduateRequirement> getCourseTargetPointByKName(String KName);
+    List<Map<String, String>> getCourseTargetPointByKName(String KName);
 }

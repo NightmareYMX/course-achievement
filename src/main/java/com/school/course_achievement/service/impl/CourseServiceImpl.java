@@ -12,7 +12,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 @Transactional
@@ -52,8 +54,11 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public List<GraduateRequirement> getCourseTargetPointByKName(String KName) {
-        List<GraduateRequirement> graduateRequirementList = new ArrayList<GraduateRequirement>();
+    public List<Map<String, String>> getCourseTargetPointByKName(String KName) {
+        List<Map<String, String>> graduateRequirementList = new ArrayList<>();
+        GraduateRequirement graduateRequirementOne = new GraduateRequirement();
+        GraduateRequirement graduateRequirementTwo = new GraduateRequirement();
+        GraduateRequirement graduateRequirementThree = new GraduateRequirement();
         //根据课程名KName查询课程的毕业指标点序号
         CourseExample courseExample = new CourseExample();
         CourseExample.Criteria courseExampleCriteria = courseExample.createCriteria();
@@ -61,16 +66,10 @@ public class CourseServiceImpl implements CourseService {
         List<Course> courseList = courseMapper.selectByExample(courseExample);
         if (!courseList.isEmpty()) {
             Course course = courseList.get(0);
-
             GraduateRequirementExample graduateRequirementExampleOne = new GraduateRequirementExample();
             GraduateRequirementExample.Criteria graduateRequirementExampleCriteriaOne = graduateRequirementExampleOne.createCriteria();
-
             graduateRequirementExampleCriteriaOne.andPContentLike("%" + course.getkTarget1Point() + "%");
             List<GraduateRequirement> graduateRequirementListOne = graduateRequirementMapper.selectByExample(graduateRequirementExampleOne);
-            GraduateRequirement graduateRequirementOne = new GraduateRequirement();
-            GraduateRequirement graduateRequirementTwo = new GraduateRequirement();
-            GraduateRequirement graduateRequirementThree = new GraduateRequirement();
-
             if (!graduateRequirementListOne.isEmpty()){
                 graduateRequirementOne = graduateRequirementListOne.get(0);
             }
@@ -88,9 +87,21 @@ public class CourseServiceImpl implements CourseService {
             if (!graduateRequirementListThree.isEmpty()){
                 graduateRequirementThree = graduateRequirementListThree.get(0);
             }
-            graduateRequirementList.add(graduateRequirementOne);
-            graduateRequirementList.add(graduateRequirementTwo);
-            graduateRequirementList.add(graduateRequirementThree);
+            Map<String, String> mapOne = new HashMap<String, String>();
+            Map<String, String> mapTwo = new HashMap<String, String>();
+            Map<String, String> mapThree = new HashMap<String, String>();
+            mapOne.put("rContent", graduateRequirementOne.getrContent());
+            mapOne.put("pContent", graduateRequirementOne.getpContent());
+            mapOne.put("target", "课程目标 1.");
+            mapTwo.put("rContent", graduateRequirementTwo.getrContent());
+            mapTwo.put("pContent", graduateRequirementTwo.getpContent());
+            mapTwo.put("target", "课程目标 2.");
+            mapThree.put("rContent", graduateRequirementThree.getrContent());
+            mapThree.put("pContent", graduateRequirementThree.getpContent());
+            mapThree.put("target", "课程目标 3.");
+            graduateRequirementList.add(mapOne);
+            graduateRequirementList.add(mapTwo);
+            graduateRequirementList.add(mapThree);
             return graduateRequirementList;
         }
         return null;

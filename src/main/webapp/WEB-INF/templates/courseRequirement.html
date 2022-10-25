@@ -17,7 +17,7 @@
     <tr th:each="courseTargetPoint:${courseTargetPointList}">
         <td th:text="${courseTargetPoint.rContent}"></td>
         <td th:text="${courseTargetPoint.pContent}"></td>
-        <td></td>
+        <td th:text="${courseTargetPoint.target}"></td>
     </tr>
 </table>
 </body>
