@@ -5,8 +5,16 @@ import java.util.Map;
 
 public interface ClassDegreeService {
     /**
-     * 按课程号查询所有的班级平时成绩
-     * @return 所有班级的所有平时成绩信息
+     * 按课程名查询所有的班级平时成绩
+     * @param KName
+     * @return 所有班级的平时成绩信息
      */
-    List<Map<String, Double>> getAllClassDegree(String KName);
+    List<Map<String, Double>> getOrdinaryClassDegree(String KName);
+
+    /**
+     * 按课程名查询所有班级的大作业或者期末考试成绩
+     * @param KName
+     * @return 所有班级的作业或者期末考试成绩
+     */
+    List<Map<String, Double>> getFinalClassDegree(String KName);
 }
