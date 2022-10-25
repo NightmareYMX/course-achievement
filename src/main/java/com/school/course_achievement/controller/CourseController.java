@@ -1,5 +1,6 @@
 package com.school.course_achievement.controller;
 
+import com.alibaba.druid.support.json.JSONUtils;
 import com.school.course_achievement.pojo.GraduateRequirement;
 import com.school.course_achievement.service.CourseService;
 import org.apache.ibatis.annotations.Param;
@@ -19,13 +20,14 @@ public class CourseController {
 
     @RequestMapping(value = "/name")
     @ResponseBody
-    public List<String> getAllCourseName() {
-        return courseService.getAllCourseName();
+    public String getAllCourseName() {
+        List<String> courseNameList = courseService.getAllCourseName();
+        return JSONUtils.toJSONString(courseNameList);
     }
 
     @RequestMapping(value = "/target")
-    public String getCourseTargetByKNo(@Param("KName") String KName, Model model) {
-        List<String> targetList = courseService.getCourseTargetByKNo(KName);
+    public String getCourseTargetByKName(@Param("KName") String KName, Model model) {
+        List<String> targetList = courseService.getCourseTargetByKName(KName);
         model.addAttribute("targetList", targetList);
         return "courseTarget";
     }

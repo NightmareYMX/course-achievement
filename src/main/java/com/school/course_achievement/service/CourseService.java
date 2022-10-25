@@ -13,10 +13,10 @@ public interface CourseService {
 
     /**
      * 按课程号得到课程目标信息
-     * @param KNo
+     * @param KName
      * @return 课程目标信息集合
      */
-    List<String> getCourseTargetByKNo(String KNo);
+    List<String> getCourseTargetByKName(String KName);
 
     /**
      * 按课程名搜索课程的毕业指标点

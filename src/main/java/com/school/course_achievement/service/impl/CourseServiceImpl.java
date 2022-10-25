@@ -24,17 +24,20 @@ public class CourseServiceImpl implements CourseService {
     GraduateRequirementMapper graduateRequirementMapper;
 
     @Override
-    public List<String> getCourseTargetByKNo(String KName) {
+    public List<String> getCourseTargetByKName(String KName) {
         CourseExample courseExample = new CourseExample();
         CourseExample.Criteria courseExampleCriteria = courseExample.createCriteria();
-        courseExampleCriteria.andKNameEqualTo(KName);
+        courseExampleCriteria.andKNameLike("%" + KName + "%");
         List<Course> courseList = courseMapper.selectByExample(courseExample);
         List<String> targetList = new ArrayList<>();
-        Course course = courseList.get(0);
-        targetList.add(course.getkTarget1());
-        targetList.add(course.getkTarget2());
-        targetList.add(course.getkTarget3());
-        return targetList;
+        if (!courseList.isEmpty()){
+            Course course = courseList.get(0);
+            targetList.add(course.getkTarget1());
+            targetList.add(course.getkTarget2());
+            targetList.add(course.getkTarget3());
+            return targetList;
+        }
+        return null;
     }
 
     @Override
@@ -56,28 +59,31 @@ public class CourseServiceImpl implements CourseService {
         CourseExample.Criteria courseExampleCriteria = courseExample.createCriteria();
         courseExampleCriteria.andKNameEqualTo(KName);
         List<Course> courseList = courseMapper.selectByExample(courseExample);
-        Course course = courseList.get(0);
+        if (!courseList.isEmpty()) {
+            Course course = courseList.get(0);
 
-        GraduateRequirementExample graduateRequirementExample = new GraduateRequirementExample();
-        GraduateRequirementExample.Criteria graduateRequirementExampleCriteria = graduateRequirementExample.createCriteria();
+            GraduateRequirementExample graduateRequirementExample = new GraduateRequirementExample();
+            GraduateRequirementExample.Criteria graduateRequirementExampleCriteria = graduateRequirementExample.createCriteria();
 
-        graduateRequirementExampleCriteria.andPContentLike(course.getkTarget1Point() + "%");
-        List<GraduateRequirement> graduateRequirementListOne = graduateRequirementMapper.selectByExample(graduateRequirementExample);
-        GraduateRequirement graduateRequirementOne = graduateRequirementListOne.get(0);
-        graduateRequirementExample.clear();
+            graduateRequirementExampleCriteria.andPContentLike(course.getkTarget1Point() + "%");
+            List<GraduateRequirement> graduateRequirementListOne = graduateRequirementMapper.selectByExample(graduateRequirementExample);
+            GraduateRequirement graduateRequirementOne = graduateRequirementListOne.get(0);
+            graduateRequirementExample.clear();
 
-        graduateRequirementExampleCriteria.andPContentLike(course.getkTarget2Point() + "%");
-        List<GraduateRequirement> graduateRequirementListTwo = graduateRequirementMapper.selectByExample(graduateRequirementExample);
-        GraduateRequirement graduateRequirementTwo = graduateRequirementListTwo.get(0);
-        graduateRequirementExample.clear();
+            graduateRequirementExampleCriteria.andPContentLike(course.getkTarget2Point() + "%");
+            List<GraduateRequirement> graduateRequirementListTwo = graduateRequirementMapper.selectByExample(graduateRequirementExample);
+            GraduateRequirement graduateRequirementTwo = graduateRequirementListTwo.get(0);
+            graduateRequirementExample.clear();
 
-        graduateRequirementExampleCriteria.andPContentLike(course.getkTarget3Point() + "%");
-        List<GraduateRequirement> graduateRequirementListThree = graduateRequirementMapper.selectByExample(graduateRequirementExample);
-        GraduateRequirement graduateRequirementThree = graduateRequirementListThree.get(0);
+            graduateRequirementExampleCriteria.andPContentLike(course.getkTarget3Point() + "%");
+            List<GraduateRequirement> graduateRequirementListThree = graduateRequirementMapper.selectByExample(graduateRequirementExample);
+            GraduateRequirement graduateRequirementThree = graduateRequirementListThree.get(0);
 
-        graduateRequirementList.add(graduateRequirementOne);
-        graduateRequirementList.add(graduateRequirementTwo);
-        graduateRequirementList.add(graduateRequirementThree);
-        return graduateRequirementList;
+            graduateRequirementList.add(graduateRequirementOne);
+            graduateRequirementList.add(graduateRequirementTwo);
+            graduateRequirementList.add(graduateRequirementThree);
+            return graduateRequirementList;
+        }
+        return null;
     }
 }

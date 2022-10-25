@@ -46,7 +46,13 @@
          @RequestBody
          ....
     -->
-    <mvc:annotation-driven />
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <constructor-arg name="defaultCharset" value="UTF-8"></constructor-arg>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
 
     <!-- 配置视图控制器 -->
     <mvc:view-controller path="/" view-name="login"></mvc:view-controller>
