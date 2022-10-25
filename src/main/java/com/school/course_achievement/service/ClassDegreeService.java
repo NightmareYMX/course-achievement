@@ -1,9 +1,23 @@
 package com.school.course_achievement.service;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
 import java.util.List;
 import java.util.Map;
 
 public interface ClassDegreeService {
+    /**
+     *
+     * @return 成功与否
+     */
+    int calculateDegreeOne();
+
+    /**
+     *
+     * @return 成功与否
+     */
+    int calculateDegreeTwo();
+
     /**
      * 按课程名查询所有的班级平时成绩
      * @param KName

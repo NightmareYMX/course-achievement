@@ -896,4 +896,35 @@ public class ClassDegree {
     public void setkSuggestion(String kSuggestion) {
         this.kSuggestion = kSuggestion == null ? null : kSuggestion.trim();
     }
+
+    public ClassDegree(String kNo, String cNo, Double dBehaveAvg, Double dBehaveLow, Double dBehaveHigh, Double dHomeworkAvg, Double dHomeworkLow, Double dHomeworkHigh, Double dTestAvg, Double dTestLow, Double dTestHigh, Double dFinalAvg, Double dFinalLow, Double dFinalHigh, Double dTarget1Avg, Double dTarget2Avg, Double dTarget3Avg, Double dTarget1O, Double dTarget2O, Double dTarget3O, Double dTotalO, Double dTarget1F, Double dTarget2F, Double dTarget3F, Double dTotalF, String kAnalyse, String kImprovement, String kSuggestion) {
+        this.kNo = kNo;
+        this.cNo = cNo;
+        this.dBehaveAvg = dBehaveAvg;
+        this.dBehaveLow = dBehaveLow;
+        this.dBehaveHigh = dBehaveHigh;
+        this.dHomeworkAvg = dHomeworkAvg;
+        this.dHomeworkLow = dHomeworkLow;
+        this.dHomeworkHigh = dHomeworkHigh;
+        this.dTestAvg = dTestAvg;
+        this.dTestLow = dTestLow;
+        this.dTestHigh = dTestHigh;
+        this.dFinalAvg = dFinalAvg;
+        this.dFinalLow = dFinalLow;
+        this.dFinalHigh = dFinalHigh;
+        this.dTarget1Avg = dTarget1Avg;
+        this.dTarget2Avg = dTarget2Avg;
+        this.dTarget3Avg = dTarget3Avg;
+        this.dTarget1O = dTarget1O;
+        this.dTarget2O = dTarget2O;
+        this.dTarget3O = dTarget3O;
+        this.dTotalO = dTotalO;
+        this.dTarget1F = dTarget1F;
+        this.dTarget2F = dTarget2F;
+        this.dTarget3F = dTarget3F;
+        this.dTotalF = dTotalF;
+        this.kAnalyse = kAnalyse;
+        this.kImprovement = kImprovement;
+        this.kSuggestion = kSuggestion;
+    }
 }

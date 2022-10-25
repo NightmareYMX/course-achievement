@@ -1,9 +1,11 @@
 package com.school.course_achievement.utils;
 
+import java.util.List;
+
 public abstract class DegreeUtils {
-    public double maxDegree(double...args) {
-        double max = args[0];
-        for (double element: args) {
+    public static double highDegree(List<Double> list) {
+        double max = list.get(0);
+        for (double element: list) {
             if (element > max) {
                 max = element;
             }
@@ -11,9 +13,9 @@ public abstract class DegreeUtils {
         return max;
     }
 
-    public double minDegree(double...args) {
-        double min = args[0];
-        for (double element: args) {
+    public static double lowDegree(List<Double> list) {
+        double min = list.get(0);
+        for (double element: list) {
             if (element < min) {
                 min = element;
             }
@@ -21,11 +23,11 @@ public abstract class DegreeUtils {
         return min;
     }
 
-    public double avgDegree(double...args) {
+    public static double avgDegree(List<Double> list) {
         double sum = 0;
-        for (double element: args) {
+        for (double element: list) {
             sum += element;
         }
-        return sum/args.length;
+        return sum/list.size();
     }
 }

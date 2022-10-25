@@ -11,7 +11,7 @@
  Target Server Version : 50740
  File Encoding         : 65001
 
- Date: 25/10/2022 14:10:23
+ Date: 25/10/2022 21:39:44
 */
 
 SET NAMES utf8mb4;
@@ -116,9 +116,9 @@ CREATE TABLE `student`  (
 INSERT INTO `student` VALUES ('17273323', 'lwq', '201');
 INSERT INTO `student` VALUES ('2012630111', 'zyb', '201');
 INSERT INTO `student` VALUES ('2012630125', 'ymx', '201');
-INSERT INTO `student` VALUES ('2012630205', 'xjh', '202');
-INSERT INTO `student` VALUES ('2012630213', 'ych', '202');
-INSERT INTO `student` VALUES ('2012630228', 'wj', '202');
+INSERT INTO `student` VALUES ('2012630205', 'xjh', '201');
+INSERT INTO `student` VALUES ('2012630213', 'ych', '201');
+INSERT INTO `student` VALUES ('2012630228', 'wj', '201');
 
 -- ----------------------------
 -- Table structure for student_degree
