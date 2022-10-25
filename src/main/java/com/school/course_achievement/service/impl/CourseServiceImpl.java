@@ -57,28 +57,37 @@ public class CourseServiceImpl implements CourseService {
         //根据课程名KName查询课程的毕业指标点序号
         CourseExample courseExample = new CourseExample();
         CourseExample.Criteria courseExampleCriteria = courseExample.createCriteria();
-        courseExampleCriteria.andKNameEqualTo(KName);
+        courseExampleCriteria.andKNameLike("%" + KName + "%");
         List<Course> courseList = courseMapper.selectByExample(courseExample);
         if (!courseList.isEmpty()) {
             Course course = courseList.get(0);
 
-            GraduateRequirementExample graduateRequirementExample = new GraduateRequirementExample();
-            GraduateRequirementExample.Criteria graduateRequirementExampleCriteria = graduateRequirementExample.createCriteria();
+            GraduateRequirementExample graduateRequirementExampleOne = new GraduateRequirementExample();
+            GraduateRequirementExample.Criteria graduateRequirementExampleCriteriaOne = graduateRequirementExampleOne.createCriteria();
 
-            graduateRequirementExampleCriteria.andPContentLike(course.getkTarget1Point() + "%");
-            List<GraduateRequirement> graduateRequirementListOne = graduateRequirementMapper.selectByExample(graduateRequirementExample);
-            GraduateRequirement graduateRequirementOne = graduateRequirementListOne.get(0);
-            graduateRequirementExample.clear();
+            graduateRequirementExampleCriteriaOne.andPContentLike("%" + course.getkTarget1Point() + "%");
+            List<GraduateRequirement> graduateRequirementListOne = graduateRequirementMapper.selectByExample(graduateRequirementExampleOne);
+            GraduateRequirement graduateRequirementOne = new GraduateRequirement();
+            GraduateRequirement graduateRequirementTwo = new GraduateRequirement();
+            GraduateRequirement graduateRequirementThree = new GraduateRequirement();
 
-            graduateRequirementExampleCriteria.andPContentLike(course.getkTarget2Point() + "%");
-            List<GraduateRequirement> graduateRequirementListTwo = graduateRequirementMapper.selectByExample(graduateRequirementExample);
-            GraduateRequirement graduateRequirementTwo = graduateRequirementListTwo.get(0);
-            graduateRequirementExample.clear();
-
-            graduateRequirementExampleCriteria.andPContentLike(course.getkTarget3Point() + "%");
-            List<GraduateRequirement> graduateRequirementListThree = graduateRequirementMapper.selectByExample(graduateRequirementExample);
-            GraduateRequirement graduateRequirementThree = graduateRequirementListThree.get(0);
-
+            if (!graduateRequirementListOne.isEmpty()){
+                graduateRequirementOne = graduateRequirementListOne.get(0);
+            }
+            GraduateRequirementExample graduateRequirementExampleTwo = new GraduateRequirementExample();
+            GraduateRequirementExample.Criteria graduateRequirementExampleCriteriaTwo = graduateRequirementExampleTwo.createCriteria();
+            graduateRequirementExampleCriteriaTwo.andPContentLike("%" + course.getkTarget2Point() + "%");
+            List<GraduateRequirement> graduateRequirementListTwo = graduateRequirementMapper.selectByExample(graduateRequirementExampleTwo);
+            if (!graduateRequirementListTwo.isEmpty()){
+                graduateRequirementTwo = graduateRequirementListTwo.get(0);
+            }
+            GraduateRequirementExample graduateRequirementExampleThree = new GraduateRequirementExample();
+            GraduateRequirementExample.Criteria graduateRequirementExampleCriteriaThree = graduateRequirementExampleThree.createCriteria();
+            graduateRequirementExampleCriteriaThree.andPContentLike("%" + course.getkTarget3Point() + "%");
+            List<GraduateRequirement> graduateRequirementListThree = graduateRequirementMapper.selectByExample(graduateRequirementExampleThree);
+            if (!graduateRequirementListThree.isEmpty()){
+                graduateRequirementThree = graduateRequirementListThree.get(0);
+            }
             graduateRequirementList.add(graduateRequirementOne);
             graduateRequirementList.add(graduateRequirementTwo);
             graduateRequirementList.add(graduateRequirementThree);
