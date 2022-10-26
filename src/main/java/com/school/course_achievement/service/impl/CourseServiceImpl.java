@@ -42,6 +42,21 @@ public class CourseServiceImpl implements CourseService {
         return null;
     }
 
+    public List<String> getCoursePoint(String KName) {
+        CourseExample courseExample = new CourseExample();
+        CourseExample.Criteria courseExampleCriteria = courseExample.createCriteria();
+        courseExampleCriteria.andKNameLike("%" + KName + "%");
+        List<Course> courseList = courseMapper.selectByExample(courseExample);
+        List<String> pointList = new ArrayList<>();
+        if (!courseList.isEmpty()){
+            Course course = courseList.get(0);
+            pointList.add(course.getkTarget1Point());
+            pointList.add(course.getkTarget2Point());
+            pointList.add(course.getkTarget3Point());
+            return pointList;
+        }
+        return null;
+    }
     @Override
     public List<Map<String, String>> getCourseTargetPointByKName(String KName) {
         List<Map<String, String>> graduateRequirementList = new ArrayList<>();

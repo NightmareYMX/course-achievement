@@ -16,25 +16,25 @@
         <th>目标 1</th>
         <td> 5 </td>
         <td th:text="${targetDegreeMap.target1Avg}"></td>
-        <td th:text="${targetDegreeMap.target1Avg}/5"></td>
+        <td th:text="${targetDegreeMap.target1Comment}"></td>
     </tr>
     <tr>
         <th>目标 2</th>
         <td> 5 </td>
         <td th:text="${targetDegreeMap.target2Avg}"></td>
-        <td th:text="${targetDegreeMap.target2Avg}/5"></td>
+        <td th:text="${targetDegreeMap.target2Comment}"></td>
     </tr>
     <tr>
         <th>目标 3</th>
         <td> 5 </td>
         <td th:text="${targetDegreeMap.target3Avg}"></td>
-        <td th:text="${targetDegreeMap.target3Avg}/5"></td>
+        <td th:text="${targetDegreeMap.target3Comment}"></td>
     </tr>
     <tr>
         <th>合计</th>
         <td> 15 </td>
-        <td th:text="${targetDegreeMap.target1Avg} + ${targetDegreeMap.target2Avg} + ${targetDegreeMap.target3Avg}"></td>
-        <td th:text="${targetDegreeMap.target1Avg} + ${targetDegreeMap.target2Avg} + ${targetDegreeMap.target3Avg}/15"></td>
+        <td th:text="${targetDegreeMap.targetAvgSum}"></td>
+        <td th:text="${targetDegreeMap.targetCommentSum}"></td>
     </tr>
 </table>
 </body>

@@ -19,4 +19,11 @@ public interface CourseService {
      * @return 指标点序号
      */
     List<Map<String, String>> getCourseTargetPointByKName(String KName);
+
+    /**
+     *
+     * @param KName
+     * @return
+     */
+    public List<String> getCoursePoint(String KName);
 }

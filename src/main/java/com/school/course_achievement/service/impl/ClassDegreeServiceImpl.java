@@ -331,6 +331,47 @@ public class ClassDegreeServiceImpl implements ClassDegreeService {
         classDegreeExampleCriteria.andKNoEqualTo(KNo);
         List<ClassDegree> classDegreeList = classDegreeMapper.selectByExample(classDegreeExample);
         ClassDegree classDegree = classDegreeList.get(0);
+        WeightExample weightExample = new WeightExample();
+        WeightExample.Criteria weightExampleCriteria = weightExample.createCriteria();
+        weightExampleCriteria.andKNoEqualTo(KNo);
+        List<Weight> weightList = weightMapper.selectByExample(weightExample);
+        Weight weight = weightList.get(0);
+        double target1OFull = 20 * weight.getBehaveTarget1Weight() + 20 * weight.getHomeworkTarget1Weight() + 60 * weight.getTestTarget1Weight();
+        target1OFull = Double.parseDouble(String.format("%.2f", target1OFull));
+        double target2OFull = 20 * weight.getBehaveTarget2Weight() + 20 * weight.getHomeworkTarget2Weight() + 60 * weight.getTestTarget2Weight();
+        target2OFull = Double.parseDouble(String.format("%.2f", target2OFull));
+        double target3OFull = 20 * weight.getBehaveTarget3Weight() + 20 * weight.getHomeworkTarget3Weight() + 60 * weight.getTestTarget3Weight();
+        target3OFull = Double.parseDouble(String.format("%.2f", target3OFull));
+
+        double target1CommentO = classDegree.getdTarget1O()/target1OFull;
+        target1CommentO = Double.parseDouble(String.format("%.2f", target1CommentO));
+        double target2CommentO = classDegree.getdTarget2O()/target2OFull;
+        target2CommentO = Double.parseDouble(String.format("%.2f", target2CommentO));
+        double target3CommentO = classDegree.getdTarget3O()/target3OFull;
+        target3CommentO = Double.parseDouble(String.format("%.2f", target3CommentO));
+
+        double target1FFull = 100 * weight.getFinalTarget1Weight();
+        target1FFull = Double.parseDouble(String.format("%.2f", target1FFull));
+        double target2FFull = 100 * weight.getFinalTarget2Weight();
+        target2FFull = Double.parseDouble(String.format("%.2f", target2FFull));
+        double target3FFull = 100 * weight.getFinalTarget3Weight();
+        target3FFull = Double.parseDouble(String.format("%.2f", target3FFull));
+
+        double target1CommentF = classDegree.getdTarget1F()/target1FFull;
+        target1CommentF = Double.parseDouble(String.format("%.2f", target1CommentF));
+        double target2CommentF = classDegree.getdTarget2F()/target2FFull;
+        target2CommentF = Double.parseDouble(String.format("%.2f", target2CommentF));
+        double target3CommentF = classDegree.getdTarget3F()/target3FFull;
+        target3CommentF = Double.parseDouble(String.format("%.2f", target3CommentF));
+
+        double target1TotalComment = (target1CommentO + target1CommentF) / 2;
+        target1TotalComment = Double.parseDouble(String.format("%.2f", target1TotalComment));
+        double target2TotalComment = (target2CommentO + target2CommentF) / 2;
+        target2TotalComment = Double.parseDouble(String.format("%.2f", target2TotalComment));
+        double target3TotalComment = (target3CommentO + target3CommentF) / 2;
+        target3TotalComment = Double.parseDouble(String.format("%.2f", target3TotalComment));
+
+        double totalComment = DegreeUtils.lowDegree(target1TotalComment, target2TotalComment, target3TotalComment);
         Map<String, Double> degreeMap = new HashMap<String, Double>();
         degreeMap.put("target1O", classDegree.getdTarget1O());
         degreeMap.put("target2O", classDegree.getdTarget2O());
@@ -340,6 +381,22 @@ public class ClassDegreeServiceImpl implements ClassDegreeService {
         degreeMap.put("target2F", classDegree.getdTarget2F());
         degreeMap.put("target3F", classDegree.getdTarget3F());
         degreeMap.put("totalF", classDegree.getdTotalF());
+        degreeMap.put("target1OFull", target1OFull);
+        degreeMap.put("target2OFull", target2OFull);
+        degreeMap.put("target3OFull", target3OFull);
+        degreeMap.put("target1CommentO", target1CommentO);
+        degreeMap.put("target2CommentO", target2CommentO);
+        degreeMap.put("target3CommentO", target3CommentO);
+        degreeMap.put("target1FFull", target1FFull);
+        degreeMap.put("target2FFull", target2FFull);
+        degreeMap.put("target3FFull", target3FFull);
+        degreeMap.put("target1CommentF", target1CommentF);
+        degreeMap.put("target2CommentF", target2CommentF);
+        degreeMap.put("target3CommentF", target3CommentF);
+        degreeMap.put("target1TotalComment", target1TotalComment);
+        degreeMap.put("target2TotalComment", target2TotalComment);
+        degreeMap.put("target3TotalComment", target3TotalComment);
+        degreeMap.put("totalComment", totalComment);
         return degreeMap;
     }
 
@@ -357,10 +414,41 @@ public class ClassDegreeServiceImpl implements ClassDegreeService {
         classDegreeExampleCriteria.andKNoEqualTo(KNo);
         List<ClassDegree> classDegreeList = classDegreeMapper.selectByExample(classDegreeExample);
         ClassDegree classDegree = classDegreeList.get(0);
+        double target1Comment = classDegree.getdTarget1Avg() / 5;
+        target1Comment = Double.parseDouble(String.format("%.2f", target1Comment));
+        double target2Comment = classDegree.getdTarget2Avg() / 5;
+        target2Comment = Double.parseDouble(String.format("%.2f", target2Comment));
+        double target3Comment = classDegree.getdTarget3Avg() / 5;
+        target3Comment = Double.parseDouble(String.format("%.2f", target3Comment));
         Map<String, Double> degreeMap = new HashMap<String, Double>();
         degreeMap.put("target1Avg", classDegree.getdTarget1Avg());
         degreeMap.put("target2Avg", classDegree.getdTarget2Avg());
         degreeMap.put("target3Avg", classDegree.getdTarget3Avg());
+        degreeMap.put("targetAvgSum", classDegree.getdTarget1Avg() + classDegree.getdTarget2Avg() + classDegree.getdTarget3Avg());
+        degreeMap.put("target1Comment", target1Comment);
+        degreeMap.put("target2Comment", target2Comment);
+        degreeMap.put("target3Comment", target3Comment);
+        degreeMap.put("targetCommentSum", DegreeUtils.lowDegree(target1Comment, target2Comment, target3Comment));
         return degreeMap;
+    }
+
+    @Override
+    public Map<String, Double> getTargetWeight(String KName) {
+        //按课程名获得课程号
+        CourseExample courseExample = new CourseExample();
+        CourseExample.Criteria courseExampleCriteria = courseExample.createCriteria();
+        courseExampleCriteria.andKNameLike("%" + KName + "%");
+        List<Course> courseList = courseMapper.selectByExample(courseExample);
+        String KNo = courseList.get(0).getkNo();
+        WeightExample weightExample = new WeightExample();
+        WeightExample.Criteria weightExampleCriteria = weightExample.createCriteria();
+        weightExampleCriteria.andKNoEqualTo(KNo);
+        List<Weight> weightList = weightMapper.selectByExample(weightExample);
+        Weight weight = weightList.get(0);
+        Map<String, Double> targetWeightMap = new HashMap<>();
+        targetWeightMap.put("totalTarget1Weight", weight.getTotalTarget1Weight());
+        targetWeightMap.put("totalTarget2Weight", weight.getTotalTarget2Weight());
+        targetWeightMap.put("totalTarget3Weight", weight.getTotalTarget3Weight());
+        return targetWeightMap;
     }
 }

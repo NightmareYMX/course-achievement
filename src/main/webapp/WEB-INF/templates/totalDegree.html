@@ -26,33 +26,33 @@
             </tr>
             <tr>
                 <th colspan="3">目标 1</th>
-                <td colspan="2">18.80</td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target1OFull}"></td>
                 <td colspan="2" th:text="${totalClassDegreeMap.target1O}"></td>
-                <td colspan="2">评价值</td>
-                <td colspan="2">30</td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target1CommentO}"></td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target1OFull}"></td>
                 <td colspan="2" th:text="${totalClassDegreeMap.target1F}"></td>
-                <td colspan="2">评价值</td>
-                <td colspan="6">总评价值</td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target1CommentF}"></td>
+                <td colspan="6" th:text="${totalClassDegreeMap.target1TotalComment}"></td>
             </tr>
             <tr>
                 <th colspan="3">目标 2</th>
-                <td colspan="2">36.60</td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target2OFull}"></td>
                 <td colspan="2" th:text="${totalClassDegreeMap.target2O}"></td>
-                <td colspan="2">评价值</td>
-                <td colspan="2">40</td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target2CommentO}"></td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target2OFull}"></td>
                 <td colspan="2" th:text="${totalClassDegreeMap.target2F}"></td>
-                <td colspan="2">评价值</td>
-                <td colspan="6">总评价值</td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target2CommentF}"></td></td>
+                <td colspan="6" th:text="${totalClassDegreeMap.target2TotalComment}"></td>
             </tr>
             <tr>
                 <th colspan="3">目标 3</th>
-                <td colspan="2">44.60</td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target3OFull}"></td>
                 <td colspan="2" th:text="${totalClassDegreeMap.target3O}"></td>
-                <td colspan="2">评价值</td>
-                <td colspan="2">30</td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target3CommentO}"></td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target3OFull}"></td>
                 <td colspan="2" th:text="${totalClassDegreeMap.target3F}"></td>
-                <td colspan="2">评价值</td>
-                <td colspan="6">总评价值</td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target3CommentF}"></td></td>
+                <td colspan="6" th:text="${totalClassDegreeMap.target3TotalComment}"></td>
             </tr>
             <tr>
                 <th colspan="3">合 计</th>
@@ -62,7 +62,7 @@
                 <td colspan="2">100</td>
                 <td colspan="2" th:text="${totalClassDegreeMap.totalF}"></td>
                 <td colspan="2">/</td>
-                <td colspan="6">总评价值</td>
+                <td colspan="6" th:text="${totalClassDegreeMap.totalComment}"></td>
             </tr>
         </table>
     </body>

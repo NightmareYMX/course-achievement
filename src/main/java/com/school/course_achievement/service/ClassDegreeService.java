@@ -39,9 +39,15 @@ public interface ClassDegreeService {
     Map<String, Double> getTotalClassDegree(String KName);
 
     /**
-     * 4
+     *
      * @param KName
      * @return
      */
     Map<String, Double> getTargetDegree(String KName);
+
+    /**
+     *
+     * @return
+     */
+    Map<String, Double> getTargetWeight(String KName);
 }
