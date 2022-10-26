@@ -1,41 +1,88 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>毕业指标点</title>
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="/static/js/jquery.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".click").click(function () {
+                $(".tip").fadeIn(200);
+            });
+
+            $(".tiptop a").click(function () {
+                $(".tip").fadeOut(200);
+            });
+
+            $(".sure").click(function () {
+                $(".tip").fadeOut(100);
+            });
+
+            $(".cancel").click(function () {
+                $(".tip").fadeOut(100);
+            });
+
+        });
+    </script>
+
 </head>
 <body>
-<table border="1px" style="margin: auto; text-align: center">
-    <tr>
-        <th>课程目标</th>
-        <th>学生问卷打分满分</th>
-        <th>学生问卷打分平均值</th>
-        <th>评价值</th>
-    </tr>
-    <tr>
-        <th>目标 1</th>
-        <td> 5 </td>
-        <td th:text="${targetDegreeMap.target1Avg}"></td>
-        <td th:text="${targetDegreeMap.target1Avg}/5"></td>
-    </tr>
-    <tr>
-        <th>目标 2</th>
-        <td> 5 </td>
-        <td th:text="${targetDegreeMap.target2Avg}"></td>
-        <td th:text="${targetDegreeMap.target2Avg}/5"></td>
-    </tr>
-    <tr>
-        <th>目标 3</th>
-        <td> 5 </td>
-        <td th:text="${targetDegreeMap.target3Avg}"></td>
-        <td th:text="${targetDegreeMap.target3Avg}/5"></td>
-    </tr>
-    <tr>
-        <th>合计</th>
-        <td> 15 </td>
-        <td th:text="${targetDegreeMap.target1Avg} + ${targetDegreeMap.target2Avg} + ${targetDegreeMap.target3Avg}"></td>
-        <td th:text="${targetDegreeMap.target1Avg} + ${targetDegreeMap.target2Avg} + ${targetDegreeMap.target3Avg}/15"></td>
-    </tr>
-</table>
+<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+        <li><a href="/index">首页</a></li>
+        <li><a href="/classDegree/targetDegree?KName=Hadoop">期末成绩</a></li>
+    </ul>
+</div>
+
+<div class="rightinfo">
+    <table class="tablelist">
+        <thead>
+            <tr>
+                <th>课程目标</th>
+                <th>学生问卷打分满分</th>
+                <th>学生问卷打分平均值</th>
+                <th>评价值</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>目标 1</th>
+                <td> 5 </td>
+                <td th:text="${targetDegreeMap.target1Avg}"></td>
+                <td th:text="${targetDegreeMap.target1Avg}/5"></td>
+            </tr>
+            <tr>
+                <th>目标 2</th>
+                <td> 5 </td>
+                <td th:text="${targetDegreeMap.target2Avg}"></td>
+                <td th:text="${targetDegreeMap.target2Avg}/5"></td>
+            </tr>
+            <tr>
+                <th>目标 3</th>
+                <td> 5 </td>
+                <td th:text="${targetDegreeMap.target3Avg}"></td>
+                <td th:text="${targetDegreeMap.target3Avg}/5"></td>
+            </tr>
+            <tr>
+                <th>合计</th>
+                <td> 15 </td>
+                <td th:text="${targetDegreeMap.target1Avg} + ${targetDegreeMap.target2Avg} + ${targetDegreeMap.target3Avg}"></td>
+                <td th:text="${targetDegreeMap.target1Avg} + ${targetDegreeMap.target2Avg} + ${targetDegreeMap.target3Avg}/15"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script type="text/javascript">
+    $('.tablelist tbody tr:odd').addClass('odd');
+</script>
+
+<div style="display:none">
+    <script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script>
+</div>
 </body>
 </html>

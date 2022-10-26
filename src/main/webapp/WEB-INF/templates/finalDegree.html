@@ -1,56 +1,103 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>毕业指标点</title>
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="/static/js/jquery.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".click").click(function () {
+                $(".tip").fadeIn(200);
+            });
+
+            $(".tiptop a").click(function () {
+                $(".tip").fadeOut(200);
+            });
+
+            $(".sure").click(function () {
+                $(".tip").fadeOut(100);
+            });
+
+            $(".cancel").click(function () {
+                $(".tip").fadeOut(100);
+            });
+
+        });
+    </script>
+
 </head>
 <body>
-    <table border="1px" style="margin: auto; text-align: center">
-        <tr>
-            <th colspan="10">期末试卷成绩支撑课程目标的总结性评价</th>
-        </tr>
-        <tr>
-            <th rowspan="2" colspan="3">平时成绩教学环节</th>
-            <th rowspan="2">满分</th>
-            <th rowspan="2">平均分</th>
-            <th rowspan="2">最高分</th>
-            <th rowspan="2">最低分</th>
-            <th colspan="3">支撑的课程目标权重</th>
-        </tr>
-        <tr>
-            <th>目标 1</th>
-            <th>目标 2</th>
-            <th>目标 3</th>
-        </tr>
-        <tr>
-            <td>一</td>
-            <th colspan="2"> 大作业 </th>
-            <td>100</td>
-            <td th:text="${finalClassDegreeMap.finalAvg}"></td>
-            <td th:text="${finalClassDegreeMap.finalHigh}"></td>
-            <td th:text="${finalClassDegreeMap.finalLow}"></td>
-            <td th:text="${finalClassDegreeMap.finalTarget1Weight}"></td>
-            <td th:text="${finalClassDegreeMap.finalTarget2Weight}"></td>
-            <td th:text="${finalClassDegreeMap.finalTarget3Weight}"></td>
-        </tr>
-        <!--   各部分总分与各目标系数乘积之和     -->
-        <tr>
-            <th rowspan="3" colspan="3"> 合计 </th>
-            <th colspan="4">各课程目标满分值</th>
-            <td th:text="${finalClassDegreeMap.target1FFull}"></td>
-            <td th:text="${finalClassDegreeMap.target2FFull}"></td>
-            <td th:text="${finalClassDegreeMap.target3FFull}"></td>
-        </tr>
-        <tr>
-            <th colspan="4">各课程目标绝对值</th>
-            <td th:text="${finalClassDegreeMap.target1F}"></td>
-            <td th:text="${finalClassDegreeMap.target2F}"></td>
-            <td th:text="${finalClassDegreeMap.target3F}"></td>
-        </tr>
-        <tr>
-            <th colspan="4">课程目标达程度绝对值</th>
-            <td colspan="3" th:text="${finalClassDegreeMap.totalF}"></td>
-        </tr>
-    </table>
+    <div class="place">
+        <span>位置：</span>
+        <ul class="placeul">
+            <li><a href="/index">首页</a></li>
+            <li><a href="/classDegree/finalDegree?KName=Python">期末成绩</a></li>
+        </ul>
+    </div>
+
+    <div class="rightinfo">
+        <table class="tablelist">
+            <thead>
+                <tr>
+                    <th colspan="10" class="ttile">期末试卷成绩支撑课程目标的总结性评价</th>
+                </tr>
+                <tr>
+                    <th rowspan="2" colspan="3">平时成绩教学环节</th>
+                    <th rowspan="2">满分</th>
+                    <th rowspan="2">平均分</th>
+                    <th rowspan="2">最高分</th>
+                    <th rowspan="2">最低分</th>
+                    <th colspan="3">支撑的课程目标权重</th>
+                </tr>
+                <tr>
+                    <th>目标 1</th>
+                    <th>目标 2</th>
+                    <th>目标 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>一</td>
+                    <th colspan="2"> 大作业 </th>
+                    <td>100</td>
+                    <td th:text="${finalClassDegreeMap.finalAvg}"></td>
+                    <td th:text="${finalClassDegreeMap.finalHigh}"></td>
+                    <td th:text="${finalClassDegreeMap.finalLow}"></td>
+                    <td th:text="${finalClassDegreeMap.finalTarget1Weight}"></td>
+                    <td th:text="${finalClassDegreeMap.finalTarget2Weight}"></td>
+                    <td th:text="${finalClassDegreeMap.finalTarget3Weight}"></td>
+                </tr>
+                <!--   各部分总分与各目标系数乘积之和     -->
+                <tr>
+                    <th rowspan="3" colspan="3"> 合计 </th>
+                    <th colspan="4">各课程目标满分值</th>
+                    <td th:text="${finalClassDegreeMap.target1FFull}"></td>
+                    <td th:text="${finalClassDegreeMap.target2FFull}"></td>
+                    <td th:text="${finalClassDegreeMap.target3FFull}"></td>
+                </tr>
+                <tr>
+                    <th colspan="4">各课程目标绝对值</th>
+                    <td th:text="${finalClassDegreeMap.target1F}"></td>
+                    <td th:text="${finalClassDegreeMap.target2F}"></td>
+                    <td th:text="${finalClassDegreeMap.target3F}"></td>
+                </tr>
+                <tr>
+                    <th colspan="4">课程目标达程度绝对值</th>
+                    <td colspan="3" th:text="${finalClassDegreeMap.totalF}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script type="text/javascript">
+        $('.tablelist tbody tr:odd').addClass('odd');
+    </script>
+
+    <div style="display:none">
+        <script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script>
+    </div>
 </body>
 </html>
