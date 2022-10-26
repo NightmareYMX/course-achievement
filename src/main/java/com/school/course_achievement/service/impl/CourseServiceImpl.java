@@ -43,17 +43,6 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public List<String> getAllCourseName() {
-        CourseExample courseExample = new CourseExample();
-        List<Course> courseList = courseMapper.selectByExample(courseExample);
-        List<String> nameList = new ArrayList<>();
-        for (Course course: courseList) {
-            nameList.add(course.getkName());
-        }
-        return nameList;
-    }
-
-    @Override
     public List<Map<String, String>> getCourseTargetPointByKName(String KName) {
         List<Map<String, String>> graduateRequirementList = new ArrayList<>();
         GraduateRequirement graduateRequirementOne = new GraduateRequirement();

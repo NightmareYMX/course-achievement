@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>$Title$</title>
+</head>
+<body>
+    <table border="1px" style="margin: auto; text-align: center">
+        <tr>
+            <th colspan="10">期末试卷成绩支撑课程目标的总结性评价</th>
+        </tr>
+        <tr>
+            <th rowspan="2" colspan="3">平时成绩教学环节</th>
+            <th rowspan="2">满分</th>
+            <th rowspan="2">平均分</th>
+            <th rowspan="2">最高分</th>
+            <th rowspan="2">最低分</th>
+            <th colspan="3">支撑的课程目标权重</th>
+        </tr>
+        <tr>
+            <th>目标 1</th>
+            <th>目标 2</th>
+            <th>目标 3</th>
+        </tr>
+        <tr>
+            <td>一</td>
+            <th colspan="2"> 大作业 </th>
+            <td>100</td>
+            <td th:text="${finalClassDegreeMap.finalAvg}"></td>
+            <td th:text="${finalClassDegreeMap.finalHigh}"></td>
+            <td th:text="${finalClassDegreeMap.finalLow}"></td>
+            <td th:text="${finalClassDegreeMap.finalTarget1Weight}"></td>
+            <td th:text="${finalClassDegreeMap.finalTarget2Weight}"></td>
+            <td th:text="${finalClassDegreeMap.finalTarget3Weight}"></td>
+        </tr>
+        <!--   各部分总分与各目标系数乘积之和     -->
+        <tr>
+            <th rowspan="3" colspan="3"> 合计 </th>
+            <th colspan="4">各课程目标满分值</th>
+            <td> 18.80 </td>
+            <td> 36.60 </td>
+            <td> 44.60 </td>
+        </tr>
+        <!--   各部分平均分与各目标系数乘积之和     -->
+        <tr>
+            <th colspan="4">各课程目标绝对值</th>
+            <td> 18.80 </td>
+            <td> 36.60 </td>
+            <td> 44.60 </td>
+        </tr>
+        <!--   各部分绝对值之和     -->
+        <tr>
+            <th colspan="4">课程目标达程度绝对值</th>
+            <td colspan="3">81.90</td>
+        </tr>
+    </table>
+</body>
+</html>

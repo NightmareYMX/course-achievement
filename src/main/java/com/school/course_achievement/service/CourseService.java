@@ -7,12 +7,6 @@ import java.util.Map;
 
 public interface CourseService {
     /**
-     * 搜索所有的课程
-     * @return 课程集合
-     */
-    List<String> getAllCourseName();
-
-    /**
      * 按课程号得到课程目标信息
      * @param KName
      * @return 课程目标信息集合

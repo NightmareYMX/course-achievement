@@ -23,12 +23,12 @@ public interface ClassDegreeService {
      * @param KName
      * @return 所有班级的平时成绩信息
      */
-    List<Map<String, Double>> getOrdinaryClassDegree(String KName);
+    Map<String, Double> getOrdinaryClassDegree(String KName);
 
     /**
      * 按课程名查询所有班级的大作业或者期末考试成绩
      * @param KName
      * @return 所有班级的作业或者期末考试成绩
      */
-    List<Map<String, Double>> getFinalClassDegree(String KName);
+    Map<String, Double> getFinalClassDegree(String KName);
 }

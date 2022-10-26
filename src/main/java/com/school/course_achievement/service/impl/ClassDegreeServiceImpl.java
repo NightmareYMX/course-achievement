@@ -3,7 +3,6 @@ import com.school.course_achievement.mapper.*;
 import com.school.course_achievement.pojo.*;
 import com.school.course_achievement.service.ClassDegreeService;
 import com.school.course_achievement.utils.DegreeUtils;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -203,11 +202,11 @@ public class ClassDegreeServiceImpl implements ClassDegreeService {
     }
 
     @Override
-    public List<Map<String, Double>> getOrdinaryClassDegree(String KName) {
+    public Map<String, Double> getOrdinaryClassDegree(String KName) {
         //按课程名获得课程号
         CourseExample courseExample = new CourseExample();
         CourseExample.Criteria courseExampleCriteria = courseExample.createCriteria();
-        courseExampleCriteria.andKNameEqualTo(KName);
+        courseExampleCriteria.andKNameLike("%" + KName + "%");
         List<Course> courseList = courseMapper.selectByExample(courseExample);
         String KNo = courseList.get(0).getkNo();
         //按课程号获得课程分数
@@ -215,43 +214,68 @@ public class ClassDegreeServiceImpl implements ClassDegreeService {
         ClassDegreeExample.Criteria classDegreeExampleCriteria = classDegreeExample.createCriteria();
         classDegreeExampleCriteria.andKNoEqualTo(KNo);
         List<ClassDegree> classDegreeList = classDegreeMapper.selectByExample(classDegreeExample);
-
+        ClassDegree classDegree = classDegreeList.get(0);
         WeightExample weightExample = new WeightExample();
         WeightExample.Criteria weightExampleCriteria = weightExample.createCriteria();
         weightExampleCriteria.andKNoEqualTo(KNo);
         List<Weight> weightList = weightMapper.selectByExample(weightExample);
-
         Weight weight = weightList.get(0);
-        List<Map<String, Double>> degreeMapList = new ArrayList<>();
-
-        for (ClassDegree classDegree: classDegreeList) {
-            Map<String, Double> degreeMap = new HashMap<String, Double>();
-            degreeMap.put("behaveAvg", classDegree.getdBehaveAvg());
-            degreeMap.put("behaveLow", classDegree.getdBehaveLow());
-            degreeMap.put("behaveHigh", classDegree.getdBehaveHigh());
-            degreeMap.put("homeworkAvg", classDegree.getdHomeworkAvg());
-            degreeMap.put("homeworkLow", classDegree.getdBehaveLow());
-            degreeMap.put("homeworkHigh", classDegree.getdHomeworkHigh());
-            degreeMap.put("testAvg", classDegree.getdTestAvg());
-            degreeMap.put("testLow", classDegree.getdTestLow());
-            degreeMap.put("testHigh", classDegree.getdTestHigh());
-            degreeMap.put("behaveTarget1Weight", weight.getBehaveTarget1Weight());
-            degreeMap.put("behaveTarget2Weight", weight.getBehaveTarget2Weight());
-            degreeMap.put("behaveTarget3Weight", weight.getBehaveTarget3Weight());
-            degreeMap.put("homeworkTarget1Weight", weight.getHomeworkTarget1Weight());
-            degreeMap.put("homeworkTarget2Weight", weight.getHomeworkTarget2Weight());
-            degreeMap.put("homeworkTarget3Weight", weight.getHomeworkTarget3Weight());
-            degreeMap.put("testTarget1Weight", weight.getTestTarget1Weight());
-            degreeMap.put("testTarget2Weight", weight.getTestTarget2Weight());
-            degreeMap.put("testTarget3Weight", weight.getTestTarget3Weight());
-            degreeMapList.add(degreeMap);
-        }
-        return degreeMapList;
+        Map<String, Double> degreeMap = new HashMap<String, Double>();
+        degreeMap.put("behaveAvg", classDegree.getdBehaveAvg());
+        degreeMap.put("behaveLow", classDegree.getdBehaveLow());
+        degreeMap.put("behaveHigh", classDegree.getdBehaveHigh());
+        degreeMap.put("homeworkAvg", classDegree.getdHomeworkAvg());
+        degreeMap.put("homeworkLow", classDegree.getdBehaveLow());
+        degreeMap.put("homeworkHigh", classDegree.getdHomeworkHigh());
+        degreeMap.put("testAvg", classDegree.getdTestAvg());
+        degreeMap.put("testLow", classDegree.getdTestLow());
+        degreeMap.put("testHigh", classDegree.getdTestHigh());
+        degreeMap.put("target1O", classDegree.getdTarget1O());
+        degreeMap.put("target2O", classDegree.getdTarget2O());
+        degreeMap.put("target3O", classDegree.getdTarget3O());
+        degreeMap.put("totalO", classDegree.getdTotalO());
+        degreeMap.put("behaveTarget1Weight", weight.getBehaveTarget1Weight());
+        degreeMap.put("behaveTarget2Weight", weight.getBehaveTarget2Weight());
+        degreeMap.put("behaveTarget3Weight", weight.getBehaveTarget3Weight());
+        degreeMap.put("homeworkTarget1Weight", weight.getHomeworkTarget1Weight());
+        degreeMap.put("homeworkTarget2Weight", weight.getHomeworkTarget2Weight());
+        degreeMap.put("homeworkTarget3Weight", weight.getHomeworkTarget3Weight());
+        degreeMap.put("testTarget1Weight", weight.getTestTarget1Weight());
+        degreeMap.put("testTarget2Weight", weight.getTestTarget2Weight());
+        degreeMap.put("testTarget3Weight", weight.getTestTarget3Weight());
+        return degreeMap;
     }
 
     @Override
-    public List<Map<String, Double>> getFinalClassDegree(String KName) {
-        //未完成
-        return null;
+    public Map<String, Double> getFinalClassDegree(String KName) {
+        //按课程名获得课程号
+        CourseExample courseExample = new CourseExample();
+        CourseExample.Criteria courseExampleCriteria = courseExample.createCriteria();
+        courseExampleCriteria.andKNameLike("%" + KName + "%");
+        List<Course> courseList = courseMapper.selectByExample(courseExample);
+        String KNo = courseList.get(0).getkNo();
+        //按课程号获得课程分数
+        ClassDegreeExample classDegreeExample = new ClassDegreeExample();
+        ClassDegreeExample.Criteria classDegreeExampleCriteria = classDegreeExample.createCriteria();
+        classDegreeExampleCriteria.andKNoEqualTo(KNo);
+        List<ClassDegree> classDegreeList = classDegreeMapper.selectByExample(classDegreeExample);
+        ClassDegree classDegree = classDegreeList.get(0);
+        WeightExample weightExample = new WeightExample();
+        WeightExample.Criteria weightExampleCriteria = weightExample.createCriteria();
+        weightExampleCriteria.andKNoEqualTo(KNo);
+        List<Weight> weightList = weightMapper.selectByExample(weightExample);
+        Weight weight = weightList.get(0);
+        Map<String, Double> degreeMap = new HashMap<String, Double>();
+        degreeMap.put("finalAvg", classDegree.getdFinalAvg());
+        degreeMap.put("finalLow", classDegree.getdFinalLow());
+        degreeMap.put("finalHigh", classDegree.getdFinalHigh());
+        degreeMap.put("target1F", classDegree.getdTarget1F());
+        degreeMap.put("target2F", classDegree.getdTarget2F());
+        degreeMap.put("target3F", classDegree.getdTarget3F());
+        degreeMap.put("totalF", classDegree.getdTotalF());
+        degreeMap.put("finalTarget1Weight", weight.getFinalTarget1Weight());
+        degreeMap.put("finalTarget2Weight", weight.getFinalTarget2Weight());
+        degreeMap.put("finalTarget3Weight", weight.getFinalTarget3Weight());
+        return degreeMap;
     }
 }

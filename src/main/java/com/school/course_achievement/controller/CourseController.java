@@ -19,13 +19,6 @@ public class CourseController {
     @Autowired
     CourseService courseService;
 
-    @RequestMapping(value = "/name")
-    @ResponseBody
-    public String getAllCourseName() {
-        List<String> courseNameList = courseService.getAllCourseName();
-        return JSONUtils.toJSONString(courseNameList);
-    }
-
     @RequestMapping(value = "/target")
     public String getCourseTargetByKName(@Param("KName") String KName, Model model) {
         List<String> targetList = courseService.getCourseTargetByKName(KName);
