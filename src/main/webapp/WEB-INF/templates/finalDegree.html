@@ -37,21 +37,19 @@
         <tr>
             <th rowspan="3" colspan="3"> 合计 </th>
             <th colspan="4">各课程目标满分值</th>
-            <td> 18.80 </td>
-            <td> 36.60 </td>
-            <td> 44.60 </td>
+            <td> 30 </td>
+            <td> 40 </td>
+            <td> 30 </td>
         </tr>
-        <!--   各部分平均分与各目标系数乘积之和     -->
         <tr>
             <th colspan="4">各课程目标绝对值</th>
-            <td> 18.80 </td>
-            <td> 36.60 </td>
-            <td> 44.60 </td>
+            <td th:text="${finalClassDegreeMap.target1F}"></td>
+            <td th:text="${finalClassDegreeMap.target2F}"></td>
+            <td th:text="${finalClassDegreeMap.target3F}"></td>
         </tr>
-        <!--   各部分绝对值之和     -->
         <tr>
             <th colspan="4">课程目标达程度绝对值</th>
-            <td colspan="3">81.90</td>
+            <td colspan="3" th:text="${finalClassDegreeMap.totalF}"></td>
         </tr>
     </table>
 </body>

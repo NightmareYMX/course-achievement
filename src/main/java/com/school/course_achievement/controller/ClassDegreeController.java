@@ -36,4 +36,10 @@ public class ClassDegreeController {
         model.addAttribute("finalClassDegreeMap", finalClassDegreeMap);
         return "finalDegree";
     }
+
+    @RequestMapping(value = "/classDegree/totalDegree")
+    public String getTotalDegree(@Param("KName") String KName, Model model) {
+
+        return "totalDegree";
+    }
 }

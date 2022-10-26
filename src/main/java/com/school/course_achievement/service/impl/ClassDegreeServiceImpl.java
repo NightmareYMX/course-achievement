@@ -221,6 +221,9 @@ public class ClassDegreeServiceImpl implements ClassDegreeService {
         List<Weight> weightList = weightMapper.selectByExample(weightExample);
         Weight weight = weightList.get(0);
         Map<String, Double> degreeMap = new HashMap<String, Double>();
+        degreeMap.put("behaveFull", 20.00);
+        degreeMap.put("homeworkFull", 20.00);
+        degreeMap.put("testFull", 60.00);
         degreeMap.put("behaveAvg", classDegree.getdBehaveAvg());
         degreeMap.put("behaveLow", classDegree.getdBehaveLow());
         degreeMap.put("behaveHigh", classDegree.getdBehaveHigh());
@@ -266,6 +269,7 @@ public class ClassDegreeServiceImpl implements ClassDegreeService {
         List<Weight> weightList = weightMapper.selectByExample(weightExample);
         Weight weight = weightList.get(0);
         Map<String, Double> degreeMap = new HashMap<String, Double>();
+        degreeMap.put("finalFull", 100.00);
         degreeMap.put("finalAvg", classDegree.getdFinalAvg());
         degreeMap.put("finalLow", classDegree.getdFinalLow());
         degreeMap.put("finalHigh", classDegree.getdFinalHigh());
