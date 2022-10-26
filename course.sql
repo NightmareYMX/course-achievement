@@ -11,7 +11,7 @@
  Target Server Version : 50740
  File Encoding         : 65001
 
- Date: 25/10/2022 21:39:44
+ Date: 26/10/2022 15:42:54
 */
 
 SET NAMES utf8mb4;
@@ -55,6 +55,8 @@ CREATE TABLE `class_degree`  (
 -- ----------------------------
 -- Records of class_degree
 -- ----------------------------
+INSERT INTO `class_degree` VALUES ('25001', '201', 16.94, 14.83, 18.99, 18.15, 16.75, 19.04, 54.04, 48.79, 57.89, 93.16, 84.10, 97.84, 4.4, 4.5, 4.4, 16.65, 32.61, 39.87, 89.13, 27.95, 37.26, 27.95, 93.16, NULL, NULL, NULL);
+INSERT INTO `class_degree` VALUES ('25002', '201', 16.63, 14.83, 19.04, 16.19, 14.83, 17.50, 50.60, 35.60, 60.00, 86.48, 66.20, 100.00, 4.2, 4.4, 4.6, 15.37, 30.79, 37.26, 83.42, 25.95, 34.59, 25.95, 86.48, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for course
@@ -77,7 +79,7 @@ CREATE TABLE `course`  (
 -- Records of course
 -- ----------------------------
 INSERT INTO `course` VALUES ('25001', 'Hadoop大数据平台与生态系统', '掌握Hadoop集群的运行机制和原理，以及MapReduce和HDFS的运行的架构和操作方式。', '能够组建由Linux虚拟机组成的分布式集群，熟练使用Linux基本指令操作Hadoop集群。', '能够通过Java、Hive-SQL语句以及Echarts框架进行数据导入、处理、业务逻辑分析。', '1.1', '2.1', '2.2', '002467');
-INSERT INTO `course` VALUES ('25002', 'Pyhon大数据分析', '掌握Python数据分析相关库的基本语法', '能够用Python进行数据读取、处理、分析并得出结论', '能过熟练使用Numpy、Sklearn等库进行数据分析，并将数据可视化', '1.1', '2.1', '2.2', '002471');
+INSERT INTO `course` VALUES ('25002', 'Python大数据分析', '掌握Python数据分析相关库的基本语法', '能够用Python进行数据读取、处理、分析并得出结论', '能过熟练使用Numpy、Sklearn等库进行数据分析，并将数据可视化', '1.1', '2.1', '2.2', '002471');
 
 -- ----------------------------
 -- Table structure for graduate_requirement

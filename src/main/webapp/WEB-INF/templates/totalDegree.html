@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>$Title$</title>
+    </head>
+    <body>
+        <table border="1px" style="margin: auto; text-align: center">
+            <tr>
+                <th colspan="21">课程达成情况评价</th>
+            </tr>
+            <tr>
+                <th rowspan="2" colspan="3">课程目标</th>
+                <th colspan="6">平时成绩</th>
+                <th colspan="6">试卷成绩</th>
+                <th colspan="6">总评价值</th>
+            </tr>
+            <tr>
+                <th colspan="2">满  分</th>
+                <th colspan="2">绝对值</th>
+                <th colspan="2">评价值</th>
+                <th colspan="2">满 分</th>
+                <th colspan="2">绝对值</th>
+                <th colspan="2">评价值</th>
+                <th colspan="2">      </th>
+            </tr>
+            <tr>
+                <th colspan="3">目标 1</th>
+                <td colspan="2">18.80</td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target1O}"></td>
+                <td colspan="2">评价值</td>
+                <td colspan="2">30</td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target1F}"></td>
+                <td colspan="2">评价值</td>
+                <td colspan="6">总评价值</td>
+            </tr>
+            <tr>
+                <th colspan="3">目标 2</th>
+                <td colspan="2">36.60</td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target2O}"></td>
+                <td colspan="2">评价值</td>
+                <td colspan="2">40</td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target2F}"></td>
+                <td colspan="2">评价值</td>
+                <td colspan="6">总评价值</td>
+            </tr>
+            <tr>
+                <th colspan="3">目标 3</th>
+                <td colspan="2">44.60</td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target3O}"></td>
+                <td colspan="2">评价值</td>
+                <td colspan="2">30</td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target3F}"></td>
+                <td colspan="2">评价值</td>
+                <td colspan="6">总评价值</td>
+            </tr>
+            <tr>
+                <th colspan="3">合 计</th>
+                <td colspan="2">100</td>
+                <td colspan="2" th:text="${totalClassDegreeMap.totalO}"></td>
+                <td colspan="2">/</td>
+                <td colspan="2">100</td>
+                <td colspan="2" th:text="${totalClassDegreeMap.totalF}"></td>
+                <td colspan="2">/</td>
+                <td colspan="6">总评价值</td>
+            </tr>
+        </table>
+    </body>
+</html>

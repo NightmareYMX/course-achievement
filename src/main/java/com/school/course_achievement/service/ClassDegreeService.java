@@ -1,19 +1,16 @@
 package com.school.course_achievement.service;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
-
-import java.util.List;
 import java.util.Map;
 
 public interface ClassDegreeService {
     /**
-     *
+     * 插入数据
      * @return 成功与否
      */
     int calculateDegreeOne();
 
     /**
-     *
+     * 插入数据
      * @return 成功与否
      */
     int calculateDegreeTwo();
@@ -31,4 +28,18 @@ public interface ClassDegreeService {
      * @return 所有班级的作业或者期末考试成绩
      */
     Map<String, Double> getFinalClassDegree(String KName);
+
+    /**
+     * 按课程名查询所有班级的总体成绩
+     * @param KName
+     * @return
+     */
+    Map<String, Double> getTotalClassDegree(String KName);
+
+    /**
+     * 4
+     * @param KName
+     * @return
+     */
+    Map<String, Double> getTargetDegree(String KName);
 }

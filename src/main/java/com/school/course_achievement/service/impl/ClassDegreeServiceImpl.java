@@ -282,4 +282,51 @@ public class ClassDegreeServiceImpl implements ClassDegreeService {
         degreeMap.put("finalTarget3Weight", weight.getFinalTarget3Weight());
         return degreeMap;
     }
+
+    @Override
+    public Map<String, Double> getTotalClassDegree(String KName) {
+        //按课程名获得课程号
+        CourseExample courseExample = new CourseExample();
+        CourseExample.Criteria courseExampleCriteria = courseExample.createCriteria();
+        courseExampleCriteria.andKNameLike("%" + KName + "%");
+        List<Course> courseList = courseMapper.selectByExample(courseExample);
+        String KNo = courseList.get(0).getkNo();
+        //按课程号获得课程分数
+        ClassDegreeExample classDegreeExample = new ClassDegreeExample();
+        ClassDegreeExample.Criteria classDegreeExampleCriteria = classDegreeExample.createCriteria();
+        classDegreeExampleCriteria.andKNoEqualTo(KNo);
+        List<ClassDegree> classDegreeList = classDegreeMapper.selectByExample(classDegreeExample);
+        ClassDegree classDegree = classDegreeList.get(0);
+        Map<String, Double> degreeMap = new HashMap<String, Double>();
+        degreeMap.put("target1O", classDegree.getdTarget1O());
+        degreeMap.put("target2O", classDegree.getdTarget2O());
+        degreeMap.put("target3O", classDegree.getdTarget3O());
+        degreeMap.put("totalO", classDegree.getdTotalO());
+        degreeMap.put("target1F", classDegree.getdTarget1F());
+        degreeMap.put("target2F", classDegree.getdTarget2F());
+        degreeMap.put("target3F", classDegree.getdTarget3F());
+        degreeMap.put("totalF", classDegree.getdTotalF());
+        return degreeMap;
+    }
+
+    @Override
+    public Map<String, Double> getTargetDegree(String KName) {
+        //按课程名获得课程号
+        CourseExample courseExample = new CourseExample();
+        CourseExample.Criteria courseExampleCriteria = courseExample.createCriteria();
+        courseExampleCriteria.andKNameLike("%" + KName + "%");
+        List<Course> courseList = courseMapper.selectByExample(courseExample);
+        String KNo = courseList.get(0).getkNo();
+        //按课程号获得课程分数
+        ClassDegreeExample classDegreeExample = new ClassDegreeExample();
+        ClassDegreeExample.Criteria classDegreeExampleCriteria = classDegreeExample.createCriteria();
+        classDegreeExampleCriteria.andKNoEqualTo(KNo);
+        List<ClassDegree> classDegreeList = classDegreeMapper.selectByExample(classDegreeExample);
+        ClassDegree classDegree = classDegreeList.get(0);
+        Map<String, Double> degreeMap = new HashMap<String, Double>();
+        degreeMap.put("target1Avg", classDegree.getdTarget1Avg());
+        degreeMap.put("target2Avg", classDegree.getdTarget2Avg());
+        degreeMap.put("target3Avg", classDegree.getdTarget3Avg());
+        return degreeMap;
+    }
 }

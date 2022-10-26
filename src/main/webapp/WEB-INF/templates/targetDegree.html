@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>$Title$</title>
+</head>
+<body>
+<table border="1px" style="margin: auto; text-align: center">
+    <tr>
+        <th>课程目标</th>
+        <th>学生问卷打分满分</th>
+        <th>学生问卷打分平均值</th>
+        <th>评价值</th>
+    </tr>
+    <tr>
+        <th>目标 1</th>
+        <td> 5 </td>
+        <td th:text="${targetDegreeMap.target1Avg}"></td>
+        <td th:text="${targetDegreeMap.target1Avg}/5"></td>
+    </tr>
+    <tr>
+        <th>目标 2</th>
+        <td> 5 </td>
+        <td th:text="${targetDegreeMap.target2Avg}"></td>
+        <td th:text="${targetDegreeMap.target2Avg}/5"></td>
+    </tr>
+    <tr>
+        <th>目标 3</th>
+        <td> 5 </td>
+        <td th:text="${targetDegreeMap.target3Avg}"></td>
+        <td th:text="${targetDegreeMap.target3Avg}/5"></td>
+    </tr>
+    <tr>
+        <th>合计</th>
+        <td> 15 </td>
+        <td th:text="${targetDegreeMap.target1Avg} + ${targetDegreeMap.target2Avg} + ${targetDegreeMap.target3Avg}"></td>
+        <td th:text="${targetDegreeMap.target1Avg} + ${targetDegreeMap.target2Avg} + ${targetDegreeMap.target3Avg}/15"></td>
+    </tr>
+</table>
+</body>
+</html>

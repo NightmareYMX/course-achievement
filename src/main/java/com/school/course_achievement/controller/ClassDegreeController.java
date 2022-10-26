@@ -39,7 +39,15 @@ public class ClassDegreeController {
 
     @RequestMapping(value = "/classDegree/totalDegree")
     public String getTotalDegree(@Param("KName") String KName, Model model) {
-
+        Map<String, Double> totalClassDegreeMap = classDegreeService.getTotalClassDegree(KName);
+        model.addAttribute("totalClassDegreeMap", totalClassDegreeMap);
         return "totalDegree";
+    }
+
+    @RequestMapping(value = "/classDegree/targetDegree")
+    public String getTargetDegree(@Param("KName") String KName, Model model) {
+        Map<String, Double> targetDegreeMap = classDegreeService.getTargetDegree(KName);
+        model.addAttribute("targetDegreeMap", targetDegreeMap);
+        return "targetDegree";
     }
 }
