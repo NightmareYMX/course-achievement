@@ -30,4 +30,14 @@ public abstract class DegreeUtils {
         }
         return sum/list.size();
     }
+
+    public static double lowDegree(double...args) {
+        double min = args[0];
+        for (double element: args) {
+            if (element < min) {
+                min = element;
+            }
+        }
+        return min;
+    }
 }

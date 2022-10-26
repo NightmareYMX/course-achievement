@@ -1,116 +1,69 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>毕业指标点</title>
-    <link href="/static/css/style.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="/static/js/jquery.js"></script>
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $(".click").click(function () {
-                $(".tip").fadeIn(200);
-            });
-
-            $(".tiptop a").click(function () {
-                $(".tip").fadeOut(200);
-            });
-
-            $(".sure").click(function () {
-                $(".tip").fadeOut(100);
-            });
-
-            $(".cancel").click(function () {
-                $(".tip").fadeOut(100);
-            });
-
-        });
-    </script>
-
-</head>
-<body>
-    <div class="place">
-        <span>位置：</span>
-        <ul class="placeul">
-            <li><a href="/index">首页</a></li>
-            <li><a href="/classDegree/totalDegree?KName=Python">期末成绩</a></li>
-        </ul>
-    </div>
-
-    <div class="rightinfo">
-        <table class="tablelist">
-            <thead>
-                <tr>
-                    <th colspan="21" class="ttile">课程达成情况评价</th>
-                </tr>
-                <tr>
-                    <th rowspan="2" colspan="3">课程目标</th>
-                    <th colspan="6">平时成绩</th>
-                    <th colspan="6">试卷成绩</th>
-                    <th colspan="6">总评价值</th>
-                </tr>
-                <tr>
-                    <th colspan="2">满  分</th>
-                    <th colspan="2">绝对值</th>
-                    <th colspan="2">评价值</th>
-                    <th colspan="2">满 分</th>
-                    <th colspan="2">绝对值</th>
-                    <th colspan="2">评价值</th>
-                    <th colspan="2">      </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th colspan="3">目标 1</th>
-                    <td colspan="2">18.80</td>
-                    <td colspan="2" th:text="${totalClassDegreeMap.target1O}"></td>
-                    <td colspan="2">评价值</td>
-                    <td colspan="2">30</td>
-                    <td colspan="2" th:text="${totalClassDegreeMap.target1F}"></td>
-                    <td colspan="2">评价值</td>
-                    <td colspan="6">总评价值</td>
-                </tr>
-                <tr>
-                    <th colspan="3">目标 2</th>
-                    <td colspan="2">36.60</td>
-                    <td colspan="2" th:text="${totalClassDegreeMap.target2O}"></td>
-                    <td colspan="2">评价值</td>
-                    <td colspan="2">40</td>
-                    <td colspan="2" th:text="${totalClassDegreeMap.target2F}"></td>
-                    <td colspan="2">评价值</td>
-                    <td colspan="6">总评价值</td>
-                </tr>
-                <tr>
-                    <th colspan="3">目标 3</th>
-                    <td colspan="2">44.60</td>
-                    <td colspan="2" th:text="${totalClassDegreeMap.target3O}"></td>
-                    <td colspan="2">评价值</td>
-                    <td colspan="2">30</td>
-                    <td colspan="2" th:text="${totalClassDegreeMap.target3F}"></td>
-                    <td colspan="2">评价值</td>
-                    <td colspan="6">总评价值</td>
-                </tr>
-                <tr>
-                    <th colspan="3">合 计</th>
-                    <td colspan="2">100</td>
-                    <td colspan="2" th:text="${totalClassDegreeMap.totalO}"></td>
-                    <td colspan="2">/</td>
-                    <td colspan="2">100</td>
-                    <td colspan="2" th:text="${totalClassDegreeMap.totalF}"></td>
-                    <td colspan="2">/</td>
-                    <td colspan="6">总评价值</td>
-                </tr>
-            </tbody>
+    <head>
+        <meta charset="UTF-8">
+        <title>$Title$</title>
+    </head>
+    <body>
+        <table border="1px" style="margin: auto; text-align: center">
+            <tr>
+                <th colspan="21">课程达成情况评价</th>
+            </tr>
+            <tr>
+                <th rowspan="2" colspan="3">课程目标</th>
+                <th colspan="6">平时成绩</th>
+                <th colspan="6">试卷成绩</th>
+                <th colspan="6">总评价值</th>
+            </tr>
+            <tr>
+                <th colspan="2">满  分</th>
+                <th colspan="2">绝对值</th>
+                <th colspan="2">评价值</th>
+                <th colspan="2">满 分</th>
+                <th colspan="2">绝对值</th>
+                <th colspan="2">评价值</th>
+                <th colspan="2">      </th>
+            </tr>
+            <tr>
+                <th colspan="3">目标 1</th>
+                <td colspan="2" th:text="${totalClassDegreeMap.target1OFull}"></td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target1O}"></td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target1CommentO}"></td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target1OFull}"></td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target1F}"></td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target1CommentF}"></td>
+                <td colspan="6" th:text="${totalClassDegreeMap.target1TotalComment}"></td>
+            </tr>
+            <tr>
+                <th colspan="3">目标 2</th>
+                <td colspan="2" th:text="${totalClassDegreeMap.target2OFull}"></td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target2O}"></td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target2CommentO}"></td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target2OFull}"></td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target2F}"></td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target2CommentF}"></td></td>
+                <td colspan="6" th:text="${totalClassDegreeMap.target2TotalComment}"></td>
+            </tr>
+            <tr>
+                <th colspan="3">目标 3</th>
+                <td colspan="2" th:text="${totalClassDegreeMap.target3OFull}"></td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target3O}"></td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target3CommentO}"></td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target3OFull}"></td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target3F}"></td>
+                <td colspan="2" th:text="${totalClassDegreeMap.target3CommentF}"></td></td>
+                <td colspan="6" th:text="${totalClassDegreeMap.target3TotalComment}"></td>
+            </tr>
+            <tr>
+                <th colspan="3">合 计</th>
+                <td colspan="2">100</td>
+                <td colspan="2" th:text="${totalClassDegreeMap.totalO}"></td>
+                <td colspan="2">/</td>
+                <td colspan="2">100</td>
+                <td colspan="2" th:text="${totalClassDegreeMap.totalF}"></td>
+                <td colspan="2">/</td>
+                <td colspan="6" th:text="${totalClassDegreeMap.totalComment}"></td>
+            </tr>
         </table>
-    </div>
-
-    <script type="text/javascript">
-        $('.tablelist tbody tr:odd').addClass('odd');
-    </script>
-
-    <div style="display:none">
-        <script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script>
-    </div>
-</body>
+    </body>
 </html>
