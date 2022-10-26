@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -201,6 +202,21 @@ public class ClassDegreeServiceImpl implements ClassDegreeService {
         return insert;
     }
 
+    public ClassDegree getClassDegree(String KName) {
+        //按课程名获得课程号
+        CourseExample courseExample = new CourseExample();
+        CourseExample.Criteria courseExampleCriteria = courseExample.createCriteria();
+        courseExampleCriteria.andKNameLike("%" + KName + "%");
+        List<Course> courseList = courseMapper.selectByExample(courseExample);
+        String KNo = courseList.get(0).getkNo();
+        //按课程号获得课程分数
+        ClassDegreeExample classDegreeExample = new ClassDegreeExample();
+        ClassDegreeExample.Criteria classDegreeExampleCriteria = classDegreeExample.createCriteria();
+        classDegreeExampleCriteria.andKNoEqualTo(KNo);
+        List<ClassDegree> classDegreeList = classDegreeMapper.selectByExample(classDegreeExample);
+        ClassDegree classDegree = classDegreeList.get(0);
+        return classDegree;
+    }
     @Override
     public Map<String, Double> getOrdinaryClassDegree(String KName) {
         //按课程名获得课程号
@@ -220,6 +236,12 @@ public class ClassDegreeServiceImpl implements ClassDegreeService {
         weightExampleCriteria.andKNoEqualTo(KNo);
         List<Weight> weightList = weightMapper.selectByExample(weightExample);
         Weight weight = weightList.get(0);
+        double target1OFull = 20 * weight.getBehaveTarget1Weight() + 20 * weight.getHomeworkTarget1Weight() + 60 * weight.getTestTarget1Weight();
+        target1OFull = Double.parseDouble(String.format("%.2f", target1OFull));
+        double target2OFull = 20 * weight.getBehaveTarget2Weight() + 20 * weight.getHomeworkTarget2Weight() + 60 * weight.getTestTarget2Weight();
+        target2OFull = Double.parseDouble(String.format("%.2f", target2OFull));
+        double target3OFull = 20 * weight.getBehaveTarget3Weight() + 20 * weight.getHomeworkTarget3Weight() + 60 * weight.getTestTarget3Weight();
+        target3OFull = Double.parseDouble(String.format("%.2f", target3OFull));
         Map<String, Double> degreeMap = new HashMap<String, Double>();
         degreeMap.put("behaveFull", 20.00);
         degreeMap.put("homeworkFull", 20.00);
@@ -237,6 +259,9 @@ public class ClassDegreeServiceImpl implements ClassDegreeService {
         degreeMap.put("target2O", classDegree.getdTarget2O());
         degreeMap.put("target3O", classDegree.getdTarget3O());
         degreeMap.put("totalO", classDegree.getdTotalO());
+        degreeMap.put("target1OFull", target1OFull);
+        degreeMap.put("target2OFull", target2OFull);
+        degreeMap.put("target3OFull", target3OFull);
         degreeMap.put("behaveTarget1Weight", weight.getBehaveTarget1Weight());
         degreeMap.put("behaveTarget2Weight", weight.getBehaveTarget2Weight());
         degreeMap.put("behaveTarget3Weight", weight.getBehaveTarget3Weight());
@@ -268,6 +293,12 @@ public class ClassDegreeServiceImpl implements ClassDegreeService {
         weightExampleCriteria.andKNoEqualTo(KNo);
         List<Weight> weightList = weightMapper.selectByExample(weightExample);
         Weight weight = weightList.get(0);
+        double target1FFull = 100 * weight.getFinalTarget1Weight();
+        target1FFull = Double.parseDouble(String.format("%.2f", target1FFull));
+        double target2FFull = 100 * weight.getFinalTarget2Weight();
+        target2FFull = Double.parseDouble(String.format("%.2f", target2FFull));
+        double target3FFull = 100 * weight.getFinalTarget3Weight();
+        target3FFull = Double.parseDouble(String.format("%.2f", target3FFull));
         Map<String, Double> degreeMap = new HashMap<String, Double>();
         degreeMap.put("finalFull", 100.00);
         degreeMap.put("finalAvg", classDegree.getdFinalAvg());
@@ -277,6 +308,9 @@ public class ClassDegreeServiceImpl implements ClassDegreeService {
         degreeMap.put("target2F", classDegree.getdTarget2F());
         degreeMap.put("target3F", classDegree.getdTarget3F());
         degreeMap.put("totalF", classDegree.getdTotalF());
+        degreeMap.put("target1FFull", target1FFull);
+        degreeMap.put("target2FFull", target2FFull);
+        degreeMap.put("target3FFull", target3FFull);
         degreeMap.put("finalTarget1Weight", weight.getFinalTarget1Weight());
         degreeMap.put("finalTarget2Weight", weight.getFinalTarget2Weight());
         degreeMap.put("finalTarget3Weight", weight.getFinalTarget3Weight());
