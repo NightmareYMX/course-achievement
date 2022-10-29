@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -111,6 +110,8 @@ public class ClassDegreeServiceImpl implements ClassDegreeService {
                     target1F + target2F + target3F,
                     null,
                     null,
+                    null,
+                    null,
                     null);
             insert = classDegreeMapper.insert(classDegreeOne);
             return insert;
@@ -194,6 +195,8 @@ public class ClassDegreeServiceImpl implements ClassDegreeService {
                     target2TwoF,
                     target3TwoF,
                     target1TwoF + target2TwoF + target3TwoF,
+                    null,
+                    null,
                     null,
                     null,
                     null);
@@ -450,5 +453,49 @@ public class ClassDegreeServiceImpl implements ClassDegreeService {
         targetWeightMap.put("totalTarget2Weight", weight.getTotalTarget2Weight());
         targetWeightMap.put("totalTarget3Weight", weight.getTotalTarget3Weight());
         return targetWeightMap;
+    }
+
+    @Override
+    public Map<String, String> getKComment(String KName) {
+        //按课程名获得课程号
+        CourseExample courseExample = new CourseExample();
+        CourseExample.Criteria courseExampleCriteria = courseExample.createCriteria();
+        courseExampleCriteria.andKNameLike("%" + KName + "%");
+        List<Course> courseList = courseMapper.selectByExample(courseExample);
+        String KNo = courseList.get(0).getkNo();
+        //按课程号获得课程分数
+        ClassDegreeExample classDegreeExample = new ClassDegreeExample();
+        ClassDegreeExample.Criteria classDegreeExampleCriteria = classDegreeExample.createCriteria();
+        classDegreeExampleCriteria.andKNoEqualTo(KNo);
+        List<ClassDegree> classDegreeList = classDegreeMapper.selectByExample(classDegreeExample);
+        ClassDegree classDegree = classDegreeList.get(0);
+        Map<String, String> commentMap = new HashMap<>();
+        String kAnalyse = classDegree.getkAnalyse();
+        String kImprovement = classDegree.getkImprovement();
+        String kCommentTName = classDegree.getkCommentTName();
+        String kCommentTime = classDegree.getkCommentTime();
+        commentMap.put("kAnalyse", kAnalyse);
+        commentMap.put("kImprovement", kImprovement);
+        commentMap.put("kCommentTName", kCommentTName);
+        commentMap.put("kCommentTime", kCommentTime);
+        return commentMap;
+    }
+
+    @Override
+    public int submitComment(String KName, String kAnalyse, String kImprovement, String kCommentTime) {
+        //按课程名获得课程号
+        CourseExample courseExample = new CourseExample();
+        CourseExample.Criteria courseExampleCriteria = courseExample.createCriteria();
+        courseExampleCriteria.andKNameLike("%" + KName + "%");
+        List<Course> courseList = courseMapper.selectByExample(courseExample);
+        String KNo = courseList.get(0).getkNo();
+        ClassDegreeExample classDegreeExample = new ClassDegreeExample();
+        ClassDegreeExample.Criteria classDegreeExampleCriteria = classDegreeExample.createCriteria();
+        classDegreeExampleCriteria.andKNoEqualTo(KNo);
+        ClassDegree classDegree = new ClassDegree();
+        classDegree.setkAnalyse(kAnalyse);
+        classDegree.setkImprovement(kImprovement);
+        classDegree.setkCommentTime(kCommentTime);
+        return classDegreeMapper.updateByExample(classDegree, classDegreeExample);
     }
 }

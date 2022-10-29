@@ -1,5 +1,6 @@
 package com.school.course_achievement.controller;
 
+import com.alibaba.druid.support.json.JSONUtils;
 import com.school.course_achievement.service.ClassDegreeService;
 import com.school.course_achievement.service.CourseService;
 import com.school.course_achievement.utils.DegreeUtils;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
@@ -85,4 +87,19 @@ public class ClassDegreeController {
         model.addAttribute("targetMap", targetMap);
         return "graduationDegree";
     }
+
+    @RequestMapping(value = "/classDegree/submitComment")
+    @ResponseBody
+    public String submitComment(@Param("KName") String KName, @Param("kAnalyse") String kAnalyse, @Param("kImprovement") String kImprovement, @Param("kCommentTime") String kCommentTime) {
+        int i = classDegreeService.submitComment(KName, kAnalyse, kImprovement, kCommentTime);
+        return JSONUtils.toJSONString(i);
+    }
+
+    @RequestMapping(value = "/classDegree/getComment")
+    @ResponseBody
+    public String getComment(@Param("KName") String KName) {
+        Map<String, String> kCommentMap = classDegreeService.getKComment(KName);
+        return JSONUtils.toJSONString(kCommentMap);
+    }
+
 }
