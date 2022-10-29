@@ -40,20 +40,6 @@
                     $(this).next('ul').slideDown();
                 }
             });
-            // 通过JQuery.ajax() 发送异步请求
-            $.ajax({
-                type:"GET",
-                url:"course/name",
-                data:"",
-                success:function (info) {
-                    data=JSON.parse(info)
-                    console.log(data[0])
-                    $('#courseName1').text(data[0])
-                    $('#courseName2').text(data[1])
-                }
-            })
-
-
         })
     </script>
 
@@ -73,7 +59,7 @@
 
             <li class="menuson1">
                 <div class="title1">
-                    <cite></cite><a href="/index" target="rightFrame" id="courseName1">数据结构</a><i></i>
+                    <cite></cite><a href="/index" target="rightFrame">Hadoop大数据平台与生态系统</a><i></i>
                 </div>
                 <ul class="menuson2">
                     <li class="active"><cite></cite><a href="/course/target?KName=Hadoop" target="rightFrame">课程目标</a><i></i></li>
@@ -88,16 +74,16 @@
 
             <li class="menuson1">
                 <div class="title1">
-                    <cite></cite><a href="/index" target="rightFrame" id="courseName2">算法</a><i></i>
+                    <cite></cite><a href="/course/target?KName=Python" target="rightFrame">Python大数据分析</a><i></i>
                 </div>
                 <ul class="menuson2">
-                    <li class="active"><cite></cite><a href="/index" target="rightFrame">课程目标</a><i></i></li>
-                    <li><cite></cite><a href="/index" target="rightFrame">毕业要求</a><i></i></li>
-                    <li><cite></cite><a href="/index" target="rightFrame">平时成绩</a><i></i></li>
-                    <li><cite></cite><a href="/index" target="rightFrame">期末成绩</a><i></i></li>
-                    <li><cite></cite><a href="/index" target="rightFrame">课程达成情况</a><i></i></li>
-                    <li><cite></cite><a href="/index" target="rightFrame">课程评价</a><i></i></li>
-                    <li><cite></cite><a href="/index" target="rightFrame">指标点达成</a><i></i></li>
+                    <li class="active"><cite></cite><a href="/course/target?KName=Python" target="rightFrame">课程目标</a><i></i></li>
+                    <li><cite></cite><a href="/course/requirement?KName=Python" target="rightFrame">毕业要求</a><i></i></li>
+                    <li><cite></cite><a href="/classDegree/ordinaryDegree?KName=Python" target="rightFrame">平时成绩</a><i></i></li>
+                    <li><cite></cite><a href="/classDegree/finalDegree?KName=Python" target="rightFrame">期末成绩</a><i></i></li>
+                    <li><cite></cite><a href="/classDegree/totalDegree?KName=Python" target="rightFrame">课程达成情况</a><i></i></li>
+                    <li><cite></cite><a href="/classDegree/targetDegree?KName=Python" target="rightFrame">课程评价</a><i></i></li>
+                    <li><cite></cite><a href="/classDegree/graduationDegree?KName=Python" target="rightFrame">指标点达成</a><i></i></li>
                 </ul>
             </li>
         </ul>
