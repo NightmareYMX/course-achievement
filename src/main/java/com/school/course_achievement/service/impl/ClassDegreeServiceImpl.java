@@ -425,6 +425,8 @@ public class ClassDegreeServiceImpl implements ClassDegreeService {
         target3Comment = Double.parseDouble(String.format("%.2f", target3Comment));
         double targetAvgSum = classDegree.getdTarget1Avg() + classDegree.getdTarget2Avg() + classDegree.getdTarget3Avg();
         targetAvgSum = Double.parseDouble(String.format("%.2f", targetAvgSum));
+        double targetCommentSum = DegreeUtils.lowDegree(target1Comment, target2Comment, target3Comment);
+        targetCommentSum = Double.parseDouble(String.format("%.2f", targetCommentSum));
         Map<String, Double> degreeMap = new HashMap<String, Double>();
         degreeMap.put("target1Avg", classDegree.getdTarget1Avg());
         degreeMap.put("target2Avg", classDegree.getdTarget2Avg());
@@ -433,7 +435,7 @@ public class ClassDegreeServiceImpl implements ClassDegreeService {
         degreeMap.put("target1Comment", target1Comment);
         degreeMap.put("target2Comment", target2Comment);
         degreeMap.put("target3Comment", target3Comment);
-        degreeMap.put("targetCommentSum", DegreeUtils.lowDegree(target1Comment, target2Comment, target3Comment));
+        degreeMap.put("targetCommentSum", targetCommentSum);
         return degreeMap;
     }
 
