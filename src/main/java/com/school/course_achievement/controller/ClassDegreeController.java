@@ -132,8 +132,6 @@ public class ClassDegreeController {
         map.put("person", "JueYue");
         map.put("me","JueYue");
         map.put("date", "2015-01-03");
-        System.out.println("----------------------------------------------------------------------------------------------------------");
-        System.out.println(url);
         try {
             XWPFDocument doc = WordExportUtil.exportWord07(url, map);
             ServletOutputStream outputStream = response.getOutputStream();
