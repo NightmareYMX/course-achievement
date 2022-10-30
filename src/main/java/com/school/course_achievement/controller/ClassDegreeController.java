@@ -125,7 +125,7 @@ public class ClassDegreeController {
     public void getWord(@Param("KName") String KName, MultipartFile file, HttpServletResponse response) {
         String template = KName + ".docx";
         String fileName = KName + "achievement-report" + ".docx";
-        String url = String.format("D:\\Java\\project\\course_achievement\\src\\main\\resources\\templates\\%s", template);
+        String url = String.format("%s\\src\\main\\resources\\templates\\%s", System.getProperty("user.dir"), template);
         Map<String, Object> map = new HashMap<String, Object>();
         //未完成
         map.put("department", "Easypoi");
