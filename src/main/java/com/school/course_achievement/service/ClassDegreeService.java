@@ -61,8 +61,24 @@ public interface ClassDegreeService {
      * @param KName
      * @param kAnalyse
      * @param kImprovement
+     * @param kCommentTName
      * @param kCommentTime
      * @return
      */
-    public int submitComment(String KName, String kAnalyse, String kImprovement, String kCommentTime);
+    public int submitComment(String KName, String kAnalyse, String kImprovement, String kCommentTName, String kCommentTime);
+
+    /**
+     *
+     * @param KName
+     * @param kSuggestion
+     * @return
+     */
+    public int submitSuggestion(String KName, String kSuggestion);
+
+    /**
+     *
+     * @param KName
+     * @return
+     */
+    public Map<String, String> getKSuggestion(String KName);
 }

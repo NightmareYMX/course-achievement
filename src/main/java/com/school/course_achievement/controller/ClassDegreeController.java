@@ -89,10 +89,10 @@ public class ClassDegreeController {
     }
 
     @RequestMapping(value = "/classDegree/submitComment")
-    @ResponseBody
-    public String submitComment(@Param("KName") String KName, @Param("kAnalyse") String kAnalyse, @Param("kImprovement") String kImprovement, @Param("kCommentTime") String kCommentTime) {
-        int i = classDegreeService.submitComment(KName, kAnalyse, kImprovement, kCommentTime);
-        return JSONUtils.toJSONString(i);
+    public String submitComment(@Param("KName") String KName, @Param("kAnalyse") String kAnalyse, @Param("kImprovement") String kImprovement, @Param("kCommentTName") String kCommentTName, @Param("kCommentTime") String kCommentTime, Model model) {
+        int i = classDegreeService.submitComment(KName, kAnalyse, kImprovement, kCommentTName, kCommentTime);
+        model.addAttribute("submitCommentIsSuccess", i);
+        return "comment";
     }
 
     @RequestMapping(value = "/classDegree/getComment")
@@ -102,4 +102,17 @@ public class ClassDegreeController {
         return JSONUtils.toJSONString(kCommentMap);
     }
 
+    @RequestMapping(value = "/classDegree/submitComment")
+    public String submitSuggestion(@Param("KName") String KName,@Param("kSuggestion") String kSuggestion, Model model) {
+        int i = classDegreeService.submitSuggestion(KName, kSuggestion);
+        model.addAttribute("submitSuggestionIsSuccess", i);
+        return "suggestion";
+    }
+
+    @RequestMapping(value = "/classDegree/getComment")
+    @ResponseBody
+    public String getSuggestion(@Param("KName") String KName) {
+        Map<String, String> kSuggestionMap = classDegreeService.getKSuggestion(KName);
+        return JSONUtils.toJSONString(kSuggestionMap);
+    }
 }
