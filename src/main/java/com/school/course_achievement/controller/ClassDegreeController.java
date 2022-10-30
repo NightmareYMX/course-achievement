@@ -1,16 +1,21 @@
 package com.school.course_achievement.controller;
 
+import cn.afterturn.easypoi.word.WordExportUtil;
 import com.alibaba.druid.support.json.JSONUtils;
 import com.school.course_achievement.service.ClassDegreeService;
 import com.school.course_achievement.service.CourseService;
 import com.school.course_achievement.utils.DegreeUtils;
 import org.apache.ibatis.annotations.Param;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
@@ -88,31 +93,56 @@ public class ClassDegreeController {
         return "graduationDegree";
     }
 
-    @RequestMapping(value = "/classDegree/submitComment")
-    public String submitComment(@Param("KName") String KName, @Param("kAnalyse") String kAnalyse, @Param("kImprovement") String kImprovement, @Param("kCommentTName") String kCommentTName, @Param("kCommentTime") String kCommentTime, Model model) {
-        int i = classDegreeService.submitComment(KName, kAnalyse, kImprovement, kCommentTName, kCommentTime);
-        model.addAttribute("submitCommentIsSuccess", i);
-        return "comment";
-    }
+//    @RequestMapping(value = "/classDegree/submitComment")
+//    public String submitComment(@Param("KName") String KName, @Param("kAnalyse") String kAnalyse, @Param("kImprovement") String kImprovement, @Param("kCommentTName") String kCommentTName, @Param("kCommentTime") String kCommentTime, Model model) {
+//        int i = classDegreeService.submitComment(KName, kAnalyse, kImprovement, kCommentTName, kCommentTime);
+//        model.addAttribute("submitCommentIsSuccess", i);
+//        return "comment";
+//    }
 
-    @RequestMapping(value = "/classDegree/getComment")
-    @ResponseBody
-    public String getComment(@Param("KName") String KName) {
-        Map<String, String> kCommentMap = classDegreeService.getKComment(KName);
-        return JSONUtils.toJSONString(kCommentMap);
-    }
+//    @RequestMapping(value = "/classDegree/getComment")
+//    @ResponseBody
+//    public String getComment(@Param("KName") String KName) {
+//        Map<String, String> kCommentMap = classDegreeService.getKComment(KName);
+//        return JSONUtils.toJSONString(kCommentMap);
+//    }
 
-    @RequestMapping(value = "/classDegree/submitComment")
-    public String submitSuggestion(@Param("KName") String KName,@Param("kSuggestion") String kSuggestion, Model model) {
-        int i = classDegreeService.submitSuggestion(KName, kSuggestion);
-        model.addAttribute("submitSuggestionIsSuccess", i);
-        return "suggestion";
-    }
+//    @RequestMapping(value = "/classDegree/submitComment")
+//    public String submitSuggestion(@Param("KName") String KName,@Param("kSuggestion") String kSuggestion, Model model) {
+//        int i = classDegreeService.submitSuggestion(KName, kSuggestion);
+//        model.addAttribute("submitSuggestionIsSuccess", i);
+//        return "suggestion";
+//    }
 
-    @RequestMapping(value = "/classDegree/getComment")
-    @ResponseBody
-    public String getSuggestion(@Param("KName") String KName) {
-        Map<String, String> kSuggestionMap = classDegreeService.getKSuggestion(KName);
-        return JSONUtils.toJSONString(kSuggestionMap);
+//    @RequestMapping(value = "/classDegree/getComment")
+//    @ResponseBody
+//    public String getSuggestion(@Param("KName") String KName) {
+//        Map<String, String> kSuggestionMap = classDegreeService.getKSuggestion(KName);
+//        return JSONUtils.toJSONString(kSuggestionMap);
+//    }
+
+    @RequestMapping(value = "/classDegree/getWord")
+    public void getWord(@Param("KName") String KName, MultipartFile file, HttpServletResponse response) {
+        String template = KName + ".docx";
+        String fileName = KName + "achievement-report" + ".docx";
+        String url = String.format("D:\\Java\\project\\course_achievement\\src\\main\\resources\\templates\\%s", template);
+        Map<String, Object> map = new HashMap<String, Object>();
+        //未完成
+        map.put("department", "Easypoi");
+        map.put("person", "JueYue");
+        map.put("me","JueYue");
+        map.put("date", "2015-01-03");
+        System.out.println("----------------------------------------------------------------------------------------------------------");
+        System.out.println(url);
+        try {
+            XWPFDocument doc = WordExportUtil.exportWord07(url, map);
+            ServletOutputStream outputStream = response.getOutputStream();
+            response.setHeader("Content-disposition", String.format("attachment; filename=%s", fileName));
+            doc.write(outputStream);
+            outputStream.close();
+            doc.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
