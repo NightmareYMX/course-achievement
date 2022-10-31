@@ -11,7 +11,7 @@
  Target Server Version : 50740
  File Encoding         : 65001
 
- Date: 29/10/2022 21:51:23
+ Date: 31/10/2022 09:25:13
 */
 
 SET NAMES utf8mb4;
@@ -51,14 +51,14 @@ CREATE TABLE `class_degree`  (
   `k_improvement` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `k_suggestion` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `k_comment_t_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `k_comment_time` varchar(0) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL
+  `k_comment_time` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of class_degree
 -- ----------------------------
-INSERT INTO `class_degree` VALUES ('25001', '201', 16.94, 14.83, 18.99, 18.15, 16.75, 19.04, 54.04, 48.79, 57.89, 93.16, 84.10, 97.84, 4.4, 4.5, 4.4, 16.65, 32.61, 39.87, 89.13, 27.95, 37.26, 27.95, 93.16, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `class_degree` VALUES ('25002', '201', 16.63, 14.83, 19.04, 16.19, 14.83, 17.50, 50.60, 35.60, 60.00, 86.48, 66.20, 100.00, 4.2, 4.4, 4.6, 15.37, 30.79, 37.26, 83.42, 25.95, 34.59, 25.95, 86.48, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `class_degree` VALUES ('25001', '201', 16.94, 14.83, 18.99, 18.15, 16.75, 19.04, 54.04, 48.79, 57.89, 93.16, 84.10, 97.84, 4.4, 4.5, 4.4, 16.65, 32.61, 39.87, 89.13, 27.95, 37.26, 27.95, 93.16, '无', '无', '无', '无', '无');
+INSERT INTO `class_degree` VALUES ('25002', '201', 16.63, 14.83, 19.04, 16.19, 14.83, 17.50, 50.60, 35.60, 60.00, 86.48, 66.20, 100.00, 4.2, 4.4, 4.6, 15.37, 30.79, 37.26, 83.42, 25.95, 34.59, 25.95, 86.48, '无', '无', '无', '无', '无');
 
 -- ----------------------------
 -- Table structure for course

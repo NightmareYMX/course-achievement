@@ -134,7 +134,7 @@ public class ClassDegreeController {
     }
 
     @RequestMapping(value = "/classDegree/getWord")
-    public void getWord(@Param("KName") String KName, MultipartFile file, HttpServletResponse response) {
+    public void getWord(@Param("KName") String KName, HttpServletResponse response) {
         CourseExample courseExample = new CourseExample();
         CourseExample.Criteria courseExampleCriteria = courseExample.createCriteria();
         courseExampleCriteria.andKNameLike("%" + KName + "%");
@@ -144,7 +144,10 @@ public class ClassDegreeController {
         TeacherExample.Criteria teacherExampleCriteria = teacherExample.createCriteria();
         teacherExampleCriteria.andTNoEqualTo(tNo);
         List<Teacher> teacherList = teacherMapper.selectByExample(teacherExample);
-        String tName = teacherList.get(0).gettName();
+        String tName = null;
+        if (!teacherList.isEmpty()) {
+            tName = teacherList.get(0).gettName();
+        }
         Map<String, Double> ordinaryClassDegreeMap = classDegreeService.getOrdinaryClassDegree(KName);
         Map<String, Double> finalClassDegreeMap = classDegreeService.getFinalClassDegree(KName);
         Map<String, Double> totalClassDegreeMap = classDegreeService.getTotalClassDegree(KName);
@@ -177,17 +180,20 @@ public class ClassDegreeController {
         String template = KName + ".docx";
         String fileName = KName + "achievement-report" + ".docx";
         String url = String.format("%s\\src\\main\\resources\\templates\\%s", System.getProperty("user.dir"), template);
-        Map<String, Object> map = new HashMap<String, Object>();
-        map.put("CNo", "201");
+        Map<String, Object> map = new HashMap<>();
+        String courseTarget1 = courseTargetList.get(0);
+        String courseTarget2 = courseTargetList.get(1);
+        String courseTarget3 = courseTargetList.get(2);
+        map.put("cNo", "201");
         map.put("tName", tName);
-        map.put("courseTarget1", courseTargetList.get(0));
-        map.put("courseTarget2", courseTargetList.get(1));
-        map.put("courseTarget3", courseTargetList.get(2));
-        map.put("courseTargetPoint1Content", courseTargetPointList.get(0).get("rContent"));
+        map.put("courseTarget1", courseTarget1);
+        map.put("courseTarget2", courseTarget2);
+        map.put("courseTarget3", courseTarget3);
+        map.put("rContent1", courseTargetPointList.get(0).get("rContent"));
         map.put("courseTargetPoint1", courseTargetPointList.get(0).get("pContent"));
-        map.put("courseTargetPoint2Content", courseTargetPointList.get(1).get("rContent"));
+        map.put("rContent2", courseTargetPointList.get(1).get("rContent"));
         map.put("courseTargetPoint2", courseTargetPointList.get(1).get("pContent"));
-        map.put("courseTargetPoint3Content", courseTargetPointList.get(2).get("rContent"));
+        map.put("rContent3", courseTargetPointList.get(2).get("rContent"));
         map.put("courseTargetPoint3", courseTargetPointList.get(2).get("pContent"));
         map.put("behaveFull", ordinaryClassDegreeMap.get("behaveFull"));
         map.put("homeworkFull", ordinaryClassDegreeMap.get("homeworkFull"));
@@ -244,6 +250,7 @@ public class ClassDegreeController {
         map.put("target1Avg", targetDegreeMap.get("target1Avg"));
         map.put("target2Avg", targetDegreeMap.get("target2Avg"));
         map.put("target3Avg", targetDegreeMap.get("target3Avg"));
+        map.put("targetAvgSum", targetDegreeMap.get("targetAvgSum"));
         map.put("target1Comment", targetDegreeMap.get("target1Comment"));
         map.put("target2Comment", targetDegreeMap.get("target2Comment"));
         map.put("target3Comment", targetDegreeMap.get("target3Comment"));
