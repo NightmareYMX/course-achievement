@@ -106,7 +106,7 @@ public class ClassDegreeController {
     public String submitComment(@Param("KName") String KName, @Param("kAnalyse") String kAnalyse, @Param("kImprovement") String kImprovement, @Param("kCommentTName") String kCommentTName, @Param("kCommentTime") String kCommentTime, Model model) {
         int i = classDegreeService.submitComment(KName, kAnalyse, kImprovement, kCommentTName, kCommentTime);
         model.addAttribute("submitCommentIsSuccess", i);
-        return "comment";
+        return "redirect:comment";
     }
 
     @RequestMapping(value = "/classDegree/getComment")
@@ -120,7 +120,7 @@ public class ClassDegreeController {
     public String submitSuggestion(@Param("KName") String KName,@Param("kSuggestion") String kSuggestion, Model model) {
         int i = classDegreeService.submitSuggestion(KName, kSuggestion);
         model.addAttribute("submitSuggestionIsSuccess", i);
-        return "suggestion";
+        return "redirect:suggestion";
     }
 
     @RequestMapping(value = "/classDegree/suggestion")
