@@ -1,7 +1,6 @@
 package com.school.course_achievement.controller;
 
 import cn.afterturn.easypoi.word.WordExportUtil;
-import com.alibaba.druid.support.json.JSONUtils;
 import com.school.course_achievement.mapper.CourseMapper;
 import com.school.course_achievement.mapper.TeacherMapper;
 import com.school.course_achievement.pojo.Course;
@@ -17,8 +16,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
@@ -105,12 +102,12 @@ public class ClassDegreeController {
         return "graduationDegree";
     }
 
-//    @RequestMapping(value = "/classDegree/submitComment")
-//    public String submitComment(@Param("KName") String KName, @Param("kAnalyse") String kAnalyse, @Param("kImprovement") String kImprovement, @Param("kCommentTName") String kCommentTName, @Param("kCommentTime") String kCommentTime, Model model) {
-//        int i = classDegreeService.submitComment(KName, kAnalyse, kImprovement, kCommentTName, kCommentTime);
-//        model.addAttribute("submitCommentIsSuccess", i);
-//        return "comment";
-//    }
+    @RequestMapping(value = "/classDegree/submitComment")
+    public String submitComment(@Param("KName") String KName, @Param("kAnalyse") String kAnalyse, @Param("kImprovement") String kImprovement, @Param("kCommentTName") String kCommentTName, @Param("kCommentTime") String kCommentTime, Model model) {
+        int i = classDegreeService.submitComment(KName, kAnalyse, kImprovement, kCommentTName, kCommentTime);
+        model.addAttribute("submitCommentIsSuccess", i);
+        return "comment";
+    }
 
     @RequestMapping(value = "/classDegree/getComment")
     public String getComment(@Param("KName") String KName, Model model) {
@@ -119,12 +116,12 @@ public class ClassDegreeController {
         return "comment";
     }
 
-//    @RequestMapping(value = "/classDegree/submitComment")
-//    public String submitSuggestion(@Param("KName") String KName,@Param("kSuggestion") String kSuggestion, Model model) {
-//        int i = classDegreeService.submitSuggestion(KName, kSuggestion);
-//        model.addAttribute("submitSuggestionIsSuccess", i);
-//        return "suggestion";
-//    }
+    @RequestMapping(value = "/classDegree/submitSuggestion")
+    public String submitSuggestion(@Param("KName") String KName,@Param("kSuggestion") String kSuggestion, Model model) {
+        int i = classDegreeService.submitSuggestion(KName, kSuggestion);
+        model.addAttribute("submitSuggestionIsSuccess", i);
+        return "suggestion";
+    }
 
     @RequestMapping(value = "/classDegree/suggestion")
     public String getSuggestion(@Param("KName") String KName, Model model) {
