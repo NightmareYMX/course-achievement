@@ -178,7 +178,7 @@ public class ClassDegreeController {
         targetMap.put("point2", coursePoint.get(1));
         targetMap.put("point3", coursePoint.get(2));
         String template = KName + ".docx";
-        String fileName = KName + "achievement-report" + ".docx";
+        String fileName = KName + "-achievement-report" + ".docx";
         String url = String.format("%s\\src\\main\\resources\\templates\\%s", System.getProperty("user.dir"), template);
         Map<String, Object> map = new HashMap<>();
         String courseTarget1 = courseTargetList.get(0);
