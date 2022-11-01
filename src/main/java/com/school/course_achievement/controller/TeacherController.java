@@ -24,6 +24,7 @@ public class TeacherController {
             return "login";
         } else {
             httpSession.setAttribute("teacher", teacherList.get(0));
+            httpSession.setAttribute("msg", "");
             return "main";
         }
     }

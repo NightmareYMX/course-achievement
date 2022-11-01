@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>欢迎登录课程目标达成情况评价系统</title>
@@ -16,7 +16,7 @@
             })
         });
     </script>
-
+    <link rel="shortcut icon" href="/favicon.ico"/>
 </head>
 
 <body style="background-color:#1c77ac; background-image:url(/static/images/light.png); background-repeat:no-repeat; background-position:center top; overflow:hidden;">
@@ -30,9 +30,6 @@
 
 <div class="logintop">
     <span>欢迎登录课程目标达成情况评价系统</span>
-    <ul>
-        <li><a href="#">回首页</a></li>
-    </ul>
 </div>
 
 <div class="loginbody">
@@ -42,7 +39,7 @@
     <div class="loginbox">
         <form action="/teacherLogin" method="post">
             <ul>
-                <li><input name="username" type="text" class="loginuser" placeholder="教职工号"/></li>
+                <li><span th:text="${session.msg}"></span><input name="username" type="text" class="loginuser" placeholder="教职工号"/></li>
                 <li><input name="password" type="text" class="loginpwd" placeholder="密码"/></li>
                 <li><input name="login" type="submit" class="loginbtn" value="登录"/></li>
             </ul>

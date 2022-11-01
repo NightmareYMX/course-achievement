@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>分数系数</title>
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="/static/js/jquery.js"></script>
+</head>
+
+
+<body>
+
+<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+        <li><a href="/index">首页</a></li>
+        <li><a href="/weight/getAllWeight">分数系数</a></li>
+    </ul>
+</div>
+
+<div class="rightinfo">
+
+
+    <table class="tablelist" th:each="weight : ${weightList}">
+        <thead>
+        <th colspan="5" th:text="'课程号:&nbsp;&nbsp;' + ${weight.kNo}"></th>
+        <tr>
+            <th>权重类别</th>
+            <th>目标 1</th>
+            <th>目标 2</th>
+            <th>目标 3</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>课堂表现</th>
+            <td th:text="${weight.behaveTarget1Weight}"></td>
+            <td th:text="${weight.behaveTarget2Weight}"></td>
+            <td th:text="${weight.behaveTarget3Weight}"></td>
+            <td rowspan="5"><a class="tablelink" th:href="@{'/weight/toUpdate/'+${weight.kNo}}">修 改</a></td>
+        </tr>
+        <tr>
+            <th>课后作业</th>
+            <td th:text="${weight.homeworkTarget1Weight}"></td>
+            <td th:text="${weight.homeworkTarget2Weight}"></td>
+            <td th:text="${weight.homeworkTarget3Weight}"></td>
+        </tr>
+        <tr>
+            <th>实验</th>
+            <td th:text="${weight.testTarget1Weight}"></td>
+            <td th:text="${weight.testTarget2Weight}"></td>
+            <td th:text="${weight.testTarget3Weight}"></td>
+        </tr>
+        <tr>
+            <th> 大作业 </th>
+            <td th:text="${weight.finalTarget1Weight}"></td>
+            <td th:text="${weight.finalTarget2Weight}"></td>
+            <td th:text="${weight.finalTarget3Weight}"></td>
+        </tr>
+        <tr>
+            <th>要求指标点</th>
+            <td th:text="${weight.totalTarget1Weight}"></td>
+            <td th:text="${weight.totalTarget2Weight}"></td>
+            <td th:text="${weight.totalTarget3Weight}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+
+
+</div>
+
+<script type="text/javascript">
+    $('.tablelist tbody tr:odd').addClass('odd');
+</script>
+
+<div style="display:none">
+    <script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script>
+</div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>分数系数</title>
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="/static/js/jquery.js"></script>
+
+
+</head>
+
+
+<body>
+
+<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+        <li><a href="/index">首页</a></li>
+        <li><a href="/weight/getAllWeight">分数系数</a></li>
+    </ul>
+</div>
+
+<div class="rightinfo">
+
+<form th:action="@{/weight/update}" method="post">
+    <input type="hidden" name="_method" value="put">
+    <input type="hidden" name="id" th:value="${weight.kNo}">
+    <table class="tablelist">
+        <thead>
+        <tr>
+            <th>权重类别</th>
+            <th>目标 1</th>
+            <th>目标 2</th>
+            <th>目标 3</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>课堂表现</th>
+            <td>
+                <input type="text" name="behaveTarget1Weight" th:value="${weight.behaveTarget1Weight}">
+            </td>
+            <td>
+                <input type="text" name="behaveTarget2Weight" th:value="${weight.behaveTarget2Weight}">
+            </td>
+            <td>
+                <input type="text" name="behaveTarget3Weight" th:value="${weight.behaveTarget3Weight}">
+            </td>
+        </tr>
+        <tr>
+            <th>课后作业</th>
+            <td>
+                <input type="text" name="homeworkTarget1Weight" th:value="${weight.homeworkTarget1Weight}">
+            </td>
+            <td>
+                <input type="text" name="homeworkTarget2Weight" th:value="${weight.homeworkTarget2Weight}">
+            </td>
+            <td>
+                <input type="text" name="homeworkTarget3Weight" th:value="${weight.homeworkTarget3Weight}">
+            </td>
+        </tr>
+        <tr>
+            <th>实验</th>
+            <td>
+                <input type="text" name="testTarget1Weight" th:value="${weight.testTarget1Weight}">
+            </td>
+            <td>
+                <input type="text" name="testTarget2Weight" th:value="${weight.testTarget2Weight}">
+            </td>
+            <td>
+                <input type="text" name="testTarget3Weight" th:value="${weight.testTarget3Weight}">
+            </td>
+        </tr>
+        <tr>
+            <th> 大作业 </th>
+            <td>
+                <input type="text" name="finalTarget1Weight" th:value="${weight.finalTarget1Weight}">
+            </td>
+            <td>
+                <input type="text" name="finalTarget2Weight" th:value="${weight.finalTarget2Weight}">
+            </td>
+            <td>
+                <input type="text" name="finalTarget3Weight" th:value="${weight.finalTarget3Weight}">
+            </td>
+        </tr>
+        <tr>
+            <th>要求指标点</th>
+            <td>
+                <input type="text" name="totalTarget1Weight" th:value="${weight.totalTarget1Weight}">
+            </td>
+            <td>
+                <input type="text" name="totalTarget2Weight" th:value="${weight.totalTarget2Weight}">
+            </td>
+            <td>
+                <input type="text" name="totalTarget3Weight" th:value="${weight.totalTarget3Weight}">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <input class="click" type="submit" value="update">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+
+
+
+</div>
+
+<script type="text/javascript">
+    $('.tablelist tbody tr:odd').addClass('odd');
+</script>
+
+<div style="display:none">
+    <script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script>
+</div>
+</body>
+</html>
