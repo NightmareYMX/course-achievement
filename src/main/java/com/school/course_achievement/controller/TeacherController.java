@@ -23,7 +23,7 @@ public class TeacherController {
         if (teacherList.isEmpty()) {
             return "login";
         } else {
-            httpSession.setAttribute("tName", teacherList.get(0).gettName());
+            httpSession.setAttribute("teacher", teacherList.get(0));
             return "main";
         }
     }

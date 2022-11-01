@@ -9,7 +9,7 @@
        http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!-- 包扫描 -->
-    <context:component-scan base-package="com.school.course_achievement.controller"></context:component-scan>
+    <context:component-scan base-package="com.school.course_achievement.controller"/>
 
 
     <!-- 配置 Thymeleaf 视图解析器 配置完毕后可以使用MVC的方式完成视图渲染和跳转了 -->
@@ -38,8 +38,6 @@
     <!-- 处理静态资源 -->
     <mvc:default-servlet-handler />
 
-
-
     <!-- 开启注解驱动
          @ControllerAdvice
          @ResponseBody
@@ -49,11 +47,21 @@
     <mvc:annotation-driven>
         <mvc:message-converters>
             <bean class="org.springframework.http.converter.StringHttpMessageConverter">
-                <constructor-arg name="defaultCharset" value="UTF-8"></constructor-arg>
+                <constructor-arg name="defaultCharset" value="UTF-8"/>
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
 
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!-- 拦截所有的页面 -->
+            <mvc:mapping path="/**"/>
+            <!-- mvc:exclude-mapping是另外一种拦截，它可以在你后来的测试中对某个页面进行不拦截，这样就不用在
+                LoginInterceptor的preHandler方法里面获取不拦截的请求uri地址了(优选) -->
+            <mvc:exclude-mapping path="/teacherLogin"/>
+            <bean class="com.school.course_achievement.interceptor.LoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
     <!-- 配置视图控制器 -->
-    <mvc:view-controller path="/" view-name="login"></mvc:view-controller>
+    <mvc:view-controller path="/" view-name="login"/>
 </beans>
