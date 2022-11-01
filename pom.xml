@@ -167,6 +167,7 @@
                 <configuration>
                     <!-- 配置Tomcat监听端口 -->
                     <port>8080</port>
+                    <uriEncoding>UTF-8</uriEncoding>
                     <!-- 配置项目的访问路径(Application Context) -->
                     <path>/</path>
                 </configuration>
