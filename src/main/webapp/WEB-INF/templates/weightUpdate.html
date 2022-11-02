@@ -6,7 +6,26 @@
     <title>分数系数</title>
     <link href="/static/css/style.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="/static/js/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".click").click(function () {
+                $(".tip").fadeIn(200);
+            });
 
+            $(".tiptop a").click(function () {
+                $(".tip").fadeOut(200);
+            });
+
+            $(".sure").click(function () {
+                $(".tip").fadeOut(100);
+            });
+
+            $(".cancel").click(function () {
+                $(".tip").fadeOut(100);
+            });
+
+        });
+    </script>
 
 </head>
 
@@ -18,6 +37,7 @@
     <ul class="placeul">
         <li><a href="/index">首页</a></li>
         <li><a href="/weight/getAllWeight">分数系数</a></li>
+        <li><a href="/weight/update">修改系数</a></li>
     </ul>
 </div>
 
@@ -25,7 +45,7 @@
 
 <form th:action="@{/weight/update}" method="post">
     <input type="hidden" name="_method" value="put">
-    <input type="hidden" name="id" th:value="${weight.kNo}">
+    <input type="hidden" name="kNo" th:value="${weight.kNo}">
     <table class="tablelist">
         <thead>
         <tr>
@@ -98,13 +118,32 @@
         </tr>
         <tr>
             <td colspan="5">
-                <input class="click" type="submit" value="update">
+                <div style="display:inline-block; *display:inline; zoom:1;">
+                    <ul class="toolbar">
+                        <li class="click"><span><img src="/static/images/t02.png"/></span>修改</li>
+                    </ul>
+                </div>
             </td>
         </tr>
         </tbody>
     </table>
-</form>
+    <div class="tip">
+        <div class="tiptop"><span>提示信息</span><a></a></div>
 
+        <div class="tipinfo">
+            <span><img src="/static/images/ticon.png"/></span>
+            <div class="tipright">
+                <p>是否确认对信息的修改 ？</p>
+                <cite>如果是请点击确定按钮 ，否则请点取消。</cite>
+            </div>
+        </div>
+
+        <div class="tipbtn">
+            <input name="update" type="submit" class="sure" value="确定"/>&nbsp;
+            <input name="cancel" type="button" class="cancel" value="取消"/>
+        </div>
+    </div>
+</form>
 
 
 </div>

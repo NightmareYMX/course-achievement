@@ -35,6 +35,6 @@ public class weightController {
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
     public String update(Weight weight) {
         weightService.updateWeight(weight);
-        return "redirect:/weight";
+        return "redirect:/weight/getAllWeight";
     }
 }
