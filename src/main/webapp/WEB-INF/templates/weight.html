@@ -15,7 +15,7 @@
     <span>位置：</span>
     <ul class="placeul">
         <li><a href="/index">首页</a></li>
-        <li><a href="/weight/getAllWeight">分数系数</a></li>
+        <li><a href="/weight/getAllWeight/1">分数系数</a></li>
     </ul>
 </div>
 
@@ -68,7 +68,40 @@
         </tbody>
     </table>
 
-
+    <div class="pagin" style="text-align: center">
+        <ul class="paginList">
+            <li class="paginItem">
+                <span th:if="${page.hasPreviousPage}">
+                    <a th:href="@{/weight/getAllWeight/1}">首页</a>
+                </span>
+            </li>
+            <li class="paginItem">
+                <span th:if="${page.hasPreviousPage}" class="pagepre">
+                    <a th:href="@{'/weight/getAllWeight/'+${page.prePage}}"></a>
+                </span>
+            </li>
+            <li class="paginItem">
+                <span th:each="num : ${page.navigatepageNums}">
+                    <a th:if="${page.pageNum==num}" th:href="@{'/weight/getAllWeight/'+${num}}" th:text="'['+${num}+']'" style="color:red;"></a>
+                </span>
+            </li>
+            <li class="paginItem">
+                <span th:each="num : ${page.navigatepageNums}">
+                    <a th:if="${page.pageNum!=num}" th:href="@{'/weight/getAllWeight/'+${num}}" th:text="${num} "></a>
+                </span>
+            </li>
+            <li class="paginItem">
+                <span th:if="${page.hasNextPage}" class="pagenxt">
+                    <a th:href="@{'/weight/getAllWeight/'+${page.nextPage}}"></a>
+                </span>
+            </li>
+            <li class="paginItem">
+                <span th:if="${page.hasNextPage}">
+                    <a th:href="@{'/weight/getAllWeight/'+${page.pages}}">末页</a>
+                </span>
+            </li>
+        </ul>
+    </div>
 
 </div>
 

@@ -6,9 +6,6 @@
     <title>无标题文档</title>
     <link href="/static/css/style.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="/static/js/jquery.js"></script>
-
-
-
 </head>
 
 
@@ -18,7 +15,7 @@
     <span>位置：</span>
     <ul class="placeul">
         <li><a href="/index">首页</a></li>
-        <li><a href="/word">文件导出</a></li>
+        <li><a href="/word/1">文件导出</a></li>
     </ul>
 </div>
 
@@ -33,24 +30,44 @@
         <tbody>
         <tr th:each="course : ${wordList}">
             <td th:text="${course.kName}"></td>
-            <td><a th:href="@{'classDegree/getWord/'+${course.kName}}" class="tablelink">导出</a></td>
+            <td><a th:href="@{'/classDegree/getWord/'+${course.kName}}" class="tablelink">导出</a></td>
         </tr>
         </tbody>
     </table>
 
 
-    <div class="pagin">
-        <div class="message">共<i class="blue">1256</i>条记录，当前显示第&nbsp;<i class="blue">2&nbsp;</i>页</div>
+    <div class="pagin" style="text-align: center">
         <ul class="paginList">
-            <li class="paginItem"><a href="javascript:;"><span class="pagepre"></span></a></li>
-            <li class="paginItem"><a href="javascript:;">1</a></li>
-            <li class="paginItem current"><a href="javascript:;">2</a></li>
-            <li class="paginItem"><a href="javascript:;">3</a></li>
-            <li class="paginItem"><a href="javascript:;">4</a></li>
-            <li class="paginItem"><a href="javascript:;">5</a></li>
-            <li class="paginItem more"><a href="javascript:;">...</a></li>
-            <li class="paginItem"><a href="javascript:;">10</a></li>
-            <li class="paginItem"><a href="javascript:;"><span class="pagenxt"></span></a></li>
+            <li class="paginItem">
+                <span th:if="${page.hasPreviousPage}">
+                    <a th:href="@{/word/1}">首页</a>
+                </span>
+            </li>
+            <li class="paginItem">
+                <span th:if="${page.hasPreviousPage}" class="pagepre">
+                    <a th:href="@{'/word/'+${page.prePage}}"></a>
+                </span>
+            </li>
+            <li class="paginItem">
+                <span th:each="num : ${page.navigatepageNums}">
+                    <a th:if="${page.pageNum==num}" th:href="@{'/word/'+${num}}" th:text="'['+${num}+']'" style="color:red;"></a>
+                </span>
+            </li>
+            <li class="paginItem">
+                <span th:each="num : ${page.navigatepageNums}">
+                    <a th:if="${page.pageNum!=num}" th:href="@{'/word/'+${num}}" th:text="${num} "></a>
+                </span>
+            </li>
+            <li class="paginItem">
+                <span th:if="${page.hasNextPage}" class="pagenxt">
+                    <a th:href="@{'/word/'+${page.nextPage}}"></a>
+                </span>
+            </li>
+            <li class="paginItem">
+                <span th:if="${page.hasNextPage}">
+                    <a th:href="@{'/word/'+${page.pages}}">末页</a>
+                </span>
+            </li>
         </ul>
     </div>
 

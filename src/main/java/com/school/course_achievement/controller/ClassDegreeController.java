@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.UnsupportedEncodingException;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -133,7 +133,7 @@ public class ClassDegreeController {
     }
 
     @RequestMapping(value = "/classDegree/getWord/{KName}")
-    public void getWord(@PathVariable("KName") String KName, HttpServletResponse response) throws UnsupportedEncodingException {
+    public void getWord(@PathVariable("KName") String KName, HttpServletResponse response) throws IOException {
         CourseExample courseExample = new CourseExample();
         CourseExample.Criteria courseExampleCriteria = courseExample.createCriteria();
         courseExampleCriteria.andKNameLike("%" + KName + "%");
@@ -178,7 +178,7 @@ public class ClassDegreeController {
         targetMap.put("point3", coursePoint.get(2));
         String template = KName + ".docx";
         String fileName = KName + "-achievement-report" + ".docx";
-        String header = String.format("attachment; filename=%s", java.net.URLEncoder.encode(fileName, "UTF-8"));
+        String header = String.format("attachment; filename=%s", fileName);
         String url = String.format("%s\\src\\main\\resources\\templates\\%s", System.getProperty("user.dir"), template);
         Map<String, Object> map = new HashMap<>();
         String courseTarget1 = courseTargetList.get(0);

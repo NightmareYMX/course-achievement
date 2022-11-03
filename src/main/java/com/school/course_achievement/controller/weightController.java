@@ -20,9 +20,9 @@ public class weightController {
     @Autowired
     WeightService weightService;
 
-    @RequestMapping("/getAllWeight")
-    public String getWeight(Model model) {
-        PageHelper.startPage(1, 1);
+    @RequestMapping("/getAllWeight/{pageNum}")
+    public String getWeight(@PathVariable("pageNum") Integer pageNum, Model model) {
+        PageHelper.startPage(pageNum, 1);
         List<Weight> weightList = weightService.getAllWeight();
         PageInfo<Weight> pageInfo = new PageInfo<>(weightList, 3);
         model.addAttribute("page", pageInfo);
@@ -40,6 +40,6 @@ public class weightController {
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
     public String update(Weight weight) {
         weightService.updateWeight(weight);
-        return "redirect:/weight/getAllWeight";
+        return "redirect:/weight/getAllWeight/1";
     }
 }
