@@ -114,7 +114,9 @@ public class ClassDegreeServiceImpl implements ClassDegreeService {
                     null,
                     null,
                     null);
-            insert = classDegreeMapper.insert(classDegreeOne);
+            ClassDegreeExample.Criteria classDegreeExampleCriteria = classDegreeExample.createCriteria();
+            classDegreeExampleCriteria.andKNoEqualTo("25001");
+            insert = classDegreeMapper.updateByExampleSelective(classDegreeOne, classDegreeExample);
             return insert;
         }
         return insert;
@@ -201,7 +203,9 @@ public class ClassDegreeServiceImpl implements ClassDegreeService {
                     null,
                     null,
                     null);
-            insert = classDegreeMapper.insert(classDegreeTwo);
+            ClassDegreeExample.Criteria classDegreeExampleCriteria = classDegreeExample.createCriteria();
+            classDegreeExampleCriteria.andKNoEqualTo("25002");
+            insert = classDegreeMapper.updateByExampleSelective(classDegreeTwo, classDegreeExample);
         }
         return insert;
     }
