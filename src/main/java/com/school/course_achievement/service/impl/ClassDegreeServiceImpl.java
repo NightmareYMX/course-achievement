@@ -4,7 +4,6 @@ import com.school.course_achievement.pojo.*;
 import com.school.course_achievement.service.ClassDegreeService;
 import com.school.course_achievement.utils.DegreeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
