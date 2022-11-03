@@ -23,10 +23,6 @@ public class WordController {
         PageInfo<Course> pageInfo = new PageInfo<>(wordList, 3);
         model.addAttribute("page", pageInfo);
         model.addAttribute("wordList", wordList);
-        for (Course course: wordList) {
-
-            System.out.println(course.getkName());
-        }
         return "word";
     }
 }
