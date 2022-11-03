@@ -18,8 +18,7 @@ public class WeightServiceImpl implements WeightService {
     WeightMapper weightMapper;
     @Override
     public List<Weight> getAllWeight() {
-        WeightExample weightExample = new WeightExample();
-        return weightMapper.selectByExample(weightExample);
+        return weightMapper.selectByExample(null);
     }
 
     @Override

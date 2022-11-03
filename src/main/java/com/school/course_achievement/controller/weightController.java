@@ -1,5 +1,7 @@
 package com.school.course_achievement.controller;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.school.course_achievement.pojo.Weight;
 import com.school.course_achievement.service.WeightService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +22,10 @@ public class weightController {
 
     @RequestMapping("/getAllWeight")
     public String getWeight(Model model) {
+        PageHelper.startPage(1, 1);
         List<Weight> weightList = weightService.getAllWeight();
+        PageInfo<Weight> pageInfo = new PageInfo<>(weightList, 3);
+        model.addAttribute("page", pageInfo);
         model.addAttribute("weightList", weightList);
         return "weight";
     }
