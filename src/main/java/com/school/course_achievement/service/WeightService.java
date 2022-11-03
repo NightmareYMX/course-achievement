@@ -18,5 +18,9 @@ public interface WeightService {
      */
     public Weight getWeightByKNo(String kNo);
 
+    /**
+     *
+     * @param weight
+     */
     public void updateWeight(Weight weight);
 }

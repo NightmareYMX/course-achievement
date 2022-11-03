@@ -16,7 +16,6 @@ public class wordServiceImpl implements WordService {
     @Override
     public List<Course> getWord() {
         CourseExample courseExample = new CourseExample();
-        List<Course> courseList = courseMapper.selectByExample(courseExample);
-        return courseList;
+        return courseMapper.selectByExample(courseExample);
     }
 }

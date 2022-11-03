@@ -1,10 +1,36 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>课程评价</title>
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css"/>
 </head>
+
 <body>
-$END$
-</body>
-</html>
+
+<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+        <li><a href="/index">首页</a></li>
+        <li><a th:href="@{'/classDegree/comment/'+${kCommentMap.kNo}}">评价</a></li>
+    </ul>
+</div>
+
+<div class="formbody">
+
+    <div class="formtitle"><span>基本信息</span></div>
+
+    <form th:action="@{/classDegree/commentUpdate}" method="post">
+        <input type="hidden" name="_method" value="put">
+        <input type="hidden" name="kNo" th:value="${kCommentMap.kNo}">
+        <ul class="forminfo">
+            <li><label>课程分析：</label><textarea name="kAnalyse" cols="" rows="" class="textinput" th:text="${kCommentMap.kAnalyse}"></textarea></li>
+            <li><label>课程改进：</label><textarea name="kImprovement" cols="" rows="" class="textinput" th:text="${kCommentMap.kImprovement}"></textarea></li>
+            <li><label>评价教师：</label><textarea style="border-top: solid 1px #a7b5bc;border-left: solid 1px #a7b5bc;border-right: solid 1px #ced9df;border-bottom: solid 1px #ced9df;" name="kCommentTName" cols="" rows="" th:text="${kCommentMap.kCommentTName}"></textarea></li>
+            <li><label>评价时间：</label><textarea style="border-top: solid 1px #a7b5bc;border-left: solid 1px #a7b5bc;border-right: solid 1px #ced9df;border-bottom: solid 1px #ced9df;" name="kCommentTime" cols="" rows="" th:text="${kCommentMap.kCommentTime}"></textarea></li>
+            <li><label>&nbsp;</label><input name="" type="submit" class="btn" value="确认保存"/></li>
+        </ul>
+    </form>
+
+</div>

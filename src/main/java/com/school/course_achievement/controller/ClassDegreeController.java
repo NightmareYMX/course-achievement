@@ -17,11 +17,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -104,56 +105,26 @@ public class ClassDegreeController {
         return "graduationDegree";
     }
 
-    @RequestMapping(value = "/classDegree/submitComment")
-    public String submitComment(@Param("KName") String KName, @Param("kAnalyse") String kAnalyse, @Param("kImprovement") String kImprovement, @Param("kCommentTName") String kCommentTName, @Param("kCommentTime") String kCommentTime, Model model) {
-        int i = classDegreeService.submitComment(KName, kAnalyse, kImprovement, kCommentTName, kCommentTime);
-        model.addAttribute("submitCommentIsSuccess", i);
-        return "redirect:comment";
-    }
-
-    @RequestMapping(value = "/classDegree/getComment")
-    public String getComment(@Param("KName") String KName, Model model) {
-        Map<String, String> kCommentMap = classDegreeService.getKComment(KName);
-        model.addAttribute("kCommentMap", kCommentMap);
-        return "comment";
-    }
-
-    @RequestMapping(value = "/classDegree/submitSuggestion")
-    public String submitSuggestion(@Param("KName") String KName,@Param("kSuggestion") String kSuggestion, Model model) {
-        int i = classDegreeService.submitSuggestion(KName, kSuggestion);
-        model.addAttribute("submitSuggestionIsSuccess", i);
-        return "redirect:suggestion";
-    }
-
-    @RequestMapping(value = "/classDegree/suggestion")
-    public String getSuggestion(@Param("KName") String KName, Model model) {
-        Map<String, String> kSuggestionMap = classDegreeService.getKSuggestion(KName);
-        model.addAttribute("kSuggestionMap", kSuggestionMap);
-        return "suggestion";
-    }
-
     @RequestMapping(value = "/classDegree/getWord/{KName}")
-    public void getWord(@PathVariable("KName") String KName, HttpServletResponse response) throws IOException {
+    public void getWord(@PathVariable("KName") String KName, HttpServletResponse response) throws UnsupportedEncodingException {
         CourseExample courseExample = new CourseExample();
         CourseExample.Criteria courseExampleCriteria = courseExample.createCriteria();
         courseExampleCriteria.andKNameLike("%" + KName + "%");
         List<Course> courseList = courseMapper.selectByExample(courseExample);
         String tNo = courseList.get(0).gettNo();
+        String kNo = courseList.get(0).getkNo();
         TeacherExample teacherExample = new TeacherExample();
         TeacherExample.Criteria teacherExampleCriteria = teacherExample.createCriteria();
         teacherExampleCriteria.andTNoEqualTo(tNo);
         List<Teacher> teacherList = teacherMapper.selectByExample(teacherExample);
-        String tName = null;
-        if (!teacherList.isEmpty()) {
-            tName = teacherList.get(0).gettName();
-        }
+        String tName = teacherList.get(0).gettName();
         Map<String, Double> ordinaryClassDegreeMap = classDegreeService.getOrdinaryClassDegree(KName);
         Map<String, Double> finalClassDegreeMap = classDegreeService.getFinalClassDegree(KName);
         Map<String, Double> totalClassDegreeMap = classDegreeService.getTotalClassDegree(KName);
         List<String> courseTargetList = courseService.getCourseTargetByKName(KName);
         List<Map<String, String>> courseTargetPointList = courseService.getCourseTargetPointByKName(KName);
-        Map<String, String> kCommentMap = classDegreeService.getKComment(KName);
-        Map<String, String> kSuggestionMap = classDegreeService.getKSuggestion(KName);
+        Map<String, String> kCommentMap = classDegreeService.getKComment(kNo);
+        Map<String, String> kSuggestionMap = classDegreeService.getKSuggestion(kNo);
         Map<String, Double> targetDegreeMap = classDegreeService.getTargetDegree(KName);
         Map<String, Double> targetWeightMap = classDegreeService.getTargetWeight(KName);
         Map<String, String> targetMap = new HashMap<>();
@@ -178,7 +149,7 @@ public class ClassDegreeController {
         targetMap.put("point3", coursePoint.get(2));
         String template = KName + ".docx";
         String fileName = KName + "-achievement-report" + ".docx";
-        String header = String.format("attachment; filename=%s", fileName);
+        String header = String.format("attachment; filename=%s", java.net.URLEncoder.encode(fileName, "UTF-8"));
         String url = String.format("%s\\src\\main\\resources\\templates\\%s", System.getProperty("user.dir"), template);
         Map<String, Object> map = new HashMap<>();
         String courseTarget1 = courseTargetList.get(0);
@@ -283,5 +254,31 @@ public class ClassDegreeController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @RequestMapping("/classDegree/audit/{kNo}")
+    public String audit(@PathVariable("kNo") String kNo, Model model) {
+        Map<String, String> kSuggestionMap = classDegreeService.getKSuggestion(kNo);
+        model.addAttribute("kSuggestionMap", kSuggestionMap);
+        return "audit";
+    }
+
+    @RequestMapping(value = "/classDegree/auditUpdate", method = RequestMethod.PUT)
+    public String updateAudit(@Param("kNo") String kNo, @Param("kSuggestion") String kSuggestion) {
+        classDegreeService.submitSuggestion(kNo, kSuggestion);
+        return String.format("redirect:/classDegree/audit/%s", kNo);
+    }
+
+    @RequestMapping("/classDegree/comment/{kNo}")
+    public String comment(@PathVariable("kNo") String kNo, Model model) {
+        Map<String, String> kCommentMap = classDegreeService.getKComment(kNo);
+        model.addAttribute("kCommentMap", kCommentMap);
+        return "comment";
+    }
+
+    @RequestMapping("/classDegree/commentUpdate")
+    public String updateComment(@Param("kNo")String kNo, @Param("kAnalyse") String kAnalyse, @Param("kImprovement") String kImprovement, @Param("kCommentTName") String kCommentTName, @Param("kCommentTime") String kCommentTime) {
+        classDegreeService.submitComment(kNo, kAnalyse, kImprovement, kCommentTName, kCommentTime);
+        return String.format("redirect:/classDegree/comment/%s", kNo);
     }
 }

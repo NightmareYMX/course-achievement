@@ -1,5 +1,7 @@
 package com.school.course_achievement.service;
 
+import com.school.course_achievement.pojo.ClassDegree;
+
 import java.util.Map;
 
 public interface ClassDegreeService {
@@ -51,34 +53,36 @@ public interface ClassDegreeService {
 
     /**
      *
-     * @param KName
+     * @param kNo
      * @return
      */
-    Map<String, String> getKComment(String KName);
+    Map<String, String> getKComment(String kNo);
 
     /**
      *
-     * @param KName
+     * @param kNo
      * @param kAnalyse
      * @param kImprovement
      * @param kCommentTName
      * @param kCommentTime
      * @return
      */
-    public int submitComment(String KName, String kAnalyse, String kImprovement, String kCommentTName, String kCommentTime);
+    public int submitComment(String kNo, String kAnalyse, String kImprovement, String kCommentTName, String kCommentTime);
 
     /**
      *
-     * @param KName
+     * @param KNo
      * @param kSuggestion
      * @return
      */
-    public int submitSuggestion(String KName, String kSuggestion);
+    public int submitSuggestion(String KNo, String kSuggestion);
 
     /**
      *
-     * @param KName
+     * @param kNo
      * @return
      */
-    public Map<String, String> getKSuggestion(String KName);
+    public Map<String, String> getKSuggestion(String kNo);
+
+
 }
