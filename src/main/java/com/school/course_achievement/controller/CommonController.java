@@ -10,49 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class CommonController {
-    @RequestMapping("/computer")
-    public String jumpToComputer() {
-        return "computer";
-    }
-
     @RequestMapping("/login")
     public String jumpToLogin() {
         return "login";
-    }
-
-    @RequestMapping("/default")
-    public String jumpToDefault() {
-        return "default";
-    }
-
-    @RequestMapping("/error")
-    public String jumpToError() {
-        return "error";
-    }
-
-    @RequestMapping("/filelist")
-    public String jumpToFileList() {
-        return "filelist";
-    }
-
-    @RequestMapping("/form")
-    public String jumpToForm() {
-        return "form";
-    }
-
-    @RequestMapping("/imglist")
-    public String jumpToImgList() {
-        return "imglist";
-    }
-
-    @RequestMapping("/imglist1")
-    public String jumpToImgList1() {
-        return "imglist1";
-    }
-
-    @RequestMapping("/imgtable")
-    public String jumpToImgTable() {
-        return "imgtable";
     }
 
     @RequestMapping("/index")
@@ -73,16 +33,6 @@ public class CommonController {
     @RequestMapping("/right")
     public String jumpToRight() {
         return "right";
-    }
-
-    @RequestMapping("/tab")
-    public String jumpToTab() {
-        return "tab";
-    }
-
-    @RequestMapping("/tools")
-    public String jumpToTools() {
-        return "tools";
     }
 
     @RequestMapping("/top")
