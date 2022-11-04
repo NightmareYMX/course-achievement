@@ -1,12 +1,10 @@
 package com.school.course_achievement.controller;
 
 import cn.afterturn.easypoi.word.WordExportUtil;
+import com.school.course_achievement.mapper.ClassDegreeMapper;
 import com.school.course_achievement.mapper.CourseMapper;
 import com.school.course_achievement.mapper.TeacherMapper;
-import com.school.course_achievement.pojo.Course;
-import com.school.course_achievement.pojo.CourseExample;
-import com.school.course_achievement.pojo.Teacher;
-import com.school.course_achievement.pojo.TeacherExample;
+import com.school.course_achievement.pojo.*;
 import com.school.course_achievement.service.ClassDegreeService;
 import com.school.course_achievement.service.CourseService;
 import com.school.course_achievement.utils.DegreeUtils;
@@ -40,10 +38,19 @@ public class ClassDegreeController {
 
     @Autowired
     TeacherMapper teacherMapper;
+
+    @Autowired
+    ClassDegreeMapper classDegreeMapper;
     @RequestMapping("/")
     public String calculateDegree(HttpSession httpSession) {
-        int insertOne = classDegreeService.calculateDegreeOne();
-        int insertTwo = classDegreeService.calculateDegreeTwo();
+        int insertOne = 0;
+        int insertTwo = 0;
+        List<ClassDegree> classDegreeList = classDegreeMapper.selectByExample(null);
+        System.out.println(classDegreeList.size());
+        if (classDegreeList.size() <= 0) {
+            insertOne = classDegreeService.calculateDegreeOne();
+            insertTwo = classDegreeService.calculateDegreeTwo();
+        }
         httpSession.setAttribute("dataIsNotEmpty", insertOne + insertTwo);
         return "login";
     }

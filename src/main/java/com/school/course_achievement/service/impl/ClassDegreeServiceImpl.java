@@ -29,183 +29,174 @@ public class ClassDegreeServiceImpl implements ClassDegreeService {
     StudentDegreeMapper studentDegreeMapper;
     @Override
     public int calculateDegreeOne() {
-        int insert = 1;
-        ClassDegreeExample classDegreeExample = new ClassDegreeExample();
-        List<ClassDegree> classDegreeList = classDegreeMapper.selectByExample(classDegreeExample);
-        if (classDegreeList.size() <= 2) {
-            ClassDegreeExample classDegreeExampleDel = new ClassDegreeExample();
-            ClassDegreeExample.Criteria criteria = classDegreeExampleDel.createCriteria();
-            criteria.andKNoEqualTo("25001");
-            criteria.andKNoEqualTo("25002");
-            classDegreeMapper.deleteByExample(classDegreeExample);
-            StudentDegreeExample studentDegreeExampleOne = new StudentDegreeExample();
-            StudentDegreeExample.Criteria studentDegreeExampleOneCriteria = studentDegreeExampleOne.createCriteria();
-            studentDegreeExampleOneCriteria.andKNoEqualTo("25001");
-            List<StudentDegree> studentDegreeOneList = studentDegreeMapper.selectByExample(studentDegreeExampleOne);
-            List<Double> BehaveOneList = new ArrayList<>();
-            List<Double> homeworkOneList = new ArrayList<>();
-            List<Double> testOneList = new ArrayList<>();
-            List<Double> finalOneList = new ArrayList<>();
-            List<Double> target1OneList = new ArrayList<>();
-            List<Double> target2OneList = new ArrayList<>();
-            List<Double> target3OneList = new ArrayList<>();
-            for (StudentDegree studentDegree: studentDegreeOneList) {
-                BehaveOneList.add(studentDegree.getBehaveDegree());
-                homeworkOneList.add(studentDegree.getHomeworkDegree());
-                testOneList.add(studentDegree.getTestDegree());
-                finalOneList.add(studentDegree.getFinalDegree());
-                target1OneList.add(studentDegree.getTarget1Degree());
-                target2OneList.add(studentDegree.getTarget2Degree());
-                target3OneList.add(studentDegree.getTarget3Degree());
-            }
-            WeightExample weightExample = new WeightExample();
-            List<Weight> weightList = weightMapper.selectByExample(weightExample);
-            Weight weightOne = weightList.get(0);
-            double behaveAvg = DegreeUtils.avgDegree(BehaveOneList);
-            double behaveLow = DegreeUtils.lowDegree(BehaveOneList);
-            double behaveHigh = DegreeUtils.highDegree(BehaveOneList);
-            double homeworkAvg = DegreeUtils.avgDegree(homeworkOneList);
-            double homeworkLow = DegreeUtils.lowDegree(homeworkOneList);
-            double homeworkHigh = DegreeUtils.highDegree(homeworkOneList);
-            double testAvg = DegreeUtils.avgDegree(testOneList);
-            double testLow = DegreeUtils.lowDegree(testOneList);
-            double testHigh = DegreeUtils.highDegree(testOneList);
-            double finalAvg = DegreeUtils.avgDegree(finalOneList);
-            double finalLow = DegreeUtils.lowDegree(finalOneList);
-            double finalHigh = DegreeUtils.highDegree(finalOneList);
-            double target1Avg = DegreeUtils.avgDegree(target1OneList);
-            double target2Avg = DegreeUtils.avgDegree(target2OneList);
-            double target3Avg = DegreeUtils.avgDegree(target3OneList);
-            double target1O = weightOne.getBehaveTarget1Weight() * behaveAvg + weightOne.getHomeworkTarget1Weight() * homeworkAvg + weightOne.getTestTarget1Weight() * testAvg;
-            double target2O = weightOne.getBehaveTarget2Weight() * behaveAvg + weightOne.getHomeworkTarget2Weight() * homeworkAvg + weightOne.getTestTarget2Weight() * testAvg;
-            double target3O = weightOne.getBehaveTarget3Weight() * behaveAvg + weightOne.getHomeworkTarget3Weight() * homeworkAvg + weightOne.getTestTarget3Weight() * testAvg;
-            double target1F = weightOne.getFinalTarget1Weight() * finalAvg;
-            double target2F = weightOne.getFinalTarget2Weight() * finalAvg;
-            double target3F = weightOne.getFinalTarget3Weight() * finalAvg;
-            ClassDegree classDegreeOne = new ClassDegree(
-                    "25001",
-                    "201",
-                    behaveAvg,
-                    behaveLow,
-                    behaveHigh,
-                    homeworkAvg,
-                    homeworkLow,
-                    homeworkHigh,
-                    testAvg,
-                    testLow,
-                    testHigh,
-                    finalAvg,
-                    finalLow,
-                    finalHigh,
-                    target1Avg,
-                    target2Avg,
-                    target3Avg,
-                    target1O,
-                    target2O,
-                    target3O,
-                    target1O + target2O + target3O,
-                    target1F,
-                    target2F,
-                    target3F,
-                    target1F + target2F + target3F,
-                    null,
-                    null,
-                    null,
-                    null,
-                    null);
-            ClassDegreeExample.Criteria classDegreeExampleCriteria = classDegreeExample.createCriteria();
-            classDegreeExampleCriteria.andKNoEqualTo("25001");
-            insert = classDegreeMapper.updateByExampleSelective(classDegreeOne, classDegreeExample);
-            return insert;
+        int insert;
+        classDegreeMapper.deleteByExample(null);
+        classDegreeMapper.insert(new ClassDegree("25001", "201", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null));
+        classDegreeMapper.insert(new ClassDegree("25002", "201", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null));
+        StudentDegreeExample studentDegreeExampleOne = new StudentDegreeExample();
+        StudentDegreeExample.Criteria studentDegreeExampleOneCriteria = studentDegreeExampleOne.createCriteria();
+        studentDegreeExampleOneCriteria.andKNoEqualTo("25001");
+        List<StudentDegree> studentDegreeOneList = studentDegreeMapper.selectByExample(studentDegreeExampleOne);
+        List<Double> BehaveOneList = new ArrayList<>();
+        List<Double> homeworkOneList = new ArrayList<>();
+        List<Double> testOneList = new ArrayList<>();
+        List<Double> finalOneList = new ArrayList<>();
+        List<Double> target1OneList = new ArrayList<>();
+        List<Double> target2OneList = new ArrayList<>();
+        List<Double> target3OneList = new ArrayList<>();
+        for (StudentDegree studentDegree: studentDegreeOneList) {
+            BehaveOneList.add(studentDegree.getBehaveDegree());
+            homeworkOneList.add(studentDegree.getHomeworkDegree());
+            testOneList.add(studentDegree.getTestDegree());
+            finalOneList.add(studentDegree.getFinalDegree());
+            target1OneList.add(studentDegree.getTarget1Degree());
+            target2OneList.add(studentDegree.getTarget2Degree());
+            target3OneList.add(studentDegree.getTarget3Degree());
         }
+        WeightExample weightExample = new WeightExample();
+        List<Weight> weightList = weightMapper.selectByExample(weightExample);
+        Weight weightOne = weightList.get(0);
+        double behaveAvg = DegreeUtils.avgDegree(BehaveOneList);
+        double behaveLow = DegreeUtils.lowDegree(BehaveOneList);
+        double behaveHigh = DegreeUtils.highDegree(BehaveOneList);
+        double homeworkAvg = DegreeUtils.avgDegree(homeworkOneList);
+        double homeworkLow = DegreeUtils.lowDegree(homeworkOneList);
+        double homeworkHigh = DegreeUtils.highDegree(homeworkOneList);
+        double testAvg = DegreeUtils.avgDegree(testOneList);
+        double testLow = DegreeUtils.lowDegree(testOneList);
+        double testHigh = DegreeUtils.highDegree(testOneList);
+        double finalAvg = DegreeUtils.avgDegree(finalOneList);
+        double finalLow = DegreeUtils.lowDegree(finalOneList);
+        double finalHigh = DegreeUtils.highDegree(finalOneList);
+        double target1Avg = DegreeUtils.avgDegree(target1OneList);
+        double target2Avg = DegreeUtils.avgDegree(target2OneList);
+        double target3Avg = DegreeUtils.avgDegree(target3OneList);
+        double target1O = weightOne.getBehaveTarget1Weight() * behaveAvg + weightOne.getHomeworkTarget1Weight() * homeworkAvg + weightOne.getTestTarget1Weight() * testAvg;
+        double target2O = weightOne.getBehaveTarget2Weight() * behaveAvg + weightOne.getHomeworkTarget2Weight() * homeworkAvg + weightOne.getTestTarget2Weight() * testAvg;
+        double target3O = weightOne.getBehaveTarget3Weight() * behaveAvg + weightOne.getHomeworkTarget3Weight() * homeworkAvg + weightOne.getTestTarget3Weight() * testAvg;
+        double target1F = weightOne.getFinalTarget1Weight() * finalAvg;
+        double target2F = weightOne.getFinalTarget2Weight() * finalAvg;
+        double target3F = weightOne.getFinalTarget3Weight() * finalAvg;
+        ClassDegree classDegreeOne = new ClassDegree(
+                null,
+                "201",
+                behaveAvg,
+                behaveLow,
+                behaveHigh,
+                homeworkAvg,
+                homeworkLow,
+                homeworkHigh,
+                testAvg,
+                testLow,
+                testHigh,
+                finalAvg,
+                finalLow,
+                finalHigh,
+                target1Avg,
+                target2Avg,
+                target3Avg,
+                target1O,
+                target2O,
+                target3O,
+                target1O + target2O + target3O,
+                target1F,
+                target2F,
+                target3F,
+                target1F + target2F + target3F,
+                null,
+                null,
+                null,
+                null,
+                null);
+        ClassDegreeExample classDegreeExample = new ClassDegreeExample();
+        ClassDegreeExample.Criteria classDegreeExampleCriteria = classDegreeExample.createCriteria();
+        classDegreeExampleCriteria.andKNoEqualTo("25001");
+        insert = classDegreeMapper.updateByExampleSelective(classDegreeOne, classDegreeExample);
         return insert;
     }
 
     @Override
     public int calculateDegreeTwo() {
-        int insert = 1;
-        ClassDegreeExample classDegreeExample = new ClassDegreeExample();
-        List<ClassDegree> classDegreeList = classDegreeMapper.selectByExample(classDegreeExample);
-        if (classDegreeList.size() <= 2) {
-            StudentDegreeExample studentDegreeExampleTwo = new StudentDegreeExample();
-            StudentDegreeExample.Criteria studentDegreeExampleTwoCriteria = studentDegreeExampleTwo.createCriteria();
-            studentDegreeExampleTwoCriteria.andKNoEqualTo("25002");
-            List<StudentDegree> studentDegreeTwoList = studentDegreeMapper.selectByExample(studentDegreeExampleTwo);
-            List<Double> BehaveTwoList = new ArrayList<>();
-            List<Double> homeworkTwoList = new ArrayList<>();
-            List<Double> testTwoList = new ArrayList<>();
-            List<Double> finalTwoList = new ArrayList<>();
-            List<Double> target1TwoList = new ArrayList<>();
-            List<Double> target2TwoList = new ArrayList<>();
-            List<Double> target3TwoList = new ArrayList<>();
-            for (StudentDegree studentDegree: studentDegreeTwoList) {
-                BehaveTwoList.add(studentDegree.getBehaveDegree());
-                homeworkTwoList.add(studentDegree.getHomeworkDegree());
-                testTwoList.add(studentDegree.getTestDegree());
-                finalTwoList.add(studentDegree.getFinalDegree());
-                target1TwoList.add(studentDegree.getTarget1Degree());
-                target2TwoList.add(studentDegree.getTarget2Degree());
-                target3TwoList.add(studentDegree.getTarget3Degree());
-            }
-            WeightExample weightExample = new WeightExample();
-            List<Weight> weightList = weightMapper.selectByExample(weightExample);
-            Weight weightTwo = weightList.get(1);
-            double behaveTwoAvg = DegreeUtils.avgDegree(BehaveTwoList);
-            double behaveTwoLow = DegreeUtils.lowDegree(BehaveTwoList);
-            double behaveTwoHigh = DegreeUtils.highDegree(BehaveTwoList);
-            double homeworkTwoAvg = DegreeUtils.avgDegree(homeworkTwoList);
-            double homeworkTwoLow = DegreeUtils.lowDegree(homeworkTwoList);
-            double homeworkTwoHigh = DegreeUtils.highDegree(homeworkTwoList);
-            double testTwoAvg = DegreeUtils.avgDegree(testTwoList);
-            double testTwoLow = DegreeUtils.lowDegree(testTwoList);
-            double testTwoHigh = DegreeUtils.highDegree(testTwoList);
-            double finalTwoAvg = DegreeUtils.avgDegree(finalTwoList);
-            double finalTwoLow = DegreeUtils.lowDegree(finalTwoList);
-            double finalTwoHigh = DegreeUtils.highDegree(finalTwoList);
-            double target1TwoAvg = DegreeUtils.avgDegree(target1TwoList);
-            double target2TwoAvg = DegreeUtils.avgDegree(target2TwoList);
-            double target3TwoAvg = DegreeUtils.avgDegree(target3TwoList);
-            double target1TwoO = weightTwo.getBehaveTarget1Weight() * behaveTwoAvg + weightTwo.getHomeworkTarget1Weight() * homeworkTwoAvg + weightTwo.getTestTarget1Weight() * testTwoAvg;
-            double target2TwoO = weightTwo.getBehaveTarget2Weight() * behaveTwoAvg + weightTwo.getHomeworkTarget2Weight() * homeworkTwoAvg + weightTwo.getTestTarget2Weight() * testTwoAvg;
-            double target3TwoO = weightTwo.getBehaveTarget3Weight() * behaveTwoAvg + weightTwo.getHomeworkTarget3Weight() * homeworkTwoAvg + weightTwo.getTestTarget3Weight() * testTwoAvg;
-            double target1TwoF = weightTwo.getFinalTarget1Weight() * finalTwoAvg;
-            double target2TwoF = weightTwo.getFinalTarget2Weight() * finalTwoAvg;
-            double target3TwoF = weightTwo.getFinalTarget3Weight() * finalTwoAvg;
-            ClassDegree classDegreeTwo = new ClassDegree(
-                    "25002",
-                    "201",
-                    behaveTwoAvg,
-                    behaveTwoLow,
-                    behaveTwoHigh,
-                    homeworkTwoAvg,
-                    homeworkTwoLow,
-                    homeworkTwoHigh,
-                    testTwoAvg,
-                    testTwoLow,
-                    testTwoHigh,
-                    finalTwoAvg,
-                    finalTwoLow,
-                    finalTwoHigh,
-                    target1TwoAvg,
-                    target2TwoAvg,
-                    target3TwoAvg,
-                    target1TwoO,
-                    target2TwoO,
-                    target3TwoO,
-                    target1TwoO + target2TwoO + target3TwoO,
-                    target1TwoF,
-                    target2TwoF,
-                    target3TwoF,
-                    target1TwoF + target2TwoF + target3TwoF,
-                    null,
-                    null,
-                    null,
-                    null,
-                    null);
-            ClassDegreeExample.Criteria classDegreeExampleCriteria = classDegreeExample.createCriteria();
-            classDegreeExampleCriteria.andKNoEqualTo("25002");
-            insert = classDegreeMapper.updateByExampleSelective(classDegreeTwo, classDegreeExample);
+        int insert;
+        StudentDegreeExample studentDegreeExampleTwo = new StudentDegreeExample();
+        StudentDegreeExample.Criteria studentDegreeExampleTwoCriteria = studentDegreeExampleTwo.createCriteria();
+        studentDegreeExampleTwoCriteria.andKNoEqualTo("25002");
+        List<StudentDegree> studentDegreeTwoList = studentDegreeMapper.selectByExample(studentDegreeExampleTwo);
+        List<Double> BehaveTwoList = new ArrayList<>();
+        List<Double> homeworkTwoList = new ArrayList<>();
+        List<Double> testTwoList = new ArrayList<>();
+        List<Double> finalTwoList = new ArrayList<>();
+        List<Double> target1TwoList = new ArrayList<>();
+        List<Double> target2TwoList = new ArrayList<>();
+        List<Double> target3TwoList = new ArrayList<>();
+        for (StudentDegree studentDegree: studentDegreeTwoList) {
+            BehaveTwoList.add(studentDegree.getBehaveDegree());
+            homeworkTwoList.add(studentDegree.getHomeworkDegree());
+            testTwoList.add(studentDegree.getTestDegree());
+            finalTwoList.add(studentDegree.getFinalDegree());
+            target1TwoList.add(studentDegree.getTarget1Degree());
+            target2TwoList.add(studentDegree.getTarget2Degree());
+            target3TwoList.add(studentDegree.getTarget3Degree());
         }
+        WeightExample weightExample = new WeightExample();
+        List<Weight> weightList = weightMapper.selectByExample(weightExample);
+        Weight weightTwo = weightList.get(1);
+        double behaveTwoAvg = DegreeUtils.avgDegree(BehaveTwoList);
+        double behaveTwoLow = DegreeUtils.lowDegree(BehaveTwoList);
+        double behaveTwoHigh = DegreeUtils.highDegree(BehaveTwoList);
+        double homeworkTwoAvg = DegreeUtils.avgDegree(homeworkTwoList);
+        double homeworkTwoLow = DegreeUtils.lowDegree(homeworkTwoList);
+        double homeworkTwoHigh = DegreeUtils.highDegree(homeworkTwoList);
+        double testTwoAvg = DegreeUtils.avgDegree(testTwoList);
+        double testTwoLow = DegreeUtils.lowDegree(testTwoList);
+        double testTwoHigh = DegreeUtils.highDegree(testTwoList);
+        double finalTwoAvg = DegreeUtils.avgDegree(finalTwoList);
+        double finalTwoLow = DegreeUtils.lowDegree(finalTwoList);
+        double finalTwoHigh = DegreeUtils.highDegree(finalTwoList);
+        double target1TwoAvg = DegreeUtils.avgDegree(target1TwoList);
+        double target2TwoAvg = DegreeUtils.avgDegree(target2TwoList);
+        double target3TwoAvg = DegreeUtils.avgDegree(target3TwoList);
+        double target1TwoO = weightTwo.getBehaveTarget1Weight() * behaveTwoAvg + weightTwo.getHomeworkTarget1Weight() * homeworkTwoAvg + weightTwo.getTestTarget1Weight() * testTwoAvg;
+        double target2TwoO = weightTwo.getBehaveTarget2Weight() * behaveTwoAvg + weightTwo.getHomeworkTarget2Weight() * homeworkTwoAvg + weightTwo.getTestTarget2Weight() * testTwoAvg;
+        double target3TwoO = weightTwo.getBehaveTarget3Weight() * behaveTwoAvg + weightTwo.getHomeworkTarget3Weight() * homeworkTwoAvg + weightTwo.getTestTarget3Weight() * testTwoAvg;
+        double target1TwoF = weightTwo.getFinalTarget1Weight() * finalTwoAvg;
+        double target2TwoF = weightTwo.getFinalTarget2Weight() * finalTwoAvg;
+        double target3TwoF = weightTwo.getFinalTarget3Weight() * finalTwoAvg;
+        ClassDegree classDegreeTwo = new ClassDegree(
+                null,
+                "201",
+                behaveTwoAvg,
+                behaveTwoLow,
+                behaveTwoHigh,
+                homeworkTwoAvg,
+                homeworkTwoLow,
+                homeworkTwoHigh,
+                testTwoAvg,
+                testTwoLow,
+                testTwoHigh,
+                finalTwoAvg,
+                finalTwoLow,
+                finalTwoHigh,
+                target1TwoAvg,
+                target2TwoAvg,
+                target3TwoAvg,
+                target1TwoO,
+                target2TwoO,
+                target3TwoO,
+                target1TwoO + target2TwoO + target3TwoO,
+                target1TwoF,
+                target2TwoF,
+                target3TwoF,
+                target1TwoF + target2TwoF + target3TwoF,
+                null,
+                null,
+                null,
+                null,
+                null);
+        ClassDegreeExample classDegreeExample = new ClassDegreeExample();
+        ClassDegreeExample.Criteria classDegreeExampleCriteria = classDegreeExample.createCriteria();
+        classDegreeExampleCriteria.andKNoEqualTo("25002");
+        insert = classDegreeMapper.updateByExampleSelective(classDegreeTwo, classDegreeExample);
         return insert;
     }
 

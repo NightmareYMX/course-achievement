@@ -60,6 +60,7 @@
                 LoginInterceptor的preHandler方法里面获取不拦截的请求uri地址了(优选) -->
             <mvc:exclude-mapping path="/teacherLogin"/>
             <mvc:exclude-mapping path="/static/**"/>
+            <mvc:exclude-mapping path="/"/>
             <bean class="com.school.course_achievement.interceptor.LoginInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
