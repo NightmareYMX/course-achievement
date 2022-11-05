@@ -16,7 +16,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/weight")
-public class weightController {
+public class WeightController {
 
     @Autowired
     WeightService weightService;
