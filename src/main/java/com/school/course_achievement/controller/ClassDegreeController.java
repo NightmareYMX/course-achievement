@@ -47,7 +47,7 @@ public class ClassDegreeController {
         int insertTwo = 0;
         List<ClassDegree> classDegreeList = classDegreeMapper.selectByExample(null);
         System.out.println(classDegreeList.size());
-        if (classDegreeList.size() <= 0) {
+        if (classDegreeList.size() < 2) {
             insertOne = classDegreeService.calculateDegreeOne();
             insertTwo = classDegreeService.calculateDegreeTwo();
         }
