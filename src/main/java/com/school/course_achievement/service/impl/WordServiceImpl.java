@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class wordServiceImpl implements WordService {
+public class WordServiceImpl implements WordService {
     @Autowired
     CourseMapper courseMapper;
     @Override
