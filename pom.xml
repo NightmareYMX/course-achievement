@@ -30,7 +30,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.38</version>
+            <version>5.1.47</version>
         </dependency>
 
         <!-- springmvc依赖 : 比Spring核心IOC 多一个 springweb -->
